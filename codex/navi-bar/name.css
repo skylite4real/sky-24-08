@@ -1,0 +1,46 @@
+.SKYLite {
+    letter-spacing: -3px !important;
+    font-weight: bold;
+    line-height: 2.0;
+    margin-left: 0; /* Adjust the margin value to decrease the gap */
+}
+
+.letter-s {
+    font-size: 24px !important;
+    color: black;
+}
+
+.letter-k {
+    font-size: 24px !important;
+    color: black;
+}
+
+.letter-y {
+    font-size: 24px !important;
+    color: black;
+}
+
+.letter-l {
+    font-size: 24px !important;
+    color: black;
+}
+
+.letter-i {
+    font-size: 20px !important;
+    color: black;
+}
+
+.letter-t {
+    font-size: 20px !important;
+    color: black;
+}
+
+.letter-e {
+    font-size: 20px !important;
+    color: black;
+}
+
+/* Adjust the gap between the logo and the name */
+.logo-name-container .logo {
+    margin-right: -14px; /* Use a negative margin to pull the elements closer together */
+}

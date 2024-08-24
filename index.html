@@ -1,0 +1,2374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star turn</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-<YOUR_INTEGRITY_HASH>" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-R6/u7mBslAqkSJaFZ4F+zGDiqSvOR6Rr8jBdE1SdC+s/92wKi49F+2e7VUG/jj7c2F6b3HodOz++J1dz0+2Vzw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    
+
+    <!-- Additional CSS for enhanced UI -->
+    <link href="./codex/main-styles/enhanced-styles.css" rel="stylesheet">
+
+    <link href="./codex/sidebar/sidebar.css" rel="stylesheet">
+
+    <link href="./codex/main-feed/feeds.css" rel="stylesheet">
+
+    <link href="./codex/navi-bar/navi.css" rel="stylesheet">
+    <link href="./codex/navi-bar/name.css" rel="stylesheet">
+
+
+    <link href="./codex/sidebar/settings/settings.css" rel="stylesheet">
+
+    <link href="./codex/profile-picture/profile/profile.css" rel="stylesheet">
+    <link href="./codex/profile-picture/escllipse_verti.css" rel="stylesheet">
+
+    <link href="./codex/profile-picture/add/actual/add.css" rel="stylesheet">
+
+
+    <link href="./codex/search/search.css" rel="stylesheet">
+
+    <link href="./codex/forms/media/vid.css" rel="stylesheet">
+    <link href="./codex/forms/media/choose-video/choose-media.css" rel="stylesheet">
+
+    <link href="./codex/Manage-Content/manage-content.css" rel="stylesheet">
+    
+    
+    <link href="./codex/forms/media/posts/post-vid.css" rel="stylesheet">
+
+
+
+    <link href="./codex/forms/media/short-video/short-video.css" rel="stylesheet">
+
+    <!-- Include Video.js CSS -->
+    <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet" />
+
+
+    
+
+  
+</head>
+<body>
+    <!-- Main Content Area -->
+    <div class="main-container" id="mainContent">
+        <!-- Top Navigation Bar -->
+        <!-- Top Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light w-100 p-0">
+            <div class="container-fluid d-flex justify-content-between align-items-center p-0">
+                <!-- Left Side: Sidebar Menu Icon and Logo -->
+                <div class="d-flex align-items-center logo-name-container mt-2">
+                    <button class="btn btn-outline-secondary mr-3" id="menuButton" aria-label="Menu">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+
+                    <span class="SKYLite">
+                        <span class="letter-s">S</span>
+                        <span class="letter-k">K</span>
+                        <span class="letter-y">Y</span>
+                        <span class="letter-l">L</span>
+                        <span class="letter-i">i</span>
+                        <span class="letter-t">t</span>
+                        <span class="letter-e">e</span>
+                    </span>
+                </div>
+
+                <!-- Right Side: Profile Photo with Search Icon -->
+                <div class="d-flex align-items-center mt-2">
+                    <div class="search-icon-container">
+                        <i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i>
+                    </div>
+                    <img id="profilePhoto" src="assets/photos/blank-profile.png" alt="Profile Photo" class="rounded-circle profile-photo" data-toggle="modal" data-target="#profileModal">
+                </div>
+            </div>
+        </nav>
+    
+    <!-- Search Section -->
+    <!-- Search Section -->
+    <div id="searchSection" class="search-section d-none">
+        <div class="search-header">
+            <i class="fas fa-arrow-left fa-lg" id="closeSearchIcon" aria-label="Close Search"></i>
+            <div class="search-input-wrapper">
+                <div class="search-input-container">
+                    <input type="text" class="form-control search-input" placeholder="Type your search here...">
+                    <i class="fa-solid fa-x clear-icon" style="color: #000000;"></i>
+                </div>
+            </div>
+        </div>
+        <div class="categories-wrapper">
+            <div class="categories">
+                <span class="category" data-category="new">New</span>
+                <span class="category" data-category="trending">Trending</span>
+                <span class="category" data-category="dance">Dance</span>
+                <span class="category" data-category="entertainment">Entertainment</span>
+                <span class="category" data-category="music">Music</span>
+                <span class="category" data-category="education">Education</span>
+                <span class="category" data-category="games">Games</span>
+                <span class="category" data-category="news">News</span>
+                <span class="category" data-category="sports">Sports</span>
+                <span class="category" data-category="travel">Travel</span>
+                <span class="category" data-category="nature">Nature</span>
+                <span class="category" data-category="food">Food</span>
+                <span class="category" data-category="comedy">Comedy</span>
+                <span class="category" data-category="technology">Technology</span>
+                <span class="category" data-category="space">Space</span>
+                <span class="category" data-category="fashion-beauty">Fashion & Beauty</span>
+                <span class="category" data-category="vlogs">Vlogs</span>
+            </div>
+        </div>
+        <!-- Content display area -->
+        <div id="contentDisplay" class="content-display"></div>
+    </div>
+
+    
+    <!--User Activity or Menu-->
+    <div id="userActivitySection">
+        <i id="closeIcon" class="fas fa-arrow-left"></i>
+        <div id="iconContainer">
+            <div class="icon-item">
+                <i class="fa-regular fa-thumbs-up"></i>
+                <span></span>
+            </div>
+            <div class="icon-item">
+                <i class="fa-regular fa-thumbs-down"></i>
+                <span></span>
+            </div>
+            <div class="icon-item">
+                <i class="fa-regular fa-comment"></i>
+                <span></span>
+            </div>
+            <div class="icon-item">
+                <i class="fa-regular fa-bookmark"></i>
+                <span></span>
+            </div>
+            <div class="icon-item">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span></span>
+            </div>
+        </div>
+        <p>User Activity Section</p>
+    </div>
+    
+
+        <!-- Navigation Tabs -->
+        <!-- Navigation Tabs -->
+        <div class="nav nav-tabs justify-content-center w-100 navitab-tabs" id="myTab" role="tablist">
+            <div class="nav-item navitab-item">
+                <a class="nav-link navitab-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+                    <i class="fas fa-home fa-lg"></i>
+                </a>
+            </div>
+            <div class="nav-item navitab-item">
+                <a class="nav-link navitab-link" id="shorts-tab" data-toggle="tab" href="#shorts" role="tab" aria-controls="shorts" aria-selected="false">
+                    <i class="fas fa-clapperboard fa-lg"></i>
+                </a>
+            </div>
+            <div class="nav-item navitab-item">
+                <a class="nav-link navitab-link" id="following-tab" data-toggle="tab" href="#following" role="tab" aria-controls="following" aria-selected="false">
+                    <i class="fas fa-user-friends fa-lg"></i>
+                </a>
+            </div>
+            <div class="nav-item navitab-item">
+                <a class="nav-link navitab-link" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="false">
+                    <i class="fas fa-images fa-lg"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <!-- Placeholder for home content -->
+                <div class="content-placeholder" id="home-content">
+                    <!-- Content from database will be loaded here -->
+                </div>
+            </div>
+            <div class="tab-pane fade" id="shorts" role="tabpanel" aria-labelledby="shorts-tab">
+                <!-- Placeholder for shorts content -->
+                <div class="content-placeholder" id="shorts-content">
+                    <!-- Content from database will be loaded here -->
+                </div>
+            </div>
+            <div class="tab-pane fade" id="following" role="tabpanel" aria-labelledby="following-tab">
+                <!-- Placeholder for following content -->
+                <div class="content-placeholder" id="following-content">
+                    <!-- Content from database will be loaded here -->
+                </div>
+            </div>
+            <div class="tab-pane fade" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                <!-- Placeholder for posts content -->
+                <div class="content-placeholder" id="posts-content">
+                    <!-- Content from database will be loaded here -->
+                </div>
+            </div>
+        </div>
+    
+
+ 
+    <!-- Profile Section -->
+    <!-- Profile Section -->
+    <!-- Profile Section -->
+    <!-- Profile Section -->
+    <div id="profileSection" class="profile-section">
+        <div class="profile-header">
+            <i class="fa-solid fa-arrow-left close-profile-icon" aria-label="Close Profile" role="button" tabindex="0"></i>
+            <div class="options-container">
+                <i class="fas fa-chart-line dashboard-icon" aria-label="dashboard" role="button" tabindex="0"></i>
+                <i class="fa-solid fa-plus add-icon-plus" aria-label="Add" role="button" tabindex="0"></i>
+                <i class="fa-solid fa-gear gear-icon" aria-label="Settings" role="button" tabindex="0"></i>
+                <i class="fa-solid fa-ellipsis-vertical options-icon" aria-label="Options" role="button" tabindex="0"></i>
+                <div class="options-dropdown" role="menu">
+                    <a href="#" id="manage" role="menuitem">Manage</a>
+                    <a href="#" id="share" role="menuitem">Share</a>
+                    <a href="#" id="logout" role="menuitem">Logout</a>
+                    <a href="#" id="deactivate" role="menuitem">Deactivate</a>
+                </div>
+            </div>
+        </div>
+        <div class="profile-content">
+            <div class="profile-info">
+                <img src="assets/photos/SKYLite.png" alt="Profile Photo" class="profile-photo-large">
+                <div class="profile-details">
+                    <h2 class="username">username</h2>
+                    <p class="followers">Followers: 1000</p>
+                </div>
+            </div>
+            <div class="buttons-container">
+                <button class="btn edit-profile-btn" id="editProfileBtn">
+                    <i class="fa-solid fa-pencil-alt"></i>Edit Profile
+                </button>
+                <button class="btn share-profile-btn" id="shareProfileBtn">
+                    <i class="fa-solid fa-share"></i>Share Profile
+                </button>
+            </div>
+            <div class="additional-info">
+                <p class="full-name">
+                    <span id="fullNameText">Skylite4real</span>
+                    <input type="text" id="fullNameInput" class="edit-input" style="display: none;" value="jake">
+                    <i id="fullNameEllipsis" class="fas fa-ellipsis-h ellipsis-icon"></i>
+                </p>
+                <p class="gmail">
+                    <span id="emailText">Skylite@email.com</span>
+                    <input type="email" id="emailInput" class="edit-input" style="display: none;" value="ai@email.com">
+                    <i id="emailEllipsis" class="fas fa-ellipsis-h ellipsis-icon"></i>
+                </p>
+                <p class="dob">
+                    <span id="dobText">00-00-0000</span>
+                    <input type="date" id="dobInput" class="edit-input" style="display: none;" value="2000-02-25">
+                    <i id="dobEllipsis" class="fas fa-ellipsis-h ellipsis-icon"></i>
+                </p>
+                <p class="location">
+                    <span id="locationText">Country, City</span>
+                    <input type="text" id="locationInput" class="edit-input" style="display: none;" value="USA">
+                    <i id="locationEllipsis" class="fas fa-ellipsis-h ellipsis-icon"></i>
+                </p>
+                <p class="about">
+                    <span id="aboutText">💐💐The Skylite is the platform where users🌏
+                        will reach their potential👏.</span>
+                    <textarea id="aboutInput" class="edit-input" style="display: none;">This is about the user.</textarea>
+                    <i id="aboutEllipsis" class="fas fa-ellipsis-h ellipsis-icon"></i>
+                </p>
+                <p class="links">
+                    <span id="linksText">http://example.com</span>
+                    <input type="url" id="linksInput" class="edit-input" style="display: none;" value="http://example.com">
+                    <i id="linksEllipsis" class="fas fa-ellipsis-h ellipsis-icon"></i>
+                </p>
+                <p class="profession">
+                    <span id="professionText">Content sharing platform💻</span>
+                    <input type="text" id="professionInput" class="edit-input" style="display: none;" value="Content Creator">
+                    <i id="professionEllipsis" class="fas fa-ellipsis-h ellipsis-icon"></i>
+                </p>
+            </div>        
+            <button class="btn update-profile-btn" id="updateProfileBtn" style="display: none;">Update Profile</button>
+            <div class="profile-tabs">
+                <div class="tabs">
+                    <div id="videosTab" class="tab" onclick="showSection('videos')">
+                        <i class="fa-solid fa-film" style="color: #bbc0c3;"></i>
+                    </div>
+                    <div id="shortsTab" class="tab" onclick="showSection('shorts')">
+                        <i class="fa-solid fa-clapperboard" style="color: #bbc0c3;"></i>
+                    </div>
+                    <div id="postsTab" class="tab" onclick="showSection('posts')">
+                        <i class="fa-solid fa-images" style="color: #bbc0c3;"></i>
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <div id="videosContent" class="content-section active">
+                        <!-- Videos content here -->
+                        <div class="video-item">Video 1</div>
+                        <div class="video-item">Video 2</div>
+                    </div>
+                    <div id="shortsContent" class="content-section">
+                        <!-- Shorts content here -->
+                        <div class="short-item">Short 1</div>
+                        <div class="short-item">Short 2</div>
+                        <div class="short-item">Short 3</div>
+                    </div>
+                    <div id="postsContent" class="content-section">
+                        <!-- Posts content here -->
+                        <div class="post-item">Post 1</div>
+                        <div class="post-item">Post 2</div>
+                        <div class="post-item">Post 3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Settings Section -->
+    <div id="settingsSection" class="settings-section">
+        <i class="fa-solid fa-arrow-left close-settings-icon" aria-label="Close Settings" role="button" tabindex="0"></i>
+        <span class="settings-title">Settings</span>
+        <hr class="settings-divider">
+
+        <div class="settings-content">
+            <!-- Preferences -->
+            <div class="settings-option">
+                <span>Preferences</span>
+            </div>
+
+            <div class="settings-option" id="darkModeToggle">
+                <i class="fa-solid fa-moon"></i>
+                <span>Dark Mode</span>
+                <i class="fa-solid fa-angle-down toggle-icon"></i>
+            </div>
+            
+            <div class="sub-option" id="darkModeOptions">
+                <label><input type="checkbox" id="darkModeEnable"> Enable</label>
+                <label><input type="checkbox" id="darkModeDisable"> Disable</label>
+            </div>
+
+            <div class="settings-option" id="notificationToggle">
+                <i class="fa-solid fa-bell"></i>
+                <span>Notifications</span>
+                <i class="fa-solid fa-angle-down toggle-icon"></i>
+            </div>
+            <div class="sub-option" id="notificationOptions">
+                <label><input type="checkbox"> Notify me of updates on my content</label>
+                <label><input type="checkbox"> Notify me of Product updates and announcements</label>
+                <label><input type="checkbox"> Notify me of promotional content</label>
+            </div>
+
+            <div class="settings-option" id="languageToggle">
+                <i class="fa-solid fa-language"></i>
+                <span>Languages</span>
+                <i class="fa-solid fa-angle-down toggle-icon"></i>
+            </div>
+            <div class="sub-option" id="languageOptions">
+                <label><input type="checkbox"> English</label>
+                <label><input type="checkbox"> Spanish</label>
+                <label><input type="checkbox"> French</label>
+                <label><input type="checkbox"> German</label>
+                <label><input type="checkbox"> Chinese</label>
+            </div>
+
+            <div class="settings-option" id="mediaControlToggle">
+                <i class="fa-solid fa-video"></i>
+                <span>Media Control</span>
+                <i class="fa-solid fa-angle-down toggle-icon"></i>
+            </div>
+            <div class="sub-option" id="mediaControlOptions">
+                <label><input type="checkbox"> Recommended</label>
+                <label><input type="checkbox"> Medium Quality</label>
+                <label><input type="checkbox"> High Quality</label>
+            </div>
+
+            <div class="settings-option" id="sensitiveContentToggle">
+                <i class="fa-solid fa-exclamation-triangle"></i>
+                <span>Sensitive Content</span>
+                <i class="fa-solid fa-angle-down toggle-icon"></i>
+            </div>
+            <div class="sub-option" id="sensitiveContentOptions">
+                <label><input type="checkbox"> Normal</label>
+                <label><input type="checkbox"> Medium</label>
+                <label><input type="checkbox"> More</label>
+            </div>
+
+            <div class="settings-option" id="profileVisibilityToggle">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile Visibility</span>
+                <i class="fa-solid fa-angle-down toggle-icon"></i>
+            </div>
+            <div class="sub-option" id="profileVisibilityOptions">
+                <label><input type="checkbox"> Public</label>
+                <label><input type="checkbox"> Private</label>
+            </div>
+
+            <hr class="settings-divider">
+
+            <!-- Controls -->
+            <div class="settings-option">
+                <span>Controls</span>
+            </div>
+
+            <div class="settings-option">
+                <i class="fa-solid fa-play"></i>
+                <span>Play Your Ads</span>
+            </div>
+
+            <div class="settings-option">
+                <i class="fa-solid fa-clock"></i>
+                <span>Time on Skylite</span>
+            </div>
+
+            <hr class="settings-divider">
+
+            <!-- Help & Support -->
+            <div class="settings-option">
+                <span>Help & Support</span>
+            </div>
+
+            <div class="settings-option">
+                <i class="fa-solid fa-database"></i> <!-- Added icon -->
+                <span>Your data on Skylite</span>
+            </div>
+
+            <div class="settings-option">
+                <i class="fa-solid fa-file-contract"></i>
+                <span>Terms of Service</span>
+            </div>
+
+            <div class="settings-option">
+                <i class="fa-solid fa-shield-alt"></i>
+                <span>Privacy Policy</span>
+            </div>
+
+            <div class="settings-option">
+                <i class="fa-solid fa-exclamation-circle"></i>
+                <span>Report a Problem</span>
+            </div>
+
+            <div class="settings-option">
+                <i class="fa-solid fa-comment-dots"></i>
+                <span>Feedback</span>
+            </div>
+
+            <div class="settings-option">
+                <i class="fa-solid fa-book"></i>
+                <span>User Guide</span>
+            </div>
+
+            <div class="settings-option">
+                <i class="fa-solid fa-info-circle"></i>
+                <span>About</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Upload Section -->
+    <!-- Upload Section -->
+    <div class="upload-section" id="uploadSection">
+        <div class="upload-header-color">
+            <i class="fa fa-arrow-left back-icon" aria-label="Back" role="button" tabindex="0"></i>
+            <h5 class="video-section-header">SKYLite</h5>
+            <!-- Tabs above the line -->
+            <div class="upload-tabs">
+                <span class="tab" onclick="showTabContent('video')">Video</span>
+                <span class="tab" onclick="showTabContent('short')">Short</span>
+                <span class="tab" onclick="showTabContent('post')">Post</span>
+                <span class="tab" onclick="showTabContent('poll')">Poll</span>
+            </div>
+
+        </div>
+
+        <!-- Initial message displayed on load -->
+        <div id="initialMessage" style="display: none; text-align: center; padding: 20px;">
+            <h3>This is the upload section of SKYLite</h3>
+            <p>You can upload your content here.</p>
+        </div>
+
+        <!-- Content of the tabs -->
+        <div class="tab-content" id="videoContent">
+            <div class="steps">
+                <div class="step" onclick="showSectionContent('chooseMedia')">Choose Media</div>
+                <div class="step" onclick="showSectionContent('videoDetails')">Video Details</div>
+                <div class="step" onclick="showSectionContent('advanced-Media')">Advanced</div>
+                <div class="step" onclick="showSectionContent('privacyVisibilitymedia')">Privacy</div>
+                <div class="step" onclick="showSectionContent('monetizationmedia')">Monetization</div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="shortContent">
+            <div class="steps">
+                <div class="step" onclick="showSectionContent('chooseShort')">Choose Short</div>
+                <div class="step" onclick="showSectionContent('shortDetails')">Short Details</div>
+                <div class="step" onclick="showSectionContent('advanced-short')">Advanced</div>
+                <div class="step" onclick="showSectionContent('privacyVisibility')">Privacy</div>
+                <div class="step" onclick="showSectionContent('monetizationshort')">Monetization</div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="postContent">
+            <div class="steps">
+                <div class="step" onclick="showSectionContent('choosePosts')">Choose Posts</div>
+                <div class="step" onclick="showSectionContent('postDetails')">Post Details</div>
+                <div class="step" onclick="showSectionContent('advanced-post')">Advanced</div>
+                <div class="step" onclick="showSectionContent('privacyVisibilityPost')">Privacy</div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="pollContent">
+            <div class="steps">
+                <div class="step" onclick="showSectionContent('writepoll')">write Poll</div>
+                <div class="step" onclick="showSectionContent('pollDetails')">Poll Details</div>
+                <div class="step" onclick="showSectionContent('advanced-poll')">Advanced poll</div>
+                <div class="step" onclick="showSectionContent('privacyVisibilityPoll')">poll Privacy</div>
+            </div>
+        </div>
+
+        <!-- New Video Preview Box -->
+        <div class="preview-box" id="previewBox">
+            <h4>Video Preview</h4>
+            <div id="videoPreview" class="video-preview">
+                <!-- Video preview will be displayed here -->
+            </div>
+            <button id="closePreviewButton" class="close-preview-button" onclick="closePreview()">Close Preview</button>
+        </div>
+        
+        <!-- New Post Preview Box -->
+        <!-- New Post Preview Box -->
+        <div class="post-preview-box" id="previewBoxPost">
+            <h4>Post Preview</h4>
+            <div id="postPreview" class="post-video-preview">
+                <!-- Swiper Wrapper -->
+                <div class="post-preview-swiper-wrapper">
+                    <!-- Swiper Slides will be dynamically added here -->
+                </div>
+                <!-- Pagination (Optional) -->
+                <div class="post-preview-swiper-pagination"></div>
+            </div>
+            <div class="choose-post-buttons">
+                <button id="closePreviewPosts" class="close-preview" onclick="closePreviewPost()" style="display: none;">Close Preview</button>
+                <button id="uploadPosts" class="upload-Post" onclick="uploadPost()" style="display: none;">upload</button>
+            </div>
+        </div>
+
+        <!-- New Short Preview Box -->
+        <div class="short-preview-box" id="previewBoxShort">
+            <h4>Short Preview</h4>
+            <div id="shortPreview" class="short-video-preview">
+                <!-- Short preview will be displayed here -->
+            </div>
+            <button id="closePreviewButtonShort" class="short-close-preview-button" onclick="closePreviewShort()">Close Preview</button>
+        </div>
+
+        <div class="poll-preview-box" id="previewBoxPoll" style="display: none;">
+            <!-- Content for the poll preview box -->
+        </div>
+        
+
+        <!-- Main Content Box -->
+        <div class="box-content" id="boxContent">
+            <!-- Choose Media Content -->
+            <div id="chooseMediaContent" style="display: none;">
+                <h3 class="choose-media-header">Choose Media</h3>
+                <p id="videoSection" class="para-of-choose-media">This is the Choose Media section. Make sure to choose your best content to reach a wider audience. Be sure to click the "i" button to read the descriptions.</p>
+                <!-- Video Upload Terms and Privacy -->
+                <!-- Learn More Link -->
+                <!-- Learn More Link -->
+                <p class="pre-terms">By uploading a video to our platform, you agree to the following terms and conditions:
+                    <span id="learnMoreChooseVideo" class="blue-text-media" onclick="openChooseMediaVideoTermsModal()">learn more</span>
+                </p>
+                <!-- Terms Modal -->
+                <!-- Terms Modal -->
+                <div id="choose-media-video-modal-terms" class="choose-media-video-modal-terms">
+                    <div class="choose-media-video-modal-terms-content">
+                        <!-- Close Icon -->
+                        <i class="fa fa-times choose-media-video-modal-terms-close-icon" id="chooseMediaVideoModalTermsCloseIcon"></i>
+
+                        <h3>Terms and Conditions</h3>
+                        <p>By using this platform, you agree to the following terms...</p>
+                        <ul>
+                            <li>All content uploaded must be original and owned by the user.</li>
+                            <li>No copyrighted or infringing material is allowed.</li>
+                            <li>Content should adhere to community guidelines and policies.</li>
+                            <li>The platform reserves the right to remove any content deemed inappropriate.</li>
+                            <li>Users are responsible for the content they upload.</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Video Upload Section -->
+                <!-- Video Upload Section -->
+                <div id="circle1Content" class="circle-content">
+                    <div class="video-upload-wrapper">
+                        <div class="video-upload-item">
+                            <i class="fa-solid fa-circle-info choose-video" onclick="toggleVideoInfo()"></i>Video
+                            <div id="videoInfo" class="info-box scrollable-content" style="display: none;">
+                                <p class="info-of-media">Upload Your Best Content</p>
+                                <p class="info-of-media">Click the "Choose Video" button to select the video you want to upload.</p>
+                                <p class="info-of-media">Video Specifications:</p>
+                                <div class="info-of-media">
+                                    <p>Video Specifications:</p>
+                                    <ul>
+                                        <li>Recommended aspect ratio: 16:9 (primary), 4:3, 3:2, and 21:9</li>
+                                        <li>Recommended resolution: 1080p or more</li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                            <div class="normal-video-place-holder">
+                                <div id="videoBox" class="display-box" 
+                                    ondragover="highlightBox(event)" 
+                                    ondragleave="removeHighlight(event)" 
+                                    ondrop="handleVideoDrop(event)">
+                                    <input type="file" id="videoFile" accept="video/*" style="display: none;" onchange="displayVideo(this)">
+                                    <div class="choose-video-button" onclick="document.getElementById('videoFile').click();">
+                                        <i class="fa-solid fa-video"></i>
+                                        <div class="blue-text-media-file">
+                                            <span class="choose-video">Choose</span>
+                                            <span class="separator" style="color: #333;">Or</span>
+                                            <span class="drag-drop">Drag and Drop your Video</span>
+                                        </div>
+                                    </div>
+                                    <i class="fa-solid fa-xmark close-icon" onclick="clearVideo()"></i>
+                                </div>                          
+                                <div class="framecontainer" id="framesContainer"></div>
+                            </div>
+                        </div>
+                        <div class="video-upload-item">
+                            <i class="fa-solid fa-circle-info" onclick="toggleThumbnailInfo()"></i>Thumbnail
+                            <div id="thumbnailInfo" class="info-box scrollable-content" style="display: none;">
+                                <p class="info-of-media">Click the "Choose Thumbnail" button to select the image you want to use as a thumbnail.</p>
+                                <p class="info-of-media">Or</p>
+                                <p class="info-of-media">You can use any frame from the video as a thumbnail.</p>
+                                <p class="info-of-media">Select an eye-catching Thumbnail to represent your video. A great thumbnail can significantly increase views.</p>
+                                <p class="info-of-media">Recommended Aspect Ratio: 16:9 for optimal display.</p>
+                                <p class="info-of-media">Image Format:</p>
+                                <ul class="info-of-media">
+                                    <li class="info-of-media">JPEG, PNG</li>
+                                </ul>
+                            </div>
+                            <div class="noraml-video-thumbnail-place-holder">
+                                <div id="thumbnailBox" class="display-box" 
+                                    ondragover="highlightBox(event)" 
+                                    ondragleave="removeHighlight(event)" 
+                                    ondrop="handleThumbnailDrop(event)">
+                                    <input type="file" id="thumbnailFile" accept="image/*" style="display: none;" onchange="displayThumbnail(this)">
+                                    <div class="choose-thumbnail-button" onclick="document.getElementById('thumbnailFile').click();">
+                                        <i class="fa-solid fa-image"></i>
+                                        <div class="blue-text-media-file">
+                                            <span class="choose-thumbnail">Choose</span>
+                                            <span class="separator" style="color: #333;">Or</span>
+                                            <span class="drag-thumbnail">Drag and Drop your Thumbnail</span>
+                                        </div>
+                                    </div>
+                                    <i class="fa-solid fa-xmark close-icon" onclick="clearThumbnail()"></i>
+                                </div> 
+                            </div>
+                            <p class="buttons-of-media">Click the Preview button to view a preview of your files. Then, click the Next button to proceed to the Video Details section.</p>
+                            <div class="middle-box-controls">
+                                <div class="line-of-border"></div>
+                                <button id="videoPreviewButton" class="video-preview-button" onclick="previewVideo()">Preview</button>
+                                <button id="nextButton" class="next-button-of-the-video-details-of-the-media-tab" onclick="goToVideoDetails()">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            
+            <!-- Video Details Content -->
+            <!-- video details content of the choose media-->
+            <div class="video-details-of-the-media-tab" id="videoDetailsContent" style="display: none;">
+                <h3 class="choose-media-header">Video Details</h3>
+                <p id="videoSection" class="para-of-choose-media">This is the video details section. Be sure to click the "i" button to read the descriptions and fill in the required information.</p>
+                
+                <div class="input-container">
+                    <i class="fa fa-circle-info fa-circle-info-video-details" id="infoTitle"></i>
+                    <label class="contents-of-video-details" for="videoTitle">Title (Mandatory):</label>
+                    <div class="info-box-video-details" id="infoBoxTitle" style="display: none;">
+                        <p class="info-of-detail">A concise and compelling title that accurately reflects the video's content.</p>
+                    </div>
+                    <input type="text" id="videoTitle" name="videoTitle" placeholder="Write the video title">
+                </div>
+
+                <div class="input-container">
+                    <div class="input-container-category">
+                        <label class="contents-of-video-category" for="videoCategory">Category (Mandatory):</label>
+                    </div>
+
+                    <select class="video-category-options" id="videoCategory" name="videoCategory">
+                        <option value="" disabled selected>Select a category</option>
+                    </select>
+                </div>
+            
+                <div class="input-container">
+                    <i class="fa fa-circle-info fa-circle-info-video-details" id="infoDescription"></i>
+                    <label class="contents-of-video-details" for="videoDescription">Description:</label>
+                    <div class="info-box-video-details" id="infoBoxDescription" style="display: none;">
+                        <p class="info-of-detail">A detailed and informative overview of the video's content.Use keywords naturally to improve discoverability.</p>
+                        <p class="info-of-detail">Includes a call-to-action (CTA) to encourage viewer engagement.</p>
+                        <p class="info-of-detail">Can incorporate relevant links (e.g., to your website, social media, or related videos).</p>
+                    </div>
+                    <textarea id="videoDescriptionInput" name="videoDescription" placeholder="Write the video description"></textarea>
+                </div>
+            
+                <div class="input-container">
+                    <i class="fa fa-circle-info fa-circle-info-video-details" id="infoTags"></i>
+                    <label class="contents-of-video-details" for="videoTags">Tags:</label>
+                    <div class="info-box-video-details" id="infoBoxTags" style="display: none;">
+                        <p class="info-of-detail">Relevant keywords that describe the video's content.A mix of general and specific tags to reach a wider audience.</p>
+                    </div>
+                    <input type="text" id="videoTags" name="videoTags" placeholder="write the video tags">
+                </div>
+            
+                <div class="middle-box-controls">
+                    <p class="buttons-of-media">Fill in the required information, then click the 'Next' button to proceed to the 'Advanced Details' section. To return to the 'Choose Media' section, click the 'Go Back' button.</p>
+                    <div class="line-of-border"></div>
+                    <button id="goBackButton" class="go-back-button-of-the-video-details-section" onclick="goBack()">Back</button>
+                    <button id="videoDetailsNextButton" class="next-button-of-the-video-details-section" onclick="proceedToNextSection()">Next</button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+            <!-- Advanced Details-->
+            <!-- Advanced Details -->
+            <!-- Advanced Details -->
+            <div class="advanced-details-of-choose-media-tab" id="advancedDetailsContent" style="display: none;">
+                <h3 class="choose-media-header">Advanced Details</h3>
+                <p id="videoSection" class="para-of-choose-media">You have successfully completed Step-2. This is Step-3 of the video upload process. Make sure to click the "i" button and read the descriptions. Fill in the necessary information.</p>
+
+                
+                <!-- Video Language -->
+                <div class="advanced-details-input-container">
+                    <div class="icon-label-container">
+                       <label class="contents-of-advanced-video-language" for="videoLanguage">Video Language:</label>
+                    </div>
+
+                    <select id="videoLanguage" name="videoLanguage" class="advanced-details-select">
+                        <option value="" disabled selected>Select a language</option>
+                        <!-- Populate with options from categories.txt -->
+                        <option value="English">English</option>
+                        <option value="Spanish">Spanish</option>
+                        <!-- More options from categories.txt -->
+                    </select>
+                    <input type="text" id="additionalLanguages" name="additionalLanguages" placeholder="Add additional languages" class="advanced-details-input">
+                </div>
+
+                <!-- Video Quality -->
+                <div class="advanced-video-details-resolution">
+                    <label class="contents-of-advanced-video" for="resolution">Video Resolution:</label>
+                    <div class="advanced-details-input-container-video-resolution">
+                        <p class="para-of-advanced-details">Select the video Resolution of your video, this helps us to categorize your video.</p>
+                        <div class="circle-dot-advanced-details">
+                            <div>
+                                <input type="radio" id="videoResolution4K" name="resolutionOption" value="4K">
+                                <label class="sub-options-of-advanced-video-four" for="videoResolution4K">4K</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="videoResolution1080p" name="resolutionOption" value="1080p">
+                                <label class="sub-options-of-advanced-video-four" for="videoResolution1080p">1080p</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="videoResolution720p" name="resolutionOption" value="720p">
+                                <label class="sub-options-of-advanced-video-four" for="videoResolution720p">720p</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="videoResolutionOther" name="resolutionOption" value="Other">
+                                <label class="sub-options-of-advanced-video-four" for="videoResolutionOther">Other</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- People Featured -->
+                <div class="advanced-details-input-container">
+                    <i class="fa fa-circle-info fa-circle-info-advanced-details" id="infoCategory"></i>
+                    <label class="contents-of-advanced-video" for="peopleFeatured">People Featured:</label>
+                    <div class="info-box-advanced-details" id="infoBoxPeopleFeatured" style="display: none;">
+                        <p class="info-of-advanced">Include the names and roles of individuals featured in the video. This can help in crediting participants and improving searchability.</p>
+                    </div>
+                    <textarea id="peopleFeatured" name="peopleFeatured" placeholder="List names and roles of individuals featured in the video" class="advanced-details-textarea"></textarea>
+                </div>
+
+                <!-- Content Warning -->
+                <!-- Content Warning -->
+                <!-- Content Warning -->
+                <div class="advanced-content-warning-label">
+                    <label class="contents-of-advanced-video" for="contentWarnings">Content Warnings (Mandatory):</label>
+                    <div class="advanced-details-input-container-box-video-warnings">
+                        <p class="para-of-advanced-details">
+                            Select the content warnings, and you can select multiple warnings and
+                            <span class="learn-more-link" id="openContentWarningModal">learn more.</span>
+                        </p>                        
+        
+                        <div class="circle-dot-advanced-details">
+                            <div>
+                                <input type="radio" id="contentWarningGraphicViolence" name="contentWarningOption" value="Graphic Violence">
+                                <label class="sub-options-of-advanced-video-four" for="contentWarningGraphicViolence">Graphic Violence</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="contentWarningStrongLanguage" name="contentWarningOption" value="Strong Language">
+                                <label class="sub-options-of-advanced-video-four" for="contentWarningStrongLanguage">Strong Language</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="contentWarningSexualContent" name="contentWarningOption" value="Sexual Content">
+                                <label class="sub-options-of-advanced-video-four" for="contentWarningSexualContent">Sexual Content</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="contentWarningFlashingLights" name="contentWarningOption" value="Flashing Lights">
+                                <label class="sub-options-of-advanced-video-four" for="contentWarningFlashingLights">Flashing Lights</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="contentWarningDrugAlcoholUse" name="contentWarningOption" value="Drug/Alcohol Use">
+                                <label class="sub-options-of-advanced-video-four" for="contentWarningDrugAlcoholUse">Drug/Alcohol Use</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="contentWarningHateSpeech" name="contentWarningOption" value="Hate Speech">
+                                <label class="sub-options-of-advanced-video-four" for="contentWarningHateSpeech">Hate Speech</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="contentWarningAnimalCruelty" name="contentWarningOption" value="Animal Cruelty">
+                                <label class="sub-options-of-advanced-video-four" for="contentWarningAnimalCruelty">Animal Cruelty</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Content Warnings -->
+                <div id="advanced-video-modal-content-warning" class="advanced-video-modal-content-warning">
+                    <div class="advanced-video-modal-content-warning-content">
+                        <i class="fa fa-times advanced-video-modal-content-warning-close-icon" id="closeContentWarningModal"></i>
+                        <h2>Content Warnings Information</h2>
+                        <p>Here you can provide detailed information about each content warning...</p>
+                    </div>
+                </div>
+
+
+                <!-- Age Restrictions-->
+                <!-- Age Restrictions -->
+                <div class="advanced-details-age-restriction-label">
+                    <label class="contents-of-advanced-video" for="ageRestrictions">Age Restrictions (Mandatory):</label>
+                    <div class="advanced-details-input-container-box-video-age">
+                        <p class="para-of-advanced-details">
+                            Select the age restriction and
+                            <span class="learn-more-link" id="openAgeRestrictionsModal">learn more.</span>
+                        </p>
+
+                        <div class="circle-dot-advanced-details">
+                            <div>
+                                <input type="radio" id="ageRestrictionAllAges" name="ageRestrictionOption" value="All Ages">
+                                <label class="sub-options-of-advanced-video-four" for="ageRestrictionAllAges">All Ages</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="ageRestriction13Plus" name="ageRestrictionOption" value="13+">
+                                <label class="sub-options-of-advanced-video-four" for="ageRestriction13Plus">13+</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="ageRestriction18Plus" name="ageRestrictionOption" value="18+">
+                                <label class="sub-options-of-advanced-video-four" for="ageRestriction18Plus">18+</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Age Restrictions -->
+                <div id="advanced-video-age-restrictions-modal" class="advanced-video-age-restrictions-modal">
+                    <div class="advanced-video-age-restrictions-modal-content">
+                        <i class="fa fa-times advanced-video-age-restrictions-modal-close-icon" id="closeAgeRestrictionsModal"></i>
+                        <h2>Age Restrictions Information</h2>
+                        <p>Here you can provide detailed information about each age restriction...</p>
+                    </div>
+                </div>
+
+                <!-- Keywords for SEO -->
+                <div class="advanced-details-input-container">
+                    <i class="fa fa-circle-info fa-circle-info-advanced-details" id="infoCategory"></i>
+                    <label class="contents-of-advanced-video" for="seoKeywords">Keywords for SEO:</label>
+                    <div class="info-box-advanced-details" id="infoBoxSeoKeywords" style="display: none;">
+                        <p class="info-of-advanced">Add relevant keywords to improve your video’s search engine optimization (SEO). This makes your video more discoverable to users searching for specific topics.</p>
+                    </div>
+                    <textarea id="seoKeywords" name="seoKeywords" placeholder="Add relevant keywords to improve your video’s SEO" class="advanced-details-textarea"></textarea>
+                </div>
+
+                <!-- Chapter Markers -->
+                <div class="advanced-details-input-container">
+                    <i class="fa fa-circle-info fa-circle-info-advanced-details" id="infoCategory"></i>
+                    <label class="contents-of-advanced-video" for="chapterMarkers">Chapter Markers:</label>
+                    <div class="info-box-advanced-details" id="infoBoxChapterMarkers" style="display: none;">
+                        <p class="info-of-advanced">Insert timestamps with titles to create chapters in your video. This allows viewers to jump to specific sections, enhancing the viewing experience.</p>
+                    </div>
+                    <textarea id="chapterMarkers" name="chapterMarkers" placeholder="Insert timestamps with titles to create chapters in your video" class="advanced-details-textarea"></textarea>
+                </div>
+
+                <!-- Licensing -->
+                <!-- License Type -->
+                <div class="advanced-details-license-type-label">
+                    <label class="contents-of-advanced-video" for="licenseType">License Type (Mandatory):</label>
+                    <div class="advanced-details-input-container-box-video-license-box">
+                        <p class="para-of-advanced-details">
+                            Select the License to make the video upload proper, and
+                            <span class="learn-more-link" id="openLicenseModal">learn more.</span>
+                        </p>
+
+                        <div class="circle-dot-advanced-details">
+                            <div>
+                                <input type="radio" id="licenseTypeStandardLicense" name="licenseTypeOption" value="Standard License">
+                                <label class="sub-options-of-advanced-video-four" for="licenseTypeStandardLicense">Standard License</label>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <!-- Modal for License Type -->
+                <div id="advanced-video-license-modal" class="advanced-video-license-modal">
+                    <div class="advanced-video-license-modal-content">
+                        <i class="fa fa-times advanced-video-license-modal-close-icon" id="closeLicenseModal"></i>
+                        <h2>License Type Information</h2>
+                        <p>Here you can provide detailed information about the license type...</p>
+                    </div>
+                </div>
+
+                <!-- Location Settings -->
+                <div class="advanced-details-input-container">
+                    <i class="fa fa-circle-info fa-circle-info-advanced-details" id="infoCategory"></i>
+                    <label class="contents-of-advanced-video" for="locationTags">location</label>
+                    <div class="info-box-advanced-details" id="infoBoxLocationTags" style="display: none;">
+                        <p class="info-of-advanced">Tag the location where the video was recorded. This adds contextual information and can make your video more discoverable for location-based searches.</p>
+                    </div>
+
+                    <input type="text" id="locationTags" name="locationTags" placeholder="Tag the location where the video was recorded" class="advanced-details-input">
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="middle-box-controls">
+                    <p class="buttons-of-media">Fill in the required information, then click the 'Next' button to proceed to the 'Privacy & Visibility' section. To return to the 'Video Details' section, click the 'Go Back' button.</p>
+                    <div class="line-of-border"></div>
+                    <button id="advancedDetailsgoBackButton" class="go-back-button-of-the-advanced-details-section" onclick="goBack('videoDetails')">Back</button>
+                    <button id="advancedDetailsNextButton" class="next-button-of-the-advanced-details-section" onclick="proceedToNextSection()">Next</button>
+                </div>
+            </div>
+
+
+
+            <!-- privacy and visibilty-->
+            <!-- privacy and visibilty-->
+            <!-- privacy and visibility-->
+            <!-- Privacy and Visibility -->
+            <div class="Privacy-and-Visibility-of-choose-media-tab" id="PrivacyandVisibilityContent" style="display: none;">
+                <h3 class="choose-media-header">Privacy and Visibility</h3>
+                <p id="videoSection" class="para-of-choose-media">You have successfully completed Step-3. This is Step-4 of the video upload process. Make sure to click the "i" button and read the descriptions. Fill in the necessary information.</p>
+                
+                <!-- Visibility -->
+                <div class="advanced-details-input-container-visibility">
+                    <div class="icon-label-container-visibility">
+                        <label class="contents-of-privacy-video" for="visibility">Visibility</label>
+                    </div>
+
+                    <div class="checkbox-container">
+                        <input type="radio" id="publicVisibility" name="visibilityOption" value="public">
+                        <label class="sub-options-of-privacy-video" for="publicVisibility">Public</label>
+                        <p class="info-of-privacy">Public: Your video is accessible to anyone on our Platform. Choose this option if you want the widest possible audience.</p>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="radio" id="privateVisibility" name="visibilityOption" value="private">
+                        <label class="sub-options-of-privacy-video" for="privateVisibility">Private</label>
+                        <p class="info-of-privacy">Private: Your video can only be viewed by specific users. Use this option for highly restricted access.</p>
+                    </div>
+                </div>
+
+                <!-- Share Settings -->
+                <div class="advanced-details-input-container-share-settings">
+                    <div class="icon-label-container-share-settings">
+                        <label for="shareSettings">Share Settings</label>
+                    </div>
+
+                    <div class="checkbox-container">
+                        <input type="radio" id="allowEmbed" name="embedOption" value="allow">
+                        <label class="sub-options-of-privacy-video" for="allowEmbed">Allow Embedding</label>
+                        <p class="info-of-privacy">Embed Options: Allow or disallow embedding of your video on other websites. Enabling this can increase your video’s reach through external sites.</p>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="radio" id="allowShare" name="shareOption" value="allow">
+                        <label class="sub-options-of-privacy-video" for="allowShare">Allow Sharing</label>
+                        <p class="info-of-privacy">Share Permissions: Control whether viewers can share your video link. This helps manage the distribution of your content.</p>
+                    </div>
+                </div>
+
+                <!-- Comments -->
+                <div class="advanced-details-input-container-comments">
+                    <div class="icon-label-container-comments">
+                        <label for="comments">Comments</label>
+                    </div>
+
+                    <div class="checkbox-container">
+                        <input type="radio" id="allowComments" name="commentOption" value="allow">
+                        <label class="sub-options-of-privacy-video" for="allowComments">Allow Comments</label>
+                        <p class="info-of-privacy">Allow Comments: Enable viewers to comment on your video. Engaging with comments can build community and provide valuable feedback.</p>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="radio" id="disableComments" name="commentOption" value="disable">
+                        <label class="sub-options-of-privacy-video" for="disableComments">Disable Comments</label>
+                        <p class="info-of-privacy">Disable Comments: Disable viewers from commenting on your video.</p>
+                    </div>
+                </div>
+
+                <!-- Viewer Interaction -->
+                <div class="advanced-details-input-container-viewer-interaction">
+                    <div class="icon-label-container-viewer-interaction">
+                        <label for="viewerInteraction">Viewer Interaction</label>
+                    </div>            
+                    <div class="checkbox-container">
+                        <input type="radio" id="allowLikes" name="likeOption" value="allow">
+                        <label class="sub-options-of-privacy-video" for="allowLikes">Allow Likes & Dislikes</label>
+                        <p class="info-of-privacy">Likes and Dislikes: Allow viewers to like or dislike your video. This provides instant feedback on your content’s reception.</p>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="radio" id="enableRatings" name="ratingOption" value="enable">
+                        <label class="sub-options-of-privacy-video" for="enableRatings">Enable Viewer Ratings</label>
+                        <p class="info-of-privacy">Viewer Ratings: Enable a rating system (e.g., star ratings) for more detailed feedback from viewers.</p>
+                    </div>
+                </div>
+
+                <!-- Watch Time Analytics -->
+                <div class="advanced-details-input-container-content-analytics">
+                    <div class="icon-label-container-content-analytics">
+                        <label for="contentAnalytics">Content Analytics</label>
+                    </div>
+
+                    <div class="checkbox-container">
+                        <input type="radio" id="enableAnalytics" name="analyticsOption" value="enable">
+                        <label class="sub-options-of-privacy-video" for="enableAnalytics">Content Analytics</label>
+                        <p class="info-of-privacy">Enable Analytics: Access detailed metrics on the Video and audience retention. This data helps you understand viewer behavior and improve future content.</p>
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="advanced-details-input-container-notifications">
+                    <div class="icon-label-container-notifications">
+                        <label for="notifications">Notifications</label>
+                    </div>
+
+                    <div class="checkbox-container">
+                        <input type="radio" id="notifyFollowers" name="notificationOption" value="notify">
+                        <label class="sub-options-of-privacy-video" for="notifyFollowers">Notify Followers</label>
+                        <p class="info-of-privacy">Notify Followers: Send notifications to your Followers when your video is published. This ensures your loyal audience is aware of new content immediately.</p>
+                    </div>
+                </div>
+
+                <div class="middle-box-controls">
+                    <p class="buttons-of-media">Fill in the required information, then click the 'Next' button to proceed to the 'Monetization' section. To return to the 'Advanced Details' section, click the 'Go Back' button.</p>
+                    <div class="line-of-border"></div>
+                    <button id="PrivacyandVisibilitygoBackButton" class="go-back-button-of-the-privacy-and-visibility" onclick="goBack()">Back</button>
+                    <button id="PrivacyandVisibilityNextButton" class="next-button-of-the-privacy-and-visibility" onclick="proceedToNextSection()">Next</button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <!-- Monetization of choose media -->
+            <!-- Monetization of choose media -->
+            <!-- Monetization of choose media -->
+            <!-- Monetization of choose media -->
+            <!-- Monetization of choose media -->
+            <div class="monetization-of-choose-of-choose-media-tab" id="MonetizationOfChooseMediaContent">
+                <h3 class="choose-media-header">Monetization</h3>
+                <p id="videoSection" class="para-of-choose-media">You have successfully completed Step-4. This is Step-5 of the video upload process. Make sure to click the "i" button and read the descriptions. Fill in the necessary information.</p>
+
+                <div class="input-container-monetization-of-choose-media-logo">
+                    <div class="logo-label-container-monetization-of-choose-media">
+                        <label for="monetizationStatus"></label>
+                        <h5 style="font-weight: bold;">SKYLITE Partnership</h5>
+                        <p class="monet-learn-more-video-link">The SKYLite Partnership is a unique program tailored for content creators, influencers, and those who want to monetize their digital content, especially videos. 
+                            <span class="learn-more-link" id="openMonetizationModal">Learn more.</span>
+                        </p>                        
+                    </div>
+                </div>
+
+
+
+                <div class="input-container-monetization-of-choose-media">
+                    <div class="icon-label-container-monetization-of-choose-media">
+                        <label class="content-of-monet-video" for="adPreferences">Ad Preferences</label>
+                    </div>
+                    
+                    <div class="radio-container-pre-roll input-boxes-monet-video">
+                        <input type="radio" id="preRoll" name="adPreferences" value="Pre-roll">
+                        <label class="monet-options-video" for="preRoll"> Pre-roll</label>
+                        <p class="info-of-mone-video">Pre-roll Ads: Ads that play before the main content starts. These ads are shown to viewers before they engage with the video, ensuring that the advertisement is seen before the content begins.</p>
+                    </div>
+                    
+                    <div class="radio-container-mid-roll input-boxes-monet-video">
+                        <input type="radio" id="midRoll" name="adPreferences" value="Mid-roll">
+                        <label class="monet-options-video" for="midRoll"> Mid-roll</label>
+                        <p class="info-of-mone-video">Mid-roll Ads: Ads that appear during the middle of the content, often placed during natural breaks or transitions. They are effective for longer videos as they capture viewers' attention partway through, but they can interrupt the viewing experience.</p>
+                    </div>
+                    
+                    <div class="radio-container-post-roll input-boxes-monet-video">
+                        <input type="radio" id="postRoll" name="adPreferences" value="Post-roll">
+                        <label class="monet-options-video" for="postRoll"> Post-roll</label>
+                        <p class="info-of-mone-video">Post-roll Ads: Ads that play after the main content ends. These ads target viewers who have watched the entire video, making them ideal for engaging those who are already fully engaged with the content.</p>
+                    </div>
+                    
+                    <div class="radio-container-banner-ads input-boxes-monet-video">
+                        <input type="radio" id="bannerAds" name="adPreferences" value="Banner Ads">
+                        <label class="monet-options-video" for="bannerAds"> Banner Ads</label>
+                        <p class="info-of-mone-video">Banner Ads: Visual ads displayed on the screen, typically at the top or bottom. They can be static or interactive, providing a less intrusive way to display advertisements while viewers consume content.</p>
+                    </div>
+                    
+                    <div class="radio-container-skippable-ads input-boxes-monet-video">
+                        <input type="radio" id="skippableAds" name="adPreferences" value="Skippable Ads">
+                        <label class="monet-options-video" for="skippableAds"> Skippable Ads</label>
+                        <p class="info-of-mone-video">Skippable Ads: These ads can be skipped by viewers after a few seconds. They are designed to be less intrusive and can provide a better user experience, but they may generate less revenue as viewers might skip them before the ad finishes.</p>
+                    </div>
+                    
+                    <div class="radio-container-non-skippable-ads input-boxes-monet-video">
+                        <input type="radio" id="nonSkippableAds" name="adPreferences" value="Non-Skippable Ads">
+                        <label class="monet-options-video" for="nonSkippableAds"> Non-Skippable Ads</label>
+                        <p class="info-of-mone-video">Non-Skippable Ads: These ads must be watched in full before the content plays. They can be more lucrative due to their guaranteed viewership, but they may affect viewer retention by disrupting the content experience.</p>
+                    </div>
+                </div>
+
+                <div class="input-container-monetization-of-choose-media">
+                    <div class="icon-label-container-monetization-of-choose-media">
+                        <label class="content-of-monet-video" for="sponsorships">Sponsorships and Brand Deals</label>
+                    </div>
+
+                    <div class="radio-container-sponsored-content input-boxes-monet-video">
+                        <input type="radio" id="sponsoredContent" name="sponsorships" value="Sponsored Content Disclosure">
+                        <label class="monet-options-video" for="sponsoredContent"> Sponsored Content Disclosure</label>
+                        <p class="info-of-mone-video">Sponsored Content Disclosure: Indicate if your video includes sponsored content. Transparency about sponsorships builds trust with your audience.<br>
+                            Brand Deal Details: Enter details about your sponsors and the terms of the deal. This information can be useful for managing partnerships and disclosures.</p>
+                    </div>
+                    
+                    <label class="content-of-monet-video-sub" for="brandDealDetails">Brand Deal Details:</label><br>
+                    <textarea id="brandDealDetails" name="brandDealDetails" rows="4" cols="50"></textarea>
+                </div>
+
+                <div class="input-container-monetization-of-choose-media">
+                    <div class="icon-label-container-monetization-of-choose-media">
+                        <label class="content-of-monet-video" for="merchandise">Merchandise</label>
+                    </div>
+                    
+                    <div class="radio-container-merchandise-shelf input-boxes-monet-video">
+                        <input type="radio" id="merchandiseShelf" name="merchandise" value="Merchandise Shelf">
+                        <label class="monet-options-video" for="merchandiseShelf"> Merchandise Shelf</label>
+                        <p class="info-of-mone-video">Merchandise Shelf: Display your merchandise below the video. This can increase sales by promoting your products directly to viewers.<br>
+                            Store Link: Provide a link to your merchandise store for viewers to purchase items.</p>
+                    </div>
+                    
+                    <label class="content-of-monet-video-sub" for="storeLink">Store Link:</label><br>
+                    <input type="text" id="storeLink" name="storeLink"><br>
+                </div>
+
+                <div class="input-container-monetization-of-choose-media">
+                    <div class="icon-label-container-monetization-of-choose-media">
+                        <label class="content-of-monet-video" for="revenueSharing">Revenue Sharing</label>
+                        <p class="info-of-mone-video">Revenue Split: Understand how revenue is shared between the platform and you. This helps you anticipate earnings.<br>
+                        Payment Thresholds: Learn about minimum earnings required before payouts are made. This information is crucial for financial planning.</p>
+                    </div>
+                </div>
+
+                <div class="middle-box-controls">
+                    <p class="buttons-of-media">Fill in the required information, then click the 'Next' button to proceed to the 'Monetization' section. To return to the 'Advanced Details' section, click the 'Go Back' button.</p>
+                    <div class="line-of-border"></div>
+                    <button id="MonetizationOfChooseMediaContentgoBackButton" class="go-back-button-of-the-monetization-of-choose-media" onclick="goBack()">Back</button>
+                    <button id="MonetizationOfChooseMediaContentSubmitButton" class="Submit-button-of-the--monetization-of-choose-media" onclick="proceedToSubmit()">Submit</button>
+                </div>
+            </div>
+
+
+           
+            <!-- Modal for Monetization -->
+            <div id="advanced-video-monetization-modal" class="advanced-video-monetization-modal">
+                <div class="advanced-video-monetization-modal-content">
+                    <i class="fa fa-times advanced-video-monetization-modal-close-icon" id="closeMonetizationModal"></i>
+                    <h2>SKYLite Partnership Information</h2>
+                    <p>Here you can provide detailed information about the SKYLite Partnership...</p>
+                </div>
+            </div>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- short video upload  -->
+            <!-- short video upload  -->
+            <!-- short video upload  -->
+            <div id="chooseShortContent" style="display: none;">
+                <h3 class="choose-media-header">Upload Your Short</h3>
+                <p id="shortvideoSection" class="para-of-choose-media">This is the Choose Media section. Make sure to choose your best content to reach a wider audience. Be sure to click the "i" button to read the descriptions.</p>
+                <p class="pre-terms">By uploading a video to our platform, you agree to the following terms and conditions:
+                    <span id="learnMoreChooseShort" class="shot-video-blue-text" onclick="openChooseShortTermsModal()">learn more</span>
+                </p>
+                <!-- Terms Modal -->
+                <!-- Terms Modal -->
+                <div id="ChooseShortterms" class="Choose-Short-terms">
+                    <div class="choose-short-modal-terms-content">
+                        <!-- Close Icon -->
+                        <i class="fa fa-times choose-short-modal-terms-close-icon" id="ChooseShortModalTermsCloseIcon"></i>
+                
+                        <h3>Terms and Conditions</h3>
+                        <p>By using this platform, you agree to the following terms...</p>
+                        <ul>
+                            <li>All content uploaded must be original and owned by the user.</li>
+                            <li>No copyrighted or infringing material is allowed.</li>
+                            <li>Content should adhere to community guidelines and policies.</li>
+                            <li>The platform reserves the right to remove any content deemed inappropriate.</li>
+                            <li>Users are responsible for the content they upload.</li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <div id="chooseshortvideoContent" class="choose-short-video-content">
+                    <div class="short-video-upload-wrapper">
+                        <div class="short-video-upload-item">
+                            <i class="fa-solid fa-circle-info choose-short-upload-info" onclick="toggleShortInfo()"></i>Choose Short Video
+                            <div id="shortInfobox" class="short-info-box-scrollable-content" style="display: none;">
+                                <p class="info-of-short">Click the "Choose Video" button to select the video you wish to upload.</p>
+                                <div class="info-of-short">
+                                    <p>Video Specifications:</p>
+                                    <ul>
+                                        <li>Recommended aspect ratios: 16:9 (primary), 4:3, 3:2, 21:9, and other commonly used aspect ratios.</li>
+                                        <li>Recommended resolution: 1080p or more</li>
+                                    </ul>
+                                    <p>The default aspect ratio of the SKYLITE is 16:9, though it also supports other aspect ratios. For better user engagement, it is recommended to choose and upload content with a 16:9 aspect ratio.</p>
+                                </div>
+                            </div>
+                            <div class="short-video-holder">
+                                <div id="ShortBox" class="display-Short-video display-aspect-9-16">
+                                    <input type="file" id="shortFile" accept="video/*" style="display: none;" onchange="displayShort(this)">
+                                    <div class="choose-short-video-button" onclick="document.getElementById('shortFile').click();">
+                                        <i class="fa-solid fa-clapperboard shorts-upload-icon"></i>
+                                        <span class="shot-video-blue-text">Choose Short Video</span>
+                                    </div>
+                                    <i class="fa-solid fa-xmark short-video-close-icon" style="display: none;" onclick="clearShortVideo()"></i>
+                                </div>                                
+                            </div>
+                            <div class="middle-box-controls">
+                                <p class="buttons-of-media">Fill in the required information, then click the 'Next' button to proceed to the 'Monetization' section. To return to the 'Advanced Details' section, click the 'Go Back' button.</p>
+                                <hr class="choose-media-line">
+                                <button id="shortvideoPreviewButton" class="short-video-preview-button" onclick="previewShortVideo()">Preview</button>
+                                <button id="shortvideonextButton" class="short-next-button-of-short-video-media-tab" onclick="goToshortDetailsContent()">Next</button>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+            
+
+            <!--short video upload detals-->
+            <!--short video upload detals-->
+            <!--short video upload detals-->
+            <div id="shortDetailsContent" style="display: none;">
+                <h3 class="choose-media-header">Short Details</h3>
+                <p id="shortVideoSectionDetails" class="para-of-choose-media">This is the short video upload details section. Be sure to click the "i" button to read the descriptions and fill in the necessary information.</p>
+                
+                <div class="short-input-container-details">
+                    <i class="fa fa-circle-info fa-circle-info-short-video" id="shortInfoTitleDetails"></i>
+                    <label class="short-contents-of-video" for="shortVideoTitle">Title (Mandatory):</label>
+                    <div class="short-info-box-video" id="shortInfoBoxTitleDetails" style="display: none;">
+                        <p class="short-info-of-detail">A concise and compelling title that accurately reflects the video's content.</p>
+                    </div>
+                    <input type="text" id="shortVideoTitle" name="shortVideoTitle" placeholder="Write the video title">
+                </div>
+            
+                <div class="short-input-container-details">
+                    <div class="short-input-container-category-details">
+                        <label class="short-contents-of-video" for="shortVideoCategory">Category (Mandatory):</label>
+                    </div>
+            
+                    <select class="short-video-category-options-details" id="shortVideoCategory" name="shortVideoCategory">
+                        <option value="" disabled selected>Select a category</option>
+                    </select>
+                </div>
+            
+                <div class="short-input-container-details">
+                    <i class="fa fa-circle-info fa-circle-info-short-video" id="shortInfoDescriptionDetails"></i>
+                    <label class="short-contents-of-video" for="shortVideoDescription">Description:</label>
+                    <div class="short-info-box-video" id="shortInfoBoxDescriptionDetails" style="display: none;">
+                        <p class="short-info-of-detail">A detailed and informative overview of the video's content. Use keywords naturally to improve discoverability.</p>
+                        <p class="short-info-of-detail">Includes a call-to-action (CTA) to encourage viewer engagement.</p>
+                        <p class="short-info-of-detail">Can incorporate relevant links (e.g., to your website, social media, or related videos).</p>
+                        <p class="short-info-of-detail">Can incorporate relevant links (e.g., to your website, social media, or related videos).</p>
+                        <p class="short-info-of-detail">Can incorporate relevant links (e.g., to your website, social media, or related videos).</p>
+                        <p class="short-info-of-detail">Can incorporate relevant links (e.g., to your website, social media, or related videos).</p>
+                    </div>
+                    <textarea id="shortVideoDescriptionInput" name="shortVideoDescription" placeholder="Write the video description"></textarea>
+                </div>
+            
+                <div class="short-input-container-details">
+                    <i class="fa fa-circle-info fa-circle-info-short-video" id="shortInfoTagsDetails"></i>
+                    <label class="short-contents-of-video" for="shortVideoTags">Tags:</label>
+                    <div class="short-info-box-video" id="shortInfoBoxTagsDetails" style="display: none;">
+                        <p class="short-info-of-detail">Relevant keywords that describe the video's content. A mix of general and specific tags to reach a wider audience.</p>
+                    </div>
+                    <input type="text" id="shortVideoTags" name="shortVideoTags" placeholder="Write the video tags">
+                </div>
+            
+                <div class="short-middle-box-controls-details">
+                    <p class="buttons-of-media">Fill in the required information, then click the 'Next' button to proceed to the 'Monetization' section. To return to the 'Advanced Details' section, click the 'Go Back' button.</p>
+                    <hr class="short-choose-media-line-details">
+                    <button id="GoBackButtonshortDetails" class="short-go-back-button-of-the-video-details" onclick="goBacktoshortvideo()">Back</button>
+                    <button id="NextButtonshortDetails" class="short-next-button-of-the-video-details" onclick="proceedToNextadvanced()">Next</button>
+                </div>
+            </div>
+
+
+
+
+            <!--advaneced content of short-->
+            <!--advaneced content of short-->
+            <!--advaneced content of short-->
+            <div id="advanced-shortContent" style="display: none;">
+                <h3 class="choose-media-header">Advanced Options</h3>
+                <p id="videoSectionShort" class="para-of-choose-media">You have successfully completed Step-2. This is Step-3 of the video upload process. Make sure to click the "i" button and read the descriptions. Fill in the necessary information.</p>
+                <!-- Video Language -->
+                <div class="advanced-details-input-container-short">
+                    <div class="icon-label-container-short">
+                        <label class="contents-of-advanced-short-language-short" for="shortLanguageShort">Video Language:</label>
+                    </div>
+                
+                    <select id="shortLanguages" name="shortLanguage" class="advanced-details-short">
+                        <option value="" disabled selected>Select a language</option>
+                        <!-- Populate with options from categories.txt -->
+                        <option value="English">English</option>
+                        <option value="Spanish">Spanish</option>
+                        <!-- More options from categories.txt -->
+                    </select>
+                    <input type="text" id="additionalLanguagesShort" name="additionalLanguagesShort" placeholder="Add additional languages" class="advanced-details-input-short">
+                </div>
+                
+                
+                <!-- People Featured -->
+                <div class="advanced-details-input-container-short">
+                    <i class="fa fa-circle-info fa-circle-info-advanced-details-short" id="infoCategoryShort"></i>
+                    <label class="contents-of-advanced-video-short" for="peopleFeaturedShort">People Featured:</label>
+                    <div class="info-box-advanced-details-short" id="infoBoxPeopleFeaturedShort" style="display: none;">
+                        <p class="info-of-advanced-short">Include the names and roles of individuals featured in the video. This can help in crediting participants and improving searchability.</p>
+                    </div>
+                    <textarea id="peopleFeaturedShort" name="peopleFeaturedShort" placeholder="List names and roles of individuals featured in the video" class="advanced-details-textarea-short"></textarea>
+                </div>
+                
+                <!-- Content Warning -->
+                <div class="advanced-content-warning-label-short">
+                    <label class="contents-of-advanced-video-short" for="contentWarningsShort">Content Warnings (Mandatory):</label>
+                    <div class="advanced-details-input-container-box-video-warnings-short">
+                        <p class="para-of-advanced-details-short">
+                            Select the content warnings, and you can select multiple warnings and
+                            <span class="learn-more-link-short" id="openChooseShortConentWarningModal">learn more.</span>
+                        </p> 
+                        <!-- Terms Modal -->
+                        <!-- Terms Modal -->
+                        <div id="ChooseShortConentWarnings" class="Choose-Short-Conent-Warnings">
+                            <div class="Choose-Short-Advanced-terms-content">
+                                <!-- Close Icon -->
+                                <i class="fa fa-times Choose-Short-Conent-Warnings-close-icon" id="ChooseShortConentWarningscloseicon"></i>
+                        
+                                <h3>Terms and Conditions</h3>
+                                <p>By using this platform, you agree to the following terms...</p>
+                                <ul>
+                                    <li>All content uploaded must be original and owned by the user.</li>
+                                    <li>No copyrighted or infringing material is allowed.</li>
+                                    <li>Content should adhere to community guidelines and policies.</li>
+                                    <li>The platform reserves the right to remove any content deemed inappropriate.</li>
+                                    <li>Users are responsible for the content they upload.</li>
+                                    <li>hey ha ha h ah ah ah ah ah aha h ah a</li>
+                                </ul>
+                            </div>
+                        </div>                       
+                
+                        <div class="circle-dot-advanced-details-short">
+                            <div>
+                                <input type="radio" id="contentWarningGraphicViolenceShort" name="contentWarningOptionShort" value="Graphic Violence">
+                                <label class="sub-options-of-advanced-video-four-short" for="contentWarningGraphicViolenceShort">Graphic Violence</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="contentWarningStrongLanguageShort" name="contentWarningOptionShort" value="Strong Language">
+                                <label class="sub-options-of-advanced-video-four-short" for="contentWarningStrongLanguageShort">Strong Language</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="contentWarningSexualContentShort" name="contentWarningOptionShort" value="Sexual Content">
+                                <label class="sub-options-of-advanced-video-four-short" for="contentWarningSexualContentShort">Sexual Content</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="contentWarningFlashingLightsShort" name="contentWarningOptionShort" value="Flashing Lights">
+                                <label class="sub-options-of-advanced-video-four-short" for="contentWarningFlashingLightsShort">Flashing Lights</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="contentWarningDrugAlcoholUseShort" name="contentWarningOptionShort" value="Drug/Alcohol Use">
+                                <label class="sub-options-of-advanced-video-four-short" for="contentWarningDrugAlcoholUseShort">Drug/Alcohol Use</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="contentWarningHateSpeechShort" name="contentWarningOptionShort" value="Hate Speech">
+                                <label class="sub-options-of-advanced-video-four-short" for="contentWarningHateSpeechShort">Hate Speech</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="contentWarningAnimalCrueltyShort" name="contentWarningOptionShort" value="Animal Cruelty">
+                                <label class="sub-options-of-advanced-video-four-short" for="contentWarningAnimalCrueltyShort">Animal Cruelty</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Age Restrictions -->
+                <div class="advanced-details-age-restriction-label-short">
+                    <label class="contents-of-advanced-video-short" for="ageRestrictionsShort">Age Restrictions (Mandatory):</label>
+                    <div class="advanced-details-input-container-box-video-age-short">
+                        <p class="para-of-advanced-details-short">
+                            Select the age restriction and
+                            <span class="learn-more-link-short" id="openAgeRestrictionsModalShort">learn more.</span>
+                        </p>
+                        <!-- Terms Modal -->
+                        <!-- Terms Modal -->
+                        <div id="AgeRestrictionsModalShort" class="Age-Restrictions-Modal-Short">
+                            <div class="Age-Restrictions-Modal-Short-content">
+                                <!-- Close Icon -->
+                                <i class="fa fa-times Age-Restrictions-Modal-Short-close-icon" id="AgeRestrictionsModalShortcloseicon"></i>
+                        
+                                <h3>Terms and Conditions</h3>
+                                <p>By using this platform, you agree to the following terms...</p>
+                                <ul>
+                                    <li>All content uploaded must be original and owned by the user.</li>
+                                    <li>No copyrighted or infringing material is allowed.</li>
+                                    <li>Content should adhere to community guidelines and policies.</li>
+                                    <li>The platform reserves the right to remove any content deemed inappropriate.</li>
+                                    <li>Users are responsible for the content they upload.</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="circle-dot-advanced-details-short">
+                            <div>
+                                <input type="radio" id="ageRestrictionAllAgesShort" name="ageRestrictionOptionShort" value="All Ages">
+                                <label class="sub-options-of-advanced-video-four-short" for="ageRestrictionAllAgesShort">All Ages</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="ageRestriction13PlusShort" name="ageRestrictionOptionShort" value="13+">
+                                <label class="sub-options-of-advanced-video-four-short" for="ageRestriction13PlusShort">13+</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="ageRestriction18PlusShort" name="ageRestrictionOptionShort" value="18+">
+                                <label class="sub-options-of-advanced-video-four-short" for="ageRestriction18PlusShort">18+</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Keywords for SEO -->
+                <div class="advanced-details-input-container-short">
+                    <i class="fa fa-circle-info fa-circle-info-advanced-details-short" id="infoCategoryShort"></i>
+                    <label class="contents-of-advanced-video-short" for="seoKeywordsShort">Keywords for SEO:</label>
+                    <div class="info-box-advanced-details-short" id="infoBoxSeoKeywordsShort" style="display: none;">
+                        <p class="info-of-advanced-short">Add relevant keywords to improve your video’s search engine optimization (SEO). This makes your video more discoverable to users searching for specific topics.</p>
+                    </div>
+                    <textarea id="seoKeywordsShort" name="seoKeywordsShort" placeholder="Add relevant keywords to improve your video’s SEO" class="advanced-details-textarea-short"></textarea>
+                </div>
+
+                <!-- Licensing -->
+                <div class="advanced-details-license-type-label-short">
+                    <label class="contents-of-advanced-video-short" for="licenseTypeShort">License Type (Mandatory):</label>
+                    <div class="advanced-details-input-container-box-video-license-box-short">
+                        <p class="para-of-advanced-details-short">
+                            Select the License to make the video upload proper, and
+                            <span class="learn-more-link-short" id="openLicenseModalShort">learn more.</span>
+                        </p>
+                        <!-- Terms Modal -->
+                        <!-- Terms Modal -->
+                        <div id="openLicenseTypeModalShort" class="open-License-Type-Modal-Short">
+                            <div class="open-License-Type-Modal-Short-content">
+                                <!-- Close Icon -->
+                                <i class="fa fa-times open-License-Type-Modal-Short-close-icon" id="openLicenseTypeModalShortcloseicon"></i>
+                        
+                                <h3>Terms and Conditions</h3>
+                                <p>By using this platform, you agree to the following terms...</p>
+                                <ul>
+                                    <li>All content uploaded must be original and owned by the user.</li>
+                                    <li>No copyrighted or infringing material is allowed.</li>
+                                    <li>Content should adhere to community guidelines and policies.</li>
+                                    <li>The platform reserves the right to remove any content deemed inappropriate.</li>
+                                    <li>Users are responsible for the content they upload.</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="circle-dot-advanced-details-short">
+                            <div>
+                                <input type="radio" id="licenseTypeStandardLicenseShort" name="licenseTypeOptionShort" value="Standard License">
+                                <label class="sub-options-of-advanced-video-four-short" for="licenseTypeStandardLicenseShort">Standard License</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Location Settings -->
+                <div class="advanced-details-input-container-short">
+                    <i class="fa fa-circle-info fa-circle-info-advanced-details-short" id="infoCategoryShort"></i>
+                    <label class="contents-of-advanced-video-short" for="locationTagsShort">Location:</label>
+                    <div class="info-box-advanced-details-short" id="infoBoxLocationTagsShort" style="display: none;">
+                        <p class="info-of-advanced-short">Tag the location where the video was recorded. This adds contextual information and can make your video more discoverable for location-based searches.</p>
+                    </div>
+                
+                    <input type="text" id="locationTagsShort" name="locationTagsShort" placeholder="Tag the location where the video was recorded" class="advanced-details-input-short">
+                </div>
+                
+                <div class="short-middle-box-controls-details">
+                    <p class="buttons-of-media">Fill in the required information, then click the 'Next' button to proceed to the 'Monetization' section. To return to the 'Advanced Details' section, click the 'Go Back' button.</p>
+                    <hr class="short-choose-media-line-details">
+                    <button id="shortGoBackButtonAdvanced" class="short-go-back-button-of-advanced-short" onclick="goBacktoshortdetails()">Back</button>
+                    <button id="shortAdvancedNextButton" class="short-next-button-of-advanced-short" onclick="proceedToNextprivacy()">Next</button>
+                </div>
+            </div>
+            
+
+
+
+
+
+
+
+
+
+
+            <!--privacy and visibility-->
+            <!--privacy and visibility-->
+            <!--privacy and visibility-->
+            <div id="privacyVisibilityContent" style="display: none;">
+                <h3 class="choose-media-header">Privacy Settings</h3>
+                <p id="shortVideoSection" class="para-of-choose-media">You have successfully completed Step-3. This is Step-4 of the video upload process. Make sure to click the "i" button and read the descriptions. Fill in the necessary information.</p>
+
+                <!-- Visibility -->
+                <div class="short-input-container-visibility">
+                    <div class="shortIcon-label-container-visibility">
+                        <label class="shortContents-of-privacy-video" for="shortVisibility">Visibility</label>
+                    </div>
+                
+                    <div class="shortCheckbox-container">
+                        <input type="radio" id="shortPublicVisibility" name="shortVisibilityOption" value="public">
+                        <label class="shortSub-options-of-privacy-video" for="shortPublicVisibility">Public</label>
+                        <p class="shortInfo-of-privacy">Public: Your video is accessible to anyone on our Platform. Choose this option if you want the widest possible audience.</p>
+                    </div>
+                    <div class="shortCheckbox-container">
+                        <input type="radio" id="shortPrivateVisibility" name="shortVisibilityOption" value="private">
+                        <label class="shortSub-options-of-privacy-video" for="shortPrivateVisibility">Private</label>
+                        <p class="shortInfo-of-privacy">Private: Your video can only be viewed by specific users. Use this option for highly restricted access.</p>
+                    </div>
+                </div>
+                
+                <!-- Share Settings -->
+                <div class="short-input-container-share-settings">
+                    <div class="shortIcon-label-container-share-settings">
+                        <label for="shortShareSettings">Share Settings</label>
+                    </div>
+                
+                    <div class="shortCheckbox-container">
+                        <input type="radio" id="shortAllowEmbed" name="shortEmbedOption" value="allow">
+                        <label class="shortSub-options-of-privacy-video" for="shortAllowEmbed">Allow Embedding</label>
+                        <p class="shortInfo-of-privacy">Embed Options: Allow or disallow embedding of your video on other websites. Enabling this can increase your video’s reach through external sites.</p>
+                    </div>
+                    <div class="shortCheckbox-container">
+                        <input type="radio" id="shortAllowShare" name="shortShareOption" value="allow">
+                        <label class="shortSub-options-of-privacy-video" for="shortAllowShare">Allow Sharing</label>
+                        <p class="shortInfo-of-privacy">Share Permissions: Control whether viewers can share your video link. This helps manage the distribution of your content.</p>
+                    </div>
+                </div>
+                
+                <!-- Comments -->
+                <div class="short-input-container-comments">
+                    <div class="shortIcon-label-container-comments">
+                        <label for="shortComments">Comments</label>
+                    </div>
+                
+                    <div class="shortCheckbox-container">
+                        <input type="radio" id="shortAllowComments" name="shortCommentOption" value="allow">
+                        <label class="shortSub-options-of-privacy-video" for="shortAllowComments">Allow Comments</label>
+                        <p class="shortInfo-of-privacy">Allow Comments: Enable viewers to comment on your video. Engaging with comments can build community and provide valuable feedback.</p>
+                    </div>
+                    <div class="shortCheckbox-container">
+                        <input type="radio" id="shortDisableComments" name="shortCommentOption" value="disable">
+                        <label class="shortSub-options-of-privacy-video" for="shortDisableComments">Disable Comments</label>
+                        <p class="shortInfo-of-privacy">Disable Comments: Disable viewers from commenting on your video.</p>
+                    </div>
+                </div>
+                
+                <!-- Viewer Interaction -->
+                <div class="short-input-container-viewer-interaction">
+                    <div class="shortIcon-label-container-viewer-interaction">
+                        <label for="shortViewerInteraction">Viewer Interaction</label>
+                    </div>            
+                    <div class="shortCheckbox-container">
+                        <input type="radio" id="shortAllowLikes" name="shortLikeOption" value="allow">
+                        <label class="shortSub-options-of-privacy-video" for="shortAllowLikes">Allow Likes & Dislikes</label>
+                        <p class="shortInfo-of-privacy">Likes and Dislikes: Allow viewers to like or dislike your video. This provides instant feedback on your content’s reception.</p>
+                    </div>
+                    <div class="shortCheckbox-container">
+                        <input type="radio" id="shortEnableRatings" name="shortRatingOption" value="enable">
+                        <label class="shortSub-options-of-privacy-video" for="shortEnableRatings">Enable Viewer Ratings</label>
+                        <p class="shortInfo-of-privacy">Viewer Ratings: Enable a rating system (e.g., star ratings) for more detailed feedback from viewers.</p>
+                    </div>
+                </div>
+                
+                <!-- Watch Time Analytics -->
+                <div class="short-input-container-content-analytics">
+                    <div class="shortIcon-label-container-content-analytics">
+                        <label for="shortContentAnalytics">Content Analytics</label>
+                    </div>
+                
+                    <div class="shortCheckbox-container">
+                        <input type="radio" id="shortEnableAnalytics" name="shortAnalyticsOption" value="enable">
+                        <label class="shortSub-options-of-privacy-video" for="shortEnableAnalytics">Content Analytics</label>
+                        <p class="shortInfo-of-privacy">Enable Analytics: Access detailed metrics on the Video and audience retention. This data helps you understand viewer behavior and improve future content.</p>
+                    </div>
+                </div>
+
+                
+                <div class="short-middle-box-controls-details">
+                    <p class="buttons-of-media">Fill in the required information, then click the 'Next' button to proceed to the 'Monetization' section. To return to the 'Advanced Details' section, click the 'Go Back' button.</p>
+                    <hr class="short-choose-media-line-details">
+                    <button id="shortGoBackButtonPrivacy" class="short-go-back-button-privacy" onclick="goBacktoadvanced()">Back</button>
+                    <button id="NextButtonPrivacy" class="short-next-button-privacy" onclick="proceedToNextMonetization()">Next</button>
+                </div>
+            </div>
+            
+
+
+
+
+
+
+
+
+
+
+
+            <!--monetization-->
+            <!--monetization-->
+            <!--monetization-->
+            <div id="monetizationshortContent" style="display: none;">
+                <h3 class="choose-media-header">Monetization</h3>
+                <p id="videoSection" class="para-of-choose-media">You have successfully completed Step-4. This is Step-5 of the video upload process. Make sure to click the "i" button and read the descriptions. Fill in the necessary information.</p>
+
+                <div class="shortInput-container-monetization-of-short-logo">
+                    <div class="shortLogo-label-container-monetization-of-short">
+                        <label for="shortMonetizationStatus"></label>
+                        <h5 style="font-weight: bold;">SKYLite Partnership</h5>
+                        <p class="para-of-advanced-details-short">The SKYLite Partnership is a unique program tailored for content creators, influencers, and those who want to monetize their digital content, especially videos. 
+                            <span class="short-Learn-more-link" id="shortOpenMonetizationModal">Learn more.</span>
+                        </p> 
+                        <!-- Terms Modal -->
+                        <!-- Terms Modal -->
+                        <div id="shortOpenMonetizationModal" class="short-Open-Monetization-Modal">
+                            <div class="short-Open-Monetization-Modal-content">
+                                <!-- Close Icon -->
+                                <i class="fa fa-times short-Open-Monetization-Modal-close-icon" id="shortOpenMonetizationModalcloseicon"></i>
+                        
+                                <h3>Terms and Conditions</h3>
+                                <p>By using this platform, you agree to the following terms...</p>
+                                <ul>
+                                    <li>All content uploaded must be original and owned by the user.</li>
+                                    <li>No copyrighted or infringing material is allowed.</li>
+                                    <li>Content should adhere to community guidelines and policies.</li>
+                                    <li>The platform reserves the right to remove any content deemed inappropriate.</li>
+                                    <li>Users are responsible for the content they upload.</li>
+                                </ul>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+                
+                <div class="shortInput-container-monetization">
+                    <div class="shortIcon-label-container-monetization-of-short">
+                        <label class="shortContent-of-monet-video-sub" for="shortSponsorships">Sponsorships and Brand Deals</label>
+                    </div>
+                
+                    <div class="shortRadio-container-sponsored-content shortInput-boxes-monet-video">
+                        <input type="radio" id="shortSponsoredContent" name="shortSponsorships" value="Sponsored Content Disclosure">
+                        <label class="shortContent-of-monet-video-sub" for="shortSponsoredContent"> Sponsored Content Disclosure</label>
+                        <p class="shortInfo-of-mone-video">Sponsored Content Disclosure: Indicate if your video includes sponsored content. Transparency about sponsorships builds trust with your audience.<br>
+                            Brand Deal Details: Enter details about your sponsors and the terms of the deal. This information can be useful for managing partnerships and disclosures.</p>
+                    </div>
+                    
+                    <label class="shortContent-of-monet-video-sub" for="shortBrandDealDetails">Brand Deal Details:</label><br>
+                    <textarea id="shortBrandDealDetails" name="shortBrandDealDetails" rows="4" cols="50"></textarea>
+                </div>
+                
+                <div class="shortInput-container-monetization">
+                    <div class="shortIcon-label-container-monetization-of-choose-media">
+                        <label class="shortContent-of-monet-video" for="shortMerchandise">Merchandise</label>
+                    </div>
+                
+                    <div class="shortRadio-container-merchandise-shelf shortInput-boxes-monet-video">
+                        <input type="radio" id="shortMerchandiseShelf" name="shortMerchandise" value="Merchandise Shelf">
+                        <label class="shortContent-of-monet-video-sub" for="shortMerchandiseShelf"> Merchandise Shelf</label>
+                        <p class="shortInfo-of-mone-video">Merchandise Shelf: Display your merchandise below the video. This can increase sales by promoting your products directly to viewers.<br>
+                            Store Link: Provide a link to your merchandise store for viewers to purchase items.</p>
+                    </div>
+                    
+                    <label class="shortContent-of-monet-video-sub" for="shortStoreLink">Store Link:</label><br>
+                    <input type="text" id="shortStoreLink" name="shortStoreLink"><br>
+                </div>
+                
+                <div class="shortInput-container-monetization">
+                    <div class="shortIcon-label-container-monetization-of-choose-media">
+                        <label class="shortContent-of-monet-video" for="shortRevenueSharing">Revenue Sharing</label>
+                        <p class="shortInfo-of-mone-video">Revenue Split: Understand how revenue is shared between the platform and you. This helps you anticipate earnings.<br>
+                        Payment Thresholds: Learn about minimum earnings required before payouts are made. This information is crucial for financial planning.</p>
+                    </div>
+                </div>
+                
+                <div class="short-middle-box-controls-details">
+                    <p class="buttons-of-media">Fill in the required information, then click the 'Next' button to proceed to the 'Monetization' section. To return to the 'Advanced Details' section, click the 'Go Back' button.</p>
+                    <hr class="short-choose-media-line-details">
+                    <button id="shortGoBackButtonMonetization" class="short-go-back-button-of-monetization" onclick="goBacktoPrivacy()">Back</button>
+                    <button id="SubmitButtonMonetization" class="short-submit-button-of-monetization" onclick="proceedToFinish()">Submit</button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!--post upload-->
+            <!--post upload-->
+            <!--post upload-->
+            <!--post upload-->
+            <!--post upload-->
+            <!--post upload-->
+            <!-- Choose post Content -->
+            <div id="choosePostsContent" style="display: none;">
+                <h3 class="choose-media-header">Choose Post (Media)</h3>
+                <p id="videoSection" class="para-of-choose-media">
+                    This is the Choose Media section. Make sure to choose your best content to reach a wider audience. Be sure to click the "i" button to read the descriptions.
+                </p>
+                
+                <p class="pre-terms">By uploading a video to our platform, you agree to the following terms and conditions:
+                    <span id="learnMoreChoosePost" class="blue-text-Post" onclick="openChoosePostTermsModal()">learn more</span>
+                </p>
+                
+                <!-- Terms Modal -->
+                <!-- Terms Modal -->
+                <div id="ChoosePostModalTerms" class="Choose-Post-Modal-Terms">
+                    <div class="Choose-Post-Modal-Terms-content">
+                        <!-- Close Icon -->
+                        <i class="fa fa-times Choose-Post-Modal-Terms-close-icon" id="ChoosePostModalTermsCloseIcon"></i>
+                
+                        <h3>Terms and Conditions</h3>
+                        <p>By using this platform, you agree to the following terms...</p>
+                        <ul>
+                            <li>All content uploaded must be original and owned by the user.</li>
+                            <li>No copyrighted or infringing material is allowed.</li>
+                            <li>Content should adhere to community guidelines and policies.</li>
+                            <li>The platform reserves the right to remove any content deemed inappropriate.</li>
+                            <li>Users are responsible for the content they upload.</li>
+                            <li>I don't know how to do it.</li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <div id="circleChoosePost" class="circle-Choose-Post">
+                    <div class="Post-upload-wrapper">
+                        <div class="Post-upload-item">
+                            <i class="fa-solid fa-circle-info choose-post-circle-info" onclick="togglePostInfo()"></i>Choose Post(Media):
+                            <div id="postInfo" class="choose-post-info-box scrollable-content" style="display: none;">
+                                <p class="info-of-post">Upload Your Best Content</p>
+                                <p class="info-of-post">Click the "Choose Video" button to select the video you want to upload.</p>
+                                <p class="info-of-post">Video Specifications:</p>
+                                <div class="info-of-post">
+                                    <p>Video Specifications:</p>
+                                    <ul>
+                                        <li>Recommended aspect ratio: 16:9 (primary), 4:3, 3:2, and 21:9</li>
+                                        <li>Recommended resolution: 1080p or more</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="normal-post-place-holder">
+                                <div id="postBox" class="post-display-box">
+                                    <input type="file" id="postFileInput" accept="image/*,video/*" style="display: none;" multiple onchange="displayPost(this)">
+                                    <div class="choose-post-button" onclick="document.getElementById('postFileInput').click();">
+                                        <i class="fa-solid fa-photo-film"></i>
+                                        <span class="blue-text-post">Choose Post(Media)</span>
+                                    </div>
+                                    <i class="fa-solid fa-x post-close-icon" onclick="clearPost()"></i>
+                                    <div class="swiper-container" id="mediaSwiper">
+                                        <div class="swiper-wrapper" id="swiperWrapper"></div>
+                                        <!-- Pagination dots -->
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="Music-upload-item">
+                            <i class="fa-solid fa-circle-info choose-post-circle-info" onclick="toggleMusicInfo()"></i>Choose Music
+                            <div id="MusicInfo" class="choose-post-info-box scrollable-content" style="display: none;">
+                                <p class="info-of-post">Click the "Choose Thumbnail" button to select the image you want to use as a thumbnail.</p>
+                                <p class="info-of-post">Or</p>
+                                <p class="info-of-post">You can use any frame from the video as a thumbnail.</p>
+                                <p class="info-of-post">Select an eye-catching Thumbnail to represent your video. A great thumbnail can significantly increase views.</p>
+                                <p class="info-of-post">Recommended Aspect Ratio: 16:9 for optimal display.</p>
+                                <p class="info-of-post">Image Format:</p>
+                                <ul class="info-of-post">
+                                    <li class="info-of-post">JPEG, PNG</li>
+                                </ul>
+                            </div>
+                            <div class="Music-upload-item-place-holder">
+                                <div id="musicBox" class="music-display-box">
+                                    <input type="file" id="musicFile" accept="audio/*" style="display: none;" onchange="displayMusic(this)">
+                                    <div class="choose-music-button" onclick="document.getElementById('musicFile').click();">
+                                        <i class="fa-solid fa-music"></i>
+                                        <span class="blue-text-post">Choose Music</span>
+                                    </div>
+                                    <i class="fa-solid fa-x Music-close-icon" onclick="clearMusic()"></i>
+                                </div>
+                            </div>
+                            <p class="buttons-of-Post">Click the Preview button to view a preview of your files. Then, click the Next button to proceed to the Video Details section.</p>
+                            <div class="post-box-controls">
+                                <div class="line-of-border"></div>
+                                <button id="postPreviewButton" class="post-preview-button" onclick="previewPost()">Preview</button>
+                                <button id="choosePostnextButton" class="choose-Post-next-Button" onclick="goToPostDetails()">Next</button>
+                            </div>
+                            <div id="customAlert" class="custom-alert hidden">
+                                <p>Please choose your post media.</p>
+                                <button id="okayButton" class="alert-button">Okay</button>
+                            </div>                                                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+
+
+            <!--post Details Content-->
+            <!--post Details Content-->
+            <!--post Details Content-->
+            <!--post Details Content-->
+            <div id="postDetailsContent" style="display: none;">
+                <h3 class="choose-media-header">Post Details</h3>
+                <p id="videoSection" class="para-of-choose-media">This is the Post details section. Be sure to click the "i" button to read the descriptions and fill in the required information.</p>
+                
+                <div class="post-details-input-container">
+                    <i class="fa fa-circle-info post-details-circle-info" id="postinfoTitle"></i>
+                    <label class="contents-of-post-details" for="postTitle">Title (Mandatory):</label>
+                    <div class="info-box-post-details" id="postinfoBoxTitle" style="display: none;">
+                        <p class="info-of-post-detail">A concise and compelling title that accurately reflects the video's content.</p>
+                    </div>
+                    <input type="text" id="postTitle" name="postTitle" placeholder="Write the post title">
+                </div>
+                
+                
+                <div class="post-details-input-container">
+                    <i class="fa fa-circle-info post-details-circle-info" id="postinfoDescription"></i>
+                    <label class="contents-of-post-details" for="postDescription">Description:</label>
+                    <div class="info-box-post-details" id="postinfoBoxDescription" style="display: none;">
+                        <p class="info-of-post-detail">A detailed and informative overview of the video's content.Use keywords naturally to improve discoverability.</p>
+                        <p class="info-of-post-detail">Includes a call-to-action (CTA) to encourage viewer engagement.</p>
+                        <p class="info-of-post-detail">Can incorporate relevant links (e.g., to your website, social media, or related videos).</p>
+                    </div>
+                    <textarea id="postDescriptionInput" name="postDescription" placeholder="Write the post description"></textarea>
+                </div>
+                
+                <div class="post-details-input-container">
+                    <i class="fa fa-circle-info post-details-circle-info" id="postinfoTags"></i>
+                    <label class="contents-of-post-details" for="postTags">Tags:</label>
+                    <div class="info-box-post-details" id="postinfoBoxTags" style="display: none;">
+                        <p class="info-of-post-detail">Relevant keywords that describe the video's content.A mix of general and specific tags to reach a wider audience.</p>
+                    </div>
+                    <input type="text" id="postTags" name="postTags" placeholder="write the post tags">
+                </div>
+
+                <p class="buttons-of-Post">Click the back button to go back. Then, click the Next button to proceed to the Video Details section.</p>
+                <div class="post-box-controls">
+                    <div class="line-of-border"></div>
+                    <button id="postDetailsGoBack" class="post-Details-Go-Back" onclick="postDetailsGoBackButton()">Back</button>
+                    <button id="postDetailsNext" class="post-Details-Next" onclick="postDetailsNextButton()">Next</button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+            <!--advanced-post Content-->
+            <!--advanced-post Content-->
+            <!--advanced-post Content-->
+            <!--advanced-post Content-->
+            <div id="advanced-postContent" style="display: none;">
+                <h3 class="choose-media-header">Post Adavnced Details</h3>
+                <p id="videoSectionShort" class="para-of-choose-media">You have successfully completed Step-2. This is Step-3 of the video upload process. Make sure to click the "i" button and read the descriptions. Fill in the necessary information.</p>
+                
+                <!-- Content Warning -->
+                <!-- Content Warning -->
+                <div class="advanced-content-warning-label-post">
+                    <label class="contents-of-advanced-video-post" for="contentWarningsPost">Content Warnings (Mandatory):</label>
+                    <div class="advanced-details-input-container-box-video-warnings-post">
+                        <p class="para-of-advanced-details-post">
+                            Select the content warnings, and you can select multiple warnings and
+                            <span class="learn-more-link-post" id="openChoosePostConentWarningModal">learn more.</span>
+                        </p> 
+                        <!-- Terms Modal -->
+                        <div id="advancedPostContentWarning" class="advanced-Post-Content-Warning">
+                            <div class="advanced-Post-Content-Warning-terms">
+                                <!-- Close Icon -->
+                                <i class="fa fa-times advanced-Post-Content-Warning-close-icon" id="advancedPostContentWarningcloseicon"></i>
+                        
+                                <h3>Terms and Conditions</h3>
+                                <p>By using this platform, you agree to the following terms...</p>
+                                <ul>
+                                    <li>All content uploaded must be original and owned by the user.</li>
+                                    <li>No copyrighted or infringing material is allowed.</li>
+                                    <li>Content should adhere to community guidelines and policies.</li>
+                                    <li>The platform reserves the right to remove any content deemed inappropriate.</li>
+                                    <li>Users are responsible for the content they upload.</li>
+                                </ul>
+                            </div>
+                        </div>                       
+                
+                        <div class="circle-dot-advanced-details-post">
+                            <div>
+                                <input type="radio" id="contentWarningGraphicViolencePost" name="contentWarningOptionPost" value="Graphic Violence">
+                                <label class="sub-options-of-advanced-video-four-post" for="contentWarningGraphicViolencePost">Graphic Violence</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="contentWarningStrongLanguagePost" name="contentWarningOptionPost" value="Strong Language">
+                                <label class="sub-options-of-advanced-video-four-post" for="contentWarningStrongLanguagePost">Strong Language</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="contentWarningSexualContentPost" name="contentWarningOptionPost" value="Sexual Content">
+                                <label class="sub-options-of-advanced-video-four-post" for="contentWarningSexualContentPost">Sexual Content</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="contentWarningFlashingLightsPost" name="contentWarningOptionPost" value="Flashing Lights">
+                                <label class="sub-options-of-advanced-video-four-post" for="contentWarningFlashingLightsPost">Flashing Lights</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="contentWarningDrugAlcoholUsePost" name="contentWarningOptionPost" value="Drug/Alcohol Use">
+                                <label class="sub-options-of-advanced-video-four-post" for="contentWarningDrugAlcoholUsePost">Drug/Alcohol Use</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="contentWarningHateSpeechPost" name="contentWarningOptionPost" value="Hate Speech">
+                                <label class="sub-options-of-advanced-video-four-post" for="contentWarningHateSpeechPost">Hate Speech</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="contentWarningAnimalCrueltyPost" name="contentWarningOptionPost" value="Animal Cruelty">
+                                <label class="sub-options-of-advanced-video-four-post" for="contentWarningAnimalCrueltyPost">Animal Cruelty</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <!-- Age Restrictions -->
+                <div class="advanced-details-age-restriction-label-post">
+                    <label class="contents-of-advanced-video-post" for="ageRestrictionsPost">Age Restrictions (Mandatory):</label>
+                    <div class="advanced-details-input-container-box-video-age-post">
+                        <p class="para-of-advanced-details-post">
+                            Select the age restriction and
+                            <span class="learn-more-link-post" id="openAgeRestrictionsModalPost">learn more.</span>
+                        </p>
+                        <!-- Terms Modal -->
+                        <div id="AgeRestrictionsModalPost" class="Age-Restrictions-Modal-Post">
+                            <div class="Age-Restrictions-Modal-Post-content">
+                                <!-- Close Icon -->
+                                <i class="fa fa-times Age-Restrictions-Modal-Post-close-icon" id="AgeRestrictionsModalPostcloseicon"></i>
+                        
+                                <h3>Terms and Conditions</h3>
+                                <p>By using this platform, you agree to the following terms...</p>
+                                <ul>
+                                    <li>All content uploaded must be original and owned by the user.</li>
+                                    <li>No copyrighted or infringing material is allowed.</li>
+                                    <li>Content should adhere to community guidelines and policies.</li>
+                                    <li>The platform reserves the right to remove any content deemed inappropriate.</li>
+                                    <li>Users are responsible for the content they upload.</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="circle-dot-advanced-details-post">
+                            <div>
+                                <input type="radio" id="ageRestrictionAllAgesPost" name="ageRestrictionOptionPost" value="All Ages">
+                                <label class="sub-options-of-advanced-video-four-post" for="ageRestrictionAllAgesPost">All Ages</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="ageRestriction13PlusPost" name="ageRestrictionOptionPost" value="13+">
+                                <label class="sub-options-of-advanced-video-four-post" for="ageRestriction13PlusPost">13+</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="ageRestriction18PlusPost" name="ageRestrictionOptionPost" value="18+">
+                                <label class="sub-options-of-advanced-video-four-post" for="ageRestriction18PlusPost">18+</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <!-- Licensing -->
+                <div class="advanced-details-license-type-label-post">
+                    <label class="contents-of-advanced-video-post" for="licenseTypePost">License Type (Mandatory):</label>
+                    <div class="advanced-details-input-container-box-video-license-box-post">
+                        <p class="para-of-advanced-details-post">
+                            Select the License to make the video upload proper, and
+                            <span class="learn-more-link-post" id="openLicenseModalPost">learn more.</span>
+                        </p>
+                        <!-- Terms Modal -->
+                        <div id="openLicenseTypeModalPost" class="open-License-Type-Modal-Post">
+                            <div class="open-License-Type-Modal-Post-content">
+                                <!-- Close Icon -->
+                                <i class="fa fa-times open-License-Type-Modal-Post-close-icon" id="openLicenseTypeModalPostcloseicon"></i>
+                        
+                                <h3>Terms and Conditions</h3>
+                                <p>By using this platform, you agree to the following terms...</p>
+                                <ul>
+                                    <li>All content uploaded must be original and owned by the user.</li>
+                                    <li>No copyrighted or infringing material is allowed.</li>
+                                    <li>Content should adhere to community guidelines and policies.</li>
+                                    <li>The platform reserves the right to remove any content deemed inappropriate.</li>
+                                    <li>Users are responsible for the content they upload.</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="circle-dot-advanced-details-post">
+                            <div>
+                                <input type="radio" id="licenseTypeStandardLicensePost" name="licenseTypeOptionPost" value="Standard License">
+                                <label class="sub-options-of-advanced-video-four-post" for="licenseTypeStandardLicensePost">Standard License</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <!-- Location Settings -->
+                <div class="advanced-details-input-container-post">
+                    <i class="fa fa-circle-info fa-circle-info-advanced-details-post" id="infoadvancedPost"></i>
+                    <label class="contents-of-advanced-video-post" for="locationTagsPost">Location:</label>
+                    <div class="info-box-advanced-details-post" id="infoBoxLocationTagsPost" style="display: none;">
+                        <p class="info-of-advanced-post">Tag the location where the video was recorded. This adds contextual information and can make your video more discoverable for location-based searches.</p>
+                    </div>
+                
+                    <input type="text" id="locationAdvancedPost" name="locationAdvancePost" placeholder="Tag the location " class="advanced-details-input-post">
+                </div>
+                
+                <p class="buttons-of-Post">Click the Preview button to view a preview of your files. Then, click the Next button to proceed to the Video Details section.</p>
+                <div class="post-box-controls">
+                    <div class="line-of-border"></div>
+                    <button id="postadvancedGoBack" class="post-advanced-Go-Back" onclick="postadvancedGoBackButton()">Back</button>
+                    <button id="postadvancedNext" class="post-advanced-Next" onclick="postadvancedNextButton()">Next</button>
+                </div> 
+            </div>
+
+
+
+
+
+            <!--privacy Visibility Post Content-->
+            <!--privacy Visibility Post Content-->
+            <!--privacy Visibility Post Content-->
+            <!--privacy Visibility Post Content-->
+            <div id="privacyVisibilityPostContent" style="display: none;">
+                <h3 class="choose-media-header">Privacy Settings</h3>
+                <p id="shortVideoSection" class="para-of-choose-media">You have successfully completed Step-3. This is Step-4 of the video upload process. Make sure to click the "i" button and read the descriptions. Fill in the necessary information.</p>
+                
+                <!-- Visibility -->
+                <div class="post-input-container-visibility">
+                    <div class="postIcon-label-container-visibility">
+                        <label class="postContents-of-privacy-video" for="postVisibility">Visibility</label>
+                    </div>
+                
+                    <div class="postCheckbox-container">
+                        <input type="radio" id="postPublicVisibility" name="postVisibilityOption" value="public">
+                        <label class="postSub-options-of-privacy-video" for="postPublicVisibility">Public</label>
+                        <p class="postInfo-of-privacy">Public: Your video is accessible to anyone on our Platform. Choose this option if you want the widest possible audience.</p>
+                    </div>
+                    <div class="postCheckbox-container">
+                        <input type="radio" id="postPrivateVisibility" name="postVisibilityOption" value="private">
+                        <label class="postSub-options-of-privacy-video" for="postPrivateVisibility">Private</label>
+                        <p class="postInfo-of-privacy">Private: Your video can only be viewed by specific users. Use this option for highly restricted access.</p>
+                    </div>
+                </div>
+                
+                <!-- Share Settings -->
+                <div class="post-input-container-share-settings">
+                    <div class="postIcon-label-container-share-settings">
+                        <label for="postShareSettings">Share Settings</label>
+                    </div>
+                
+                    <div class="postCheckbox-container">
+                        <input type="radio" id="postAllowEmbed" name="postEmbedOption" value="allow">
+                        <label class="postSub-options-of-privacy-video" for="postAllowEmbed">Allow Embedding</label>
+                        <p class="postInfo-of-privacy">Embed Options: Allow or disallow embedding of your video on other websites. Enabling this can increase your video’s reach through external sites.</p>
+                    </div>
+                    <div class="postCheckbox-container">
+                        <input type="radio" id="postAllowShare" name="postShareOption" value="allow">
+                        <label class="postSub-options-of-privacy-video" for="postAllowShare">Allow Sharing</label>
+                        <p class="postInfo-of-privacy">Share Permissions: Control whether viewers can share your video link. This helps manage the distribution of your content.</p>
+                    </div>
+                </div>
+                
+                <!-- Comments -->
+                <div class="post-input-container-comments">
+                    <div class="postIcon-label-container-comments">
+                        <label for="postComments">Comments</label>
+                    </div>
+                
+                    <div class="postCheckbox-container">
+                        <input type="radio" id="postAllowComments" name="postCommentOption" value="allow">
+                        <label class="postSub-options-of-privacy-video" for="postAllowComments">Allow Comments</label>
+                        <p class="postInfo-of-privacy">Allow Comments: Enable viewers to comment on your video. Engaging with comments can build community and provide valuable feedback.</p>
+                    </div>
+                    <div class="postCheckbox-container">
+                        <input type="radio" id="postDisableComments" name="postCommentOption" value="disable">
+                        <label class="postSub-options-of-privacy-video" for="postDisableComments">Disable Comments</label>
+                        <p class="postInfo-of-privacy">Disable Comments: Disable viewers from commenting on your video.</p>
+                    </div>
+                </div>
+                
+                <!-- Viewer Interaction -->
+                <div class="post-input-container-viewer-interaction">
+                    <div class="postIcon-label-container-viewer-interaction">
+                        <label for="postViewerInteraction">Viewer Interaction</label>
+                    </div>            
+                    <div class="postCheckbox-container">
+                        <input type="radio" id="postAllowLikes" name="postLikeOption" value="allow">
+                        <label class="postSub-options-of-privacy-video" for="postAllowLikes">Allow Likes & Dislikes</label>
+                        <p class="postInfo-of-privacy">Likes and Dislikes: Allow viewers to like or dislike your video. This provides instant feedback on your content’s reception.</p>
+                    </div>
+                    <div class="postCheckbox-container">
+                        <input type="radio" id="postEnableRatings" name="postRatingOption" value="enable">
+                        <label class="postSub-options-of-privacy-video" for="postEnableRatings">Enable Viewer Ratings</label>
+                        <p class="postInfo-of-privacy">Viewer Ratings: Enable a rating system (e.g., star ratings) for more detailed feedback from viewers.</p>
+                    </div>
+                </div>
+                
+                <!-- Watch Time Analytics -->
+                <div class="post-input-container-content-analytics">
+                    <div class="postIcon-label-container-content-analytics">
+                        <label for="postContentAnalytics">Content Analytics</label>
+                    </div>
+                
+                    <div class="postCheckbox-container">
+                        <input type="radio" id="postEnableAnalytics" name="postAnalyticsOption" value="enable">
+                        <label class="postSub-options-of-privacy-video" for="postEnableAnalytics">Content Analytics</label>
+                        <p class="postInfo-of-privacy">Enable Analytics: Access detailed metrics on the Video and audience retention. This data helps you understand viewer behavior and improve future content.</p>
+                    </div>
+                </div>
+                
+                <p class="buttons-of-Post">Click the Preview button to view a preview of your files. Then, click the Next button to proceed to the Video Details section.</p>
+                <div class="post-box-controls">
+                    <div class="line-of-border"></div>
+                    <button id="postprivacyGoBack" class="post-privacy-Go-Back" onclick="postprivacyGoBackButton()">Back</button>
+                    <button id="postprivacySubmit" class="post-privacy-Submit" onclick="postprivacysubmitButton()">Submit</button>
+                </div> 
+            </div>
+            
+            
+        </div>
+       
+    </div> <!--Upload section end div-->
+
+
+
+    <!-- Dashboard Section -->
+    <!-- Dashboard Section -->
+    <!-- Dashboard Section -->
+    <div id="dashboardSection" class="dashboard-section">
+        <div class="dashboard-header">
+            <i class="fa-solid fa-arrow-left close-dashboard-icon" aria-label="Close Dashboard" role="button" tabindex="0"></i>
+        </div>
+        <div class="dashboard-content">
+            <div class="left-column">
+                <div class="manage-content-display-box">
+                    <!-- Content for the left top box goes here -->
+                    <p>video display box</p>
+                </div>
+                <div class="user-content-display-box">
+                    <div class="user-content-display-tabs">
+                        <button id="user-content-display-video-tab" class="user-content-display-video-tab active">Video</button>
+                        <button id="user-content-display-shorts-tab" class="user-content-display-shorts-tab">Shorts</button>
+                        <button id="user-content-display-posts-tab" class="user-content-display-posts-tab">Posts</button>
+                    </div>
+                    <div id="video-content" class="user-content-display-tab-content active">
+                        <p>Content for video tab</p>
+                    </div>
+                    <div id="shorts-content" class="user-content-display-tab-content">
+                        <p>Content for shorts tab</p>
+                    </div>
+                    <div id="posts-content" class="user-content-display-tab-content">
+                        <p>Content for posts tab</p>
+                    </div>
+                </div>
+            </div>
+            <div class="real-time-content-display-box">
+                <div class="real-time-content-display-tabs">
+                    <button id="real-time-analytics-tab" class="real-time-tab active">Analytics</button>
+                    <button id="real-time-earnings-tab" class="real-time-tab">Earnings</button>
+                    <button id="real-time-comments-tab" class="real-time-tab">Comments</button>
+                    <button id="real-time-edit-tab" class="real-time-tab">Edit</button>
+                </div>
+                <div id="analytics-content" class="real-time-tab-content active">
+                    <p>Analytics content goes here.</p>
+                </div>
+                <div id="earnings-content" class="real-time-tab-content">
+                    <p>Earnings content goes here.</p>
+                </div>
+                <div id="comments-content" class="real-time-tab-content">
+                    <p>Comments content goes here.</p>
+                </div>
+                <div id="edit-content" class="real-time-tab-content">
+                    <p>Edit content goes here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+
+
+
+
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+        
+
+
+
+
+
+
+    <!-- Short Section -->
+    
+    <!-- Post Section -->
+    
+    <!-- Bootstrap JavaScript and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+
+    <!-- JavaScript -->
+    <script src="./codex/sidebar/sidebar.js"></script>
+
+    <script src="./codex/sidebar/settings/settings.js"></script>
+
+    <script src="./codex/profile-picture/profile/profile.js"></script>
+
+    <script src="./codex/profile-picture/add/actual/add.js"></script>
+
+
+    <script src="./codex/main-feed/feeds.js"></script>
+
+    <script src="./codex/search/search.js"></script>
+
+    <script src="./codex/forms/media/vid.js"></script>
+    <script src="./codex/forms/media/choose-video/choose-media.js"></script>
+
+
+    <script src="./codex/Manage-Content/Manage-content.js"></script>
+
+    <script src="./codex/forms/media/posts/posts-vid.js"></script>
+
+
+    <!-- Include Video.js JS -->
+    <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
+
+
+
+    <script src="./codex/forms/media/short-video/short-video.js"></script>
+
+
+
+
+
+</body>
+</html>

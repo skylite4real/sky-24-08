@@ -1,0 +1,2534 @@
+/*///////////////////////////*/
+/*//////////////////////////*/
+/*/////////////////////////*/
+/* Choose post */
+
+.Post-upload-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns content to the left */
+    width: 100%; /* Ensure full width */
+}
+
+.Post-upload-item,
+.Music-upload-item {
+    width: 100%; /* Full width to each item */
+    margin-bottom: 20px;
+}
+
+#circleChoosePost .video-js {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+.normal-post-place-holder {
+    width: 100%;
+    max-width: 100%; /* Full width */
+    margin-bottom: 50px; /* Space below for frames */
+    border: 1px solid #ccc;
+    padding: 10px !important;
+    background-color: white;
+    border-radius: 5px !important;
+    display: flex !important;
+    flex-direction: column !important; /* Stack the display-box and framesContainer vertically */
+    align-items: center !important; /* Center-align content horizontally */
+
+}
+
+.Music-upload-item-place-holder {
+    width: 100%;
+    max-width: 100%; /* Full width */
+    margin-bottom: 50px !important; /* Space below for frames */
+    border: 1px solid #ccc;
+    padding: 10px !important;
+    background-color: white;
+    border-radius: 5px !important;
+    display: flex !important;
+    flex-direction: column !important; /* Stack the display-box and framesContainer vertically */
+    align-items: center !important; /* Center-align content horizontally */
+
+
+}
+
+.post-display-box {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 50%; /* Initial height (50% of the parent container) */
+    overflow: hidden;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: height 0.3s ease; /* Smooth transition for height */
+
+
+}
+
+.media-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* Ensure it is above the button */
+
+}
+
+.post-display-box.filled {
+    height: auto; /* Allows the height to adjust based on the aspect ratio */
+    aspect-ratio: 1 / 1; 
+
+}
+.swiper-container {
+    width: 100%;
+    height: 100%; /* Use 100% height to maintain consistency */
+    margin-top: 10px;
+    overflow: hidden;
+    display: none;
+    position: absolute;
+}
+
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide img,
+.swiper-slide video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+/* Ensure swiper pagination is at the bottom of the image container */
+.swiper-pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(204, 204, 204, 0.8);  /* Semi-transparent gray */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;  /* Smooth transitions */
+}
+
+.post-display-box video,
+.post-display-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important; /* Fit within the box while preserving aspect ratio */
+    border-radius: 5px; /* Maintain border-radius */
+    color: #615f5f;
+    background-color: #ccc;
+    border: 50%;
+}
+/* Add styles for highlighting the drop zone */
+.highlight {
+    border: 5px dashed #3498db;
+    background-color: #e8f7ff;
+}
+
+.music-display-box {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+    padding: 0; /* Ensure no padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    overflow: hidden;
+    align-self: center !important; /* Align to the left */
+    border-radius: 5px !important;
+    
+}
+
+.post-close-icon {
+    position: absolute;
+    position: absolute;
+    color: #333;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.post-close-icon:hover {
+    color: #333;
+}
+
+.Music-close-icon {
+    position: absolute;
+    color: #333;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+
+.Music-close-icon:hover {
+    color: #333;
+}
+
+
+/* Styles for the play/pause button */
+.post-display-box .video-js .vjs-big-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+/* Ensure the control bar remains unaffected */
+.post-display-box .video-js .vjs-control-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 5;
+    
+}
+
+/* Hide big play button when video is playing */
+.post-display-box .video-js.vjs-playing .vjs-big-play-button {
+    display: none;
+}
+
+/* Make sure the control bar is always visible when video is paused */
+.post-display-box .video-js.vjs-paused .vjs-control-bar {
+    display: flex;
+}
+
+
+
+
+.blue-text-post {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: solid !important;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.blue-text-post:hover {
+    color: darkblue;}
+
+
+
+.choose-post-circle-info {
+    font-size: 18px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    color: #615f5f;
+    margin-left: 0px;
+    margin-right: 5px !important;
+}
+
+.choose-post-info-box {
+    padding: 10px !important;
+    display: none;
+    overflow-y: hidden;
+    background-color: white;
+    border: 0.5px solid #ccc !important;
+    border-radius: 15px !important;
+    margin-bottom: 10px;
+    max-height: 200px;
+    line-height: 1.4;
+    margin-left: 0px !important;
+    max-width: 80% !important;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgb(122, 170, 218) !important;
+
+}
+
+
+.info-of-post {
+    font-size: 14px !important;
+    font-weight: solid !important;
+    color: #333;
+    margin-bottom: 1px !important;
+    margin-top: 0px !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.buttons-of-Post {
+    font-size: 14px !important;
+    font-weight: solid !important;
+    color: #333;
+    margin-bottom: 5px !important;
+    margin-top: 0px !important;
+    font-family: 'Arial', sans-serif;
+    text-align: left !important;
+    
+}
+
+
+
+.scrollable-content {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.scrollable-content::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.scrollable-content {
+    scrollbar-width: none;
+}
+
+
+
+.choose-post-button,
+.choose-music-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: #1E90FF;
+}
+
+.choose-post-button i,
+.choose-music-button i {
+    font-size: 24px;
+}
+
+.choose-post-button:hover,
+.choose-music-button:hover {
+    color: #104E8B;
+}
+
+
+.post-preview-button {
+    margin-top: 10px !important;
+    padding: 5px 10px;
+    margin-bottom: 10px !important;
+    margin-left: 737px !important;
+    background-color: #0078d4 !important; /* accent color */
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 2px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: center !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.post-preview-button:hover {
+    background-color: #005a9e !important; /*hover color */
+}
+
+.choose-Post-next-Button {
+    margin-top: 10px !important;
+    padding: 5px 10px;
+    margin-bottom: 20px !important;
+    margin-left: 767px !important;
+    background-color: #0078d4 !important; /* accent color */
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 2px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: center !important;
+    transition: background-color 0.3s ease !important;
+
+}
+
+.choose-Post-next-Button:hover {
+    background-color: #005a9e !important; /*hover color */
+}
+
+#closePreviewPosts  {
+    width: 100% !important;
+    padding: 10px 0 !important;
+    margin-top: 30px !important;
+    background-color: #0078d4 !important; /* accent color */
+    color: white !important;
+    border: none !important;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center !important;
+    transition: background-color 0.3s ease !important;
+}
+
+#closePreviewPosts  {
+    background-color: #005a9e !important; /* Hover color */
+} 
+#uploadPosts {
+    width: 100% !important;
+    padding: 10px 0 !important;
+    margin-top: 10px !important; /* Spacing between the close preview and upload buttons */
+    background-color: #28a745 !important; /* Green color for the upload button */
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 4px !important;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center !important;
+    transition: background-color 0.3s ease !important;
+}
+
+#uploadPosts:hover {
+    background-color: #218838 !important; /* Darker green on hover */
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+.custom-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFFFFF;
+    color: #007BFF;
+    padding: 20px;
+    width: 350px;
+    height: 180px;
+    border-radius: 8px;
+    z-index: 1000;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.custom-alert p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+}
+
+/* Button Styles */
+.alert-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF; /* Button background color */
+    color: #FFFFFF; /* Button text color */
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.alert-button:hover {
+    background-color: #005bb5; /* Darker blue on hover */
+}
+
+
+
+
+/* Align buttons to the right */
+.post-preview-button,
+.choose-Post-next-Button  {
+    display: inline-block;
+    float: right;
+    margin: 10px 0 0 10px;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+
+/* Positioning buttons below the bottom right corner of the line */
+.post-box-controls {
+    text-align: right;
+    margin-top: 10px;
+}
+
+
+/* Updated Video Preview Box Styling */
+/* Updated Video Preview Box Styling */
+#previewBoxPost {
+    position: absolute;
+    top: 150px !important;
+    right: 30px;
+    width: 310px;
+    height: auto !important;
+    display: none; /* Initially hidden */
+    background-color: #fdfdfd;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+
+/* Header for Post Preview */
+#previewBoxPost h4 {
+    text-align: center;
+    margin-bottom: 10px; /* Adjusted margin for better spacing */
+    color: #333;
+    font-weight: bold;
+}
+
+/* Post video preview container */
+#postPreview {
+    width: 100%; /* Full width */
+    height: 300px; /* Adjust height as needed */
+    max-width: 100%; /* Ensure full width */
+    margin: 0 !important; /* Remove all margins */
+    padding: 0 !important; /* Remove all padding */
+    box-sizing: border-box; /* Include padding/border within the width */
+}
+
+
+
+
+.post-preview-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.post-preview-swiper-pagination {
+    position: relative;
+    bottom: 10px;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;  /* Smooth transitions */
+}
+.post-preview-slide img,
+.post-preview-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure media fits within the container */
+    max-width: 100%; /* Prevent overflow */
+    max-height: 100%; /* Maintain the aspect ratio */
+}
+
+.post-preview-swiper-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Hide any overflow */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Adjust the scroll text animation */
+.scroll-text-container {
+    position: absolute;
+    bottom: 10px;
+    right: 10px; /* Start from the bottom right */
+    width: calc(100% - 50px); /* Account for padding and space for the music icon */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@keyframes scrollText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+
+/* Styles for the play/pause button */
+#postPreview .video-js .vjs-big-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+/* Ensure the control bar remains unaffected */
+#postPreview .video-js .vjs-control-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+/* Hide big play button when video is playing */
+#postPreview .video-js.vjs-playing .vjs-big-play-button {
+    display: none;
+}
+
+/* Make sure the control bar is always visible when video is paused */
+#postPreview .video-js.vjs-paused .vjs-control-bar {
+    display: flex;
+}
+
+
+
+/* Responsive styles for large screens */
+@media (min-width: 1200px) {
+    .post-display-box,
+    .music-display-box {
+        width: 335px; /* Fixed width for large screens */
+    }
+}
+
+/* Responsive styles for mid and small screens */
+@media (max-width: 1199px) {
+    .post-display-box,
+    .music-display-box {
+        width: 90%;
+        max-width: 335px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .post-display-box,
+    .music-display-box {
+        width: 85%;
+        max-width: 335px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .post-display-box,
+    .music-display-box {
+        width: 80%;
+        max-width: 335px;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .post-display-box,
+    .music-display-box{
+        width: 95%;
+        max-width: 440px;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .post-display-box,
+    .music-display-box {
+        width: 95%;
+        max-width: 450px;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .post-display-box,
+    .music-display-box {
+        width: 100%;
+        max-width: 450px;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+}
+
+
+
+
+@media (max-width: 1200px) {
+    #choosePostsContent {
+        width: 100% !important;
+
+    }
+    .post-preview-button,
+    .choose-Post-next-Button  {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    #choosePostsContent {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .post-preview-button,
+    .choose-Post-next-Button  {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+    }
+}
+/* Remove any potential padding/margin causing the gap */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@media (max-width: 768px) {
+    #choosePostsContent {
+        width: 100%; /* Ensure full width */
+        padding: 0 !important; /* Remove padding */
+        margin: 0 !important; /* Remove margin */
+        box-sizing: border-box; /* Include padding/border within the width */
+    }
+    .post-preview-button,
+    .choose-Post-next-Button  {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+        padding: 5px 10px; /* Adjust padding to ensure buttons fit */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+
+    .choose-post-info-box  {
+        margin-left: 20px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    #choosePostsContent {
+        width: 100%; /* Ensure full width */
+        padding: 0 !important; /* Remove padding */
+        margin: 0 !important; /* Remove margin */
+        box-sizing: border-box; /* Include padding/border within the width */
+    }
+    .post-preview-button,
+    .choose-Post-next-Button  {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+        padding: 5px 10px;
+        white-space: nowrap;
+    }
+
+    .choose-post-info-box  {
+        margin-left: 20px !important;
+    }
+    #boxContent {
+        padding: 15px !important;
+    }
+}
+
+
+/* Responsive styles for Choose Media Content */
+
+@media (min-width: 1200px) {
+    #choosePostsContent {
+        width: 90% !important;
+        max-width: 1200px !important;
+        padding: 30px !important;
+    }
+}
+
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+    #choosePostsContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 1150px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: 0 auto; /* Center align the content */
+    }
+}
+
+@media (min-width: 900px)  and (max-width: 1010px) {
+    #choosePostsContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 1000px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: 0 auto; /* Center align the content */
+    }
+}
+
+@media (min-width: 400px) and (max-width: 899px) {
+    #choosePostsContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 850px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: auto !important; /* Center align the content */
+        align-items: center !important;
+        align-content: center !important;
+    }
+}
+/* Ensure the width is always lower than the content-box */
+#choosePostsContent {
+    width: 100%; /* Full width */
+    max-width: 800px; /* Max width for larger screens */
+    margin: 0 auto; /* Center align on larger screens */
+    padding: 0 !important; /* Remove padding */
+    box-sizing: border-box; /* Include padding/border within the width */
+}
+
+/* Responsive styles for mid and small screens */
+@media (max-width: 992px) {
+    #previewBoxPost {
+        position: static;
+        width: 350px;
+        height: 350px;
+        max-width: none;
+        margin-top: 20px !important;
+        margin-left: 0px !important;
+        margin-bottom: 20px !important;
+        margin-right: 0px !important;
+        margin: auto !important;
+
+    }
+
+    .box-content {
+        position: static;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        border-left: none !important;
+        margin-top: 0px !important;
+        margin-left: 0px !important;
+        margin-bottom: 0px !important;
+        margin-right: 0px !important;
+    }
+
+    #postPreview {
+        width: 100%; /* Full width */
+        height: 300px; /* Adjust height as needed */
+        max-width: 100%; /* Ensure full width */
+        margin: 0 !important; /* Remove all margins */
+        padding: 0 !important; /* Remove all padding */
+        box-sizing: border-box; /* Include padding/border within the width */
+    }
+}
+
+@media (max-width: 768px) {
+    #previewBoxPost {
+        width: 300px;
+        height: 300px;
+        max-width: 100%; /* Ensure full width */
+        margin: 0 !important; /* Remove all margins */
+        padding: 0 !important; /* Remove all padding */
+        box-sizing: border-box; /* Include padding/border within the width */
+        align-self: center !important;
+        margin: auto !important;
+        margin-bottom: 40px !important;
+    }
+
+    #postPreview {
+        width: 100%; /* Full width */
+        height: 300px; /* Adjust height as needed */
+        max-width: 100%; /* Ensure full width */
+        margin: 0 !important; /* Remove all margins */
+        padding: 0 !important; /* Remove all padding */
+        box-sizing: border-box; /* Include padding/border within the width */
+    }
+
+    .box-content {
+        position: static;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        border-left: none !important;
+        margin-top: 0px !important;
+        margin-left: 0px !important;
+        margin-bottom: 0px !important;
+        margin-right: 0px !important;
+    }
+
+    #postPreview {
+        width: 100%; /* Full width */
+        height: 300px; /* Adjust height as needed */
+        max-width: 100%; /* Ensure full width */
+        margin: 0 !important; /* Remove all margins */
+        padding: 0 !important; /* Remove all padding */
+        box-sizing: border-box; /* Include padding/border within the width */
+    }
+
+}
+
+/* Media query to handle 576px screen size */
+@media (max-width: 576px) {
+    #previewBoxPost {
+        width: 300px; /* Full width */
+        height: 300px; /* Adjust height as needed */
+        max-width: 100%; /* Ensure full width */
+        margin: 0 !important; /* Remove all margins */
+        padding: 0 !important; /* Remove all padding */
+        box-sizing: border-box; /* Include padding/border within the width */
+        align-self: center !important;
+        margin: auto !important;
+        margin-bottom: 40px !important;
+    }
+
+    #postPreview {
+        width: 100%; /* Full width */
+        height: 300px; /* Adjust height as needed */
+        max-width: 100%; /* Ensure full width */
+        margin: 0 !important; /* Remove all margins */
+        padding: 0 !important; /* Remove all padding */
+        box-sizing: border-box; /* Include padding/border within the width */
+    }
+
+    .box-content {
+        position: static;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        margin-top: 0px !important;
+        margin-left: 0px !important;
+        margin-bottom: 0px !important;
+        margin-right: 0px !important;
+        border-left: none !important;
+        border-right: none !important;
+    }
+}
+
+
+
+/* Modal Overlay */
+#ChoosePostModalTerms {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    overflow: auto;
+}
+
+/* Modal Content */
+.Choose-Post-Modal-Terms-content {
+    background-color: #fdfdfd;
+    margin: 3% auto;
+    padding: 40px;
+    border: none;
+    width: 85%;
+    height: 85%;
+    max-width: 1000px;
+    max-height: 85%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow-y: auto;
+    top: 30px !important;
+    animation: chooseShortTermsFadeIn 0.3s ease-in-out;
+}
+
+/* Close Icon */
+.Choose-Post-Modal-Terms-close-icon {
+    position: absolute !important;
+    top: 20px !important;
+    right: 25px !important;
+    font-size: 32px !important;
+    cursor: pointer !important;
+    color: #aaa !important;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.Choose-Post-Modal-Terms-close-icon:hover {
+    color: #000;
+    transform: scale(1.2);
+}
+
+/* Fade-in Animation */
+@keyframes ChoosePostModalTermsFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Disable page interaction when modal is open */
+body.modal-open {
+    pointer-events: none;
+}
+
+body.modal-open #ChoosePostModalTerms {
+    pointer-events: auto; /* Allow interaction with the modal */
+}
+
+.blue-text-Post {
+    color: blue;
+    cursor: pointer;
+    font-size: 15px;
+    text-decoration: underline;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: solid;
+}
+
+.blue-text-Post:hover {
+    color: darkblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* post details */
+/* post details */
+/* post details */
+/* post details */
+/* post details */
+.post-details-input-container {
+    position: relative;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-top: 30px !important;
+}
+
+/* Info Icon */
+.post-details-circle-info {
+    font-size: 16px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    color: #615f5f;
+    margin-left: 0px;
+}
+
+/* Info Box */
+.info-box-post-details {
+    padding: 10px !important;
+    display: none;
+    overflow-y: auto; /* Keep scrolling enabled */
+    background-color: white;
+    border: 0.5px solid #ccc !important;
+    border-radius: 15px !important;
+    margin-bottom: 10px;
+    max-height: 200px;
+    line-height: 1.4;
+    margin-left: 0px !important;
+    max-width: 80% !important;
+    box-shadow: 0 4px 8px rgb(122, 170, 218) !important;
+    
+    /* Hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+    
+}
+
+.info-box-post-details::-webkit-scrollbar {
+    display: none; /* WebKit browsers (Chrome, Safari) */
+}
+
+.info-of-post-detail {
+    font-size: 14px !important;
+    font-weight: solid !important;
+    color: #333;
+    margin-bottom: 1px !important;
+    margin-top: 0px !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contents-of-post-details {
+    font-size: 16px !important;
+    margin-left: 0px !important;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: solid;
+}
+
+
+
+/* Title Input */
+#postTitle {
+    width: 800px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1); /* Added shadow */
+    font-size: 14px;
+    margin-bottom: 30px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+#postTitle:focus {
+    border-color: #1E90FF;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5), 0 2px 4px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    outline: none;
+}
+
+/* Description Textarea */
+#postDescriptionInput{
+    width: 800px;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1); /* Added shadow */
+    font-size: 14px;
+    resize: vertical;
+    margin-bottom: 30px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+#postDescriptionInput:focus {
+    border-color: #1E90FF;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5), 0 2px 4px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    outline: none;
+}
+
+
+
+/* Tags Input */
+#postTags {
+    width: 800px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1); /* Added shadow */
+    font-size: 14px;
+    margin-bottom: 50px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+#postTags:focus {
+    border-color: #1E90FF;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5), 0 2px 4px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    outline: none;
+}
+
+
+/* Go Back Button */
+.post-Details-Go-Back {
+    margin-top: 10px !important;
+    padding: 5px 10px;
+    margin-bottom: 10px !important;
+    margin-left: 737px !important;
+    background-color: #0078d4 !important; /* accent color */
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 2px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: center !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.post-Details-Go-Back:hover {
+    background-color: #005a9e !important; /*hover color */
+}
+
+/* Middle Box Next Button */
+.post-Details-Next {
+    margin-top: 10px !important;
+    padding: 5px 10px;
+    margin-bottom: 20px !important;
+    margin-left: 767px !important;
+    background-color: #0078d4 !important; /* accent color */
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 2px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: center !important;
+
+}
+
+.post-Details-Next:hover {
+    background-color: #005a9e !important; /*hover color */
+}
+
+/* Responsive styles for Video Details Content */
+
+
+@media (max-width: 1200px) {
+
+    .post-Details-Go-Back,
+    .post-Details-Next {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+    }
+    /* Input fields should adjust width based on screen size */
+    #postTitle,
+    #postDescriptionInput,
+    #postTags {
+        width: 100%;
+        max-width: 90%;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    #postDetailsContent {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .post-Details-Go-Back,
+    .post-Details-Next{
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+    }
+    /* Adjust input fields to fit within smaller screens */
+    #postTitle,
+    #postDescriptionInput,
+    #postTags {
+        width: 100%;
+        max-width: 85%;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #postDetailsContent {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .post-Details-Go-Back,
+    .post-Details-Next {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+        padding: 5px 10px; /* Adjust padding to ensure buttons fit */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+
+    .info-of-post-detail {
+        margin-left: 20px !important;
+    }
+
+    /* Further reduce the width for smaller screens */
+    #postTitle,
+    #postDescriptionInput,
+    #postTags {
+        width: 100%;
+        max-width: 80%;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .postDetailsContent {
+        width: 100%;
+        padding: 0 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .info-of-post-detail {
+        margin-left: 20px !important;
+    }
+
+
+    .post-Details-Go-Back,
+    .post-Details-Next {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+        padding: 5px 10px;
+        white-space: nowrap;
+    }
+
+    
+    .info-of-post-detail {
+        margin-left: 20px !important;
+    }
+    /* Ensure input fields fit within the smallest screens */
+    #postTitle,
+    #postDescriptionInput,
+    #postTags{
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+}
+
+
+
+
+@media (min-width: 1200px) {
+    #postDetailsContent{
+        width: 90% !important;
+        max-width: 1200px !important;
+        padding: 30px !important;
+    }
+}
+
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+    #postDetailsContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 1150px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: 0 auto; /* Center align the content */
+    }
+}
+
+
+@media (min-width: 900px)  and (max-width: 1010px) {
+    #postDetailsContent{
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 1000px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: 0 auto; /* Center align the content */
+    }
+}
+
+
+@media (min-width: 400px) and (max-width: 899px) {
+    #postDetailsContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 850px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: auto !important; /* Center align the content */
+        align-items: center !important;
+        align-content: center !important;
+    }
+}
+
+
+
+/* Ensure the width is always lower than the content-box */
+#postDetailsContent{
+    width: 100%; /* Full width */
+    max-width: 800px; /* Max width for larger screens */
+    margin: 0 auto; /* Center align on larger screens */
+    padding: 0 !important; /* Remove padding */
+    box-sizing: border-box; /* Include padding/border within the width */
+
+}
+
+/* Align buttons to the right */
+.post-Details-Go-Back,
+.post-Details-Next {
+    display: inline-block;
+    float: right;
+    margin: 10px 0 0 10px;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.short-choose-media-line-details {
+    display: block;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+/* Positioning buttons below the bottom right corner of the line */
+.post-box-controls {
+    text-align: right;
+    margin-top: 10px;
+}
+/* General styles for input fields to be responsive */
+#postTitle,
+#postDescriptionInput,
+#postTags {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*//////////////////////*/
+/*//////////////////////*/
+/*//////////////////////*/
+/*//////////////////////*/
+/*//////////////////////*/
+/*//////////////////////*/
+
+/* advanced details of the post */
+/* advanced details of the post */
+/* Container for input and info short */
+.advanced-details-input-container-post {
+    position: relative;
+    margin-top: 30px; /* Reduced gap between each container */
+    margin-left: 0px !important;
+}
+
+
+/* Video Quality (Video Resolution Section) */
+.advanced-details-input-container-box-video-warnings-post,
+.advanced-details-input-container-box-video-age-post,
+.advanced-details-input-container-box-video-age-post{
+    width: 100% !important;
+    margin-bottom: 80px !important; /* Adjust margin as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px !important; /* Add padding inside the box */
+    padding-bottom: 0px !important;
+    background-color: white;
+
+}
+
+
+.advanced-details-input-container-box-video-license-box-post {
+    width: 100% !important;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px !important; /* Add padding inside the box */
+    padding-bottom: 0px !important;
+    background-color: white;
+
+}
+
+.advanced-content-warning-label-post,
+.advanced-details-age-restriction-label-post {
+    margin-bottom: 30px !important; /* Adjust margin as needed */
+
+}
+
+
+.sub-options-of-advanced-video-four-post {
+    font-size: 15px !important;
+    font-weight: solid;
+    color: #333;
+    margin-top: 10px !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.circle-dot-advanced-details-post {
+    margin-left: 20px; /* Adjust as needed */
+}
+
+.circle-dot-advanced-details-post div {
+    display: flex; /* Align radio button and label horizontally */
+    align-items: center; /* Center-align the radio button and label vertically */
+    margin-bottom: 10px; /* Space between each option */
+}
+
+.circle-dot-advanced-details-post input[type="radio"] {
+    margin-right: 10px; /* Space between radio button and label */
+}
+
+.contents-of-advanced-video-post {
+    font-size: 16px !important;
+    font-weight: solid !important;
+    margin-left: 0px !important;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.info-of-advanced-post {
+    font-size: 14px !important;
+    color: #333;
+    margin-bottom: 1px !important;
+    margin-top: 0px !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: solid;
+}
+
+/* Info Box */
+.info-box-advanced-details-post {
+    padding: 10px !important;
+    display: none;
+    overflow-y: auto; /* Keep scrolling enabled */
+    background-color: white;
+    border: 0.5px solid #ccc !important;
+    border-radius: 15px !important;
+    margin-bottom: 10px;
+    max-height: 200px;
+    line-height: 1.4;
+    margin-left: 0px !important;
+    max-width: 80% !important;
+    box-shadow: 0 4px 8px rgb(122, 170, 218) !important;
+        
+    /* Hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+}
+.info-box-advanced-details-post::-webkit-scrollbar {
+    display: none; /* WebKit browsers (Chrome, Safari) */
+}
+
+
+
+
+#locationAdvancedPost {
+    width: 800px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added shadow */
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+#locationAdvancedPost:focus {
+    border-color: #1E90FF;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+    outline: none;
+}
+
+/* Navigation Buttons */
+.post-advanced-Go-Back {
+    margin-top: 10px !important;
+    padding: 5px 10px;
+    margin-bottom: 10px !important;
+    margin-left: 737px;
+    background-color: #0078d4 !important; /* accent color */
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 2px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    font-size: 16px;
+    text-align: center !important;
+    transition: background-color 0.3s ease !important;
+}
+
+
+.post-advanced-Go-Back:hover {
+    background-color: #005a9e !important; /*hover color */
+}
+
+.post-advanced-Next {
+    margin-top: 10px !important;
+    padding: 5px 10px;
+    margin-bottom: 20px !important;
+    margin-left: 767px !important;
+    background-color: #0078d4 !important; /* accent color */
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 2px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: center !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.post-advanced-Next:hover {
+    background-color: #005a9e !important; /*hover color */
+}
+
+
+
+/* Responsive styles for Advanced Details Content */
+
+@media (max-width: 1200px) {
+    #advanced-postContent {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .post-advanced-Go-Back,
+    .post-advanced-Next {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+    }
+    /* Adjust input fields for large screens */
+
+    #locationAdvancedPost {
+        width: 100%;
+        max-width: 85%;
+    }
+}
+
+@media (max-width: 992px) {
+    #advanced-postContent {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .post-advanced-Go-Back,
+    .post-advanced-Next {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+    }
+    /* Adjust input fields for medium screens */
+    #locationAdvancedPost{
+        width: 100%;
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    #advanced-postContent {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .post-advanced-Go-Back,
+    .post-advanced-Next {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+        padding: 5px 10px; /* Adjust padding to ensure buttons fit */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+    /* Adjust input fields for small screens */
+    #locationAdvancedPost {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .info-box-advanced-details-post {
+        margin-left: 20px !important;
+    }
+    
+}
+
+@media (max-width: 576px) {
+    #advanced-postContent {
+        width: 100%;
+        padding: 0 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .post-advanced-Go-Back,
+    .post-advanced-Next {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+        padding: 5px 10px;
+        white-space: nowrap;
+    }
+    /* Ensure input fields fit within the smallest screens */
+    #locationAdvancedPost {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .info-box-advanced-details-post {
+        margin-left: 20px !important;
+    }
+
+}
+
+
+
+
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .advanced-details-input-container-box-video-warnings-post,
+    .advanced-details-input-container-box-video-age-post,
+    .advanced-details-input-container-box-video-license-box-post,
+    .advanced-details-input-container-post {
+        width: 100% !important;
+        padding: 8px;
+    }
+
+    .circle-dot-advanced-details-post {
+        margin-left: 15px; /* Adjust as needed */
+    }
+
+    .circle-dot-advanced-details-post div {
+        margin-bottom: 8px; /* Adjust space between each option */
+    }
+
+
+}
+
+@media (max-width: 992px) {
+    .advanced-details-input-container-box-video-warnings-post,
+    .advanced-details-input-container-box-video-age-post,
+    .advanced-details-input-container-box-video-license-box-post,
+    .advanced-details-input-container-post {
+        width: 100% !important;
+        padding: 8px;
+    }
+
+    .circle-dot-advanced-details-post {
+        margin-left: 10px; /* Adjust as needed */
+    }
+
+    .circle-dot-advanced-details-post div {
+        margin-bottom: 8px; /* Adjust space between each option */
+    }
+
+
+}
+
+@media (max-width: 768px) {
+    .advanced-details-input-container-box-video-warnings-post,
+    .advanced-details-input-container-box-video-age-post,
+    .advanced-details-input-container-box-video-license-box-post,
+    .advanced-details-input-container-post {
+        width: 100% !important;
+        padding: 6px;
+    }
+
+    .circle-dot-advanced-details-post {
+        margin-left: 10px; /* Adjust as needed */
+    }
+
+    .circle-dot-advanced-details-post div {
+        margin-bottom: 6px; /* Adjust space between each option */
+    }
+
+
+}
+
+@media (max-width: 576px) {
+    .advanced-details-input-container-box-video-warnings-post,
+    .advanced-details-input-container-box-video-age-post,
+    .advanced-details-input-container-box-video-license-box-post,
+    .advanced-details-input-container-post {
+        width: 100% !important;
+        padding: 4px;
+    }
+
+    .circle-dot-advanced-details-post {
+        margin-left: 5px; /* Adjust as needed */
+    }
+
+    .circle-dot-advanced-details-post div {
+        margin-bottom: 4px; /* Adjust space between each option */
+    }
+}
+
+
+@media (max-width: 480px) {
+    .advanced-details-input-container-box-video-warnings-post,
+    .advanced-details-input-container-box-video-age-post,
+    .advanced-details-input-container-box-video-license-box-post,
+    .advanced-details-input-container-post {
+        width: 100% !important;
+        padding: 4px;
+    }
+
+    .circle-dot-advanced-details-post {
+        margin-left: 5px; /* Adjust as needed */
+    }
+
+    .circle-dot-advanced-details-post div {
+        margin-bottom: 4px; /* Adjust space between each option */
+    }
+
+}
+
+@media (max-width: 360px) {
+    .advanced-details-input-container-box-video-warnings-post,
+    .advanced-details-input-container-box-video-age-post,
+    .advanced-details-input-container-box-video-license-box-post,
+    .advanced-details-input-container-post {
+        width: 100% !important;
+        padding: 2px;
+    }
+
+    .circle-dot-advanced-details-post {
+        margin-left: 2px; /* Adjust as needed */
+    }
+
+    .circle-dot-advanced-details-post div {
+        margin-bottom: 2px; /* Adjust space between each option */
+    }
+
+
+}
+
+
+
+@media (min-width: 1200px) {
+    #advanced-postContent{
+        width: 90% !important;
+        max-width: 1200px !important;
+        padding: 30px !important;
+    }
+}
+
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+    #advanced-postContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 1150px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: 0 auto; /* Center align the content */
+    }
+}
+
+
+@media (min-width: 900px)  and (max-width: 1010px) {
+    #advanced-postContent{
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 1000px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: 0 auto; /* Center align the content */
+    }
+}
+
+
+@media (min-width: 400px) and (max-width: 899px) {
+    #advanced-postContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 850px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: auto !important; /* Center align the content */
+        align-items: center !important;
+        align-content: center !important;
+    }
+}
+
+
+/* Ensure the width is always lower than the content-box */
+#advanced-postContent {
+    width: 100%; /* Full width */
+    max-width: 800px; /* Max width for larger screens */
+    margin: 0 auto; /* Center align on larger screens */
+    padding: 0 !important; /* Remove padding */
+    box-sizing: border-box; /* Include padding/border within the width */
+}
+
+/* Align buttons to the right */
+.post-advanced-Go-Back,
+.post-advanced-Next  {
+    display: inline-block;
+    float: right;
+    margin: 10px 0 0 10px;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+
+/* Positioning buttons below the bottom right corner of the line */
+.post-box-controls {
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* General styles for input fields to be responsive */
+#locationAdvancedPost {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+
+
+/* Modal Overlay */
+#advancedPostContentWarning {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    overflow: auto;
+}
+
+/* Modal Content */
+.advanced-Post-Content-Warning-terms {
+    background-color: #fdfdfd;
+    margin: 3% auto;
+    padding: 40px;
+    border: none;
+    width: 85%;
+    height: 85%;
+    max-width: 1000px;
+    max-height: 85%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow-y: auto;
+    top: 30px !important;
+    animation: chooseContentWarningsFadeIn 0.3s ease-in-out;
+}
+
+/* Close Icon */
+.advanced-Post-Content-Warning-close-icon {
+    position: absolute !important;
+    top: 20px !important;
+    right: 25px !important;
+    font-size: 32px !important;
+    cursor: pointer !important;
+    color: #aaa !important;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.advanced-Post-Content-Warning-close-icon:hover {
+    color: #000;
+    transform: scale(1.2);
+}
+
+/* Fade-in Animation */
+@keyframes advancedPostContentWarningFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Disable page interaction when modal is open */
+body.modal-open {
+    pointer-events: none;
+}
+
+body.modal-open #advancedPostContentWarning {
+    pointer-events: auto; /* Allow interaction with the modal */
+}
+
+.learn-more-link-post {
+    color: blue;
+    cursor: pointer;
+    font-weight: solid;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+.para-of-advanced-details-post {
+    font-weight: solid;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+.learn-more-link-post:hover {
+    color: darkblue;
+}
+
+
+
+
+/* Age Restrictions Modal Overlay */
+#AgeRestrictionsModalPost {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    overflow: auto;
+}
+
+/* Age Restrictions Modal Content */
+.Age-Restrictions-Modal-Post-content {
+    background-color: #fdfdfd;
+    margin: 3% auto;
+    padding: 40px;
+    border: none;
+    width: 85%;
+    height: 85%;
+    max-width: 1000px;
+    max-height: 85%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow-y: auto;
+    top: 30px !important;
+    animation: AgeRestrictionsModalShortFadeIn 0.3s ease-in-out;
+}
+
+/* Close Icon for Age Restrictions Modal */
+.Age-Restrictions-Modal-Post-close-icon {
+    position: absolute !important;
+    top: 20px !important;
+    right: 25px !important;
+    font-size: 32px !important;
+    cursor: pointer !important;
+    color: #aaa !important;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.Age-Restrictions-Modal-Post-close-icon:hover {
+    color: #000;
+    transform: scale(1.2);
+}
+
+/* Fade-in Animation for Age Restrictions Modal */
+@keyframes AgeRestrictionsModalPostFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Disable page interaction when modal is open */
+body.modal-open {
+    pointer-events: none;
+}
+
+body.modal-open #AgeRestrictionsModalPost {
+    pointer-events: auto; /* Allow interaction with the modal */
+}
+
+/* License Type Modal Overlay */
+#openLicenseTypeModalPost {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    overflow: auto;
+}
+
+/* License Type Modal Content */
+.open-License-Type-Modal-Post-content {
+    background-color: #fdfdfd;
+    margin: 3% auto;
+    padding: 40px;
+    border: none;
+    width: 85%;
+    height: 85%;
+    max-width: 1000px;
+    max-height: 85%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow-y: auto;
+    top: 30px !important;
+    animation: openLicenseTypeModalShortFadeIn 0.3s ease-in-out;
+}
+
+/* Close Icon for License Type Modal */
+.open-License-Type-Modal-Post-close-icon {
+    position: absolute !important;
+    top: 20px !important;
+    right: 25px !important;
+    font-size: 32px !important;
+    cursor: pointer !important;
+    color: #aaa !important;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.open-License-Type-Modal-Post-close-icon:hover {
+    color: #000;
+    transform: scale(1.2);
+}
+
+/* Fade-in Animation for License Type Modal */
+@keyframes openLicenseTypeModalPostFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Disable page interaction when modal is open */
+body.modal-open {
+    pointer-events: none;
+}
+
+body.modal-open #openLicenseTypeModalPost {
+    pointer-events: auto; /* Allow interaction with the modal */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Privacy and Visibility post */
+/* Privacy and Visibility post */
+/* Privacy and Visibility post */
+#privacyVisibilityPostContent {
+    display: none;
+    width: 100%;
+    max-width: 700px;
+    margin: 30px;
+    padding: 0; /* Remove padding from the main container */
+}
+
+
+
+.post-input-container-visibility {
+    margin-top: 30px !important;
+}
+
+/* Containers */
+.post-input-container-visibility,
+.post-input-container-share-settings,
+.post-input-container-comments,
+.post-input-container-viewer-interaction,
+.post-input-container-content-analytics {
+    margin-bottom: 0px !important;
+    padding: 10px; /* Reduce padding inside containers */
+    background-color: white;
+
+    width: 100%;
+    text-align: left; /* Align the content to the left */
+    margin-left: 0; /* Ensure no extra margin on the left */ 
+    padding-top: 20px !important;   
+    padding-bottom: 10px !important;
+    margin-bottom: 60px !important;
+    background-color: white;
+    border: 1px solid #c9cacc;
+    border-radius: 2px;
+}
+
+.postIcon-label-container-visibility,
+.postIcon-label-container-share-settings,
+.postIcon-label-container-comments,
+.postIcon-label-container-viewer-interaction,
+.postIcon-label-container-content-analytics {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333; /* inspired color */
+    text-align: left; /* Align the labels to the left */
+    padding-left: 0; /* Remove any padding on the left */
+    margin-left: 0; /* Ensure no extra margin on the left */
+}
+
+/* Labels and Checkboxes */
+.post-input-container-visibilitylabel,
+.post-input-container-share-settings label,
+.post-input-container-comments label,
+.post-input-container-viewer-interaction label,
+.post-input-container-content-analytics label {
+    display: inline-block;
+    margin-bottom: 5px;
+    text-align: left; /* Align the labels to the left */
+    padding-left: 0; /* Remove any padding on the left */
+    margin-left: 20px; /* Ensure no extra margin on the left */
+    font-size: 16px;
+    font-weight: solid;
+    color: black;
+}
+
+.postSub-options-of-privacy-video {
+    margin-top: 0px !important;
+    font-size: 15px !important;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+/* Info of Privacy */
+.postInfo-of-privacy {
+    margin-left: 20px; /* Match the margin-left of the respective label */
+    display: block;
+    margin-top: 5px; /* Add margin to ensure proper spacing */
+    font-size: 14px !important;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: solid;
+}
+
+/* Checkbox Containers */
+.post-input-container-visibility .postCheckbox-container,
+.post-input-container-share-settings .postCheckbox-container,
+.post-input-container-comments .postCheckbox-container,
+.post-input-container-viewer-interaction .postCheckbox-container,
+.post-input-container-content-analytics .postCheckbox-container {
+    display: flex;
+    flex-direction: column; /* Make each checkbox-container column-based */
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 5px;
+    border: 1px solid #ccc !important;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+    width: 100%;
+    text-align: left; /* Align the checkboxes to the left */
+    margin-left: 0; /* Ensure no extra margin on the left */
+}
+
+.post-input-container-visibility input[type="radio"],
+.post-input-container-share-settings input[type="radio"],
+.post-input-container-comments input[type="radio"],
+.post-input-container-viewer-interaction input[type="radio"],
+.post-input-container-content-analytics input[type="radio"] {
+    margin-right: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* Hover and Focus States */
+.postIcon-label-container-visibility:hover,
+.postIcon-label-container-share-settings:hover,
+.postIcon-label-container-comments:hover,
+.postIcon-label-container-viewer-interaction:hover,
+.postIcon-label-container-content-analytics:hover {
+    color: #0056b3;
+}
+
+.postCheckbox-containe:hover label,
+.postCheckbox-containe:focus-within label {
+    color: #0056b3;
+}
+
+/* Navigation Buttons */
+.post-privacy-Go-Back {
+    margin-top: 10px !important;
+    padding: 5px 10px;
+    margin-bottom: 10px !important;
+    margin-left: 737px !important;
+    background-color: #0078d4 !important; /* accent color */
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: center !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.post-privacy-Submit {
+    margin-top: 10px !important;
+    padding: 5px 10px;
+    margin-bottom: 20px !important;
+    margin-left: 767px !important;
+    background-color: #1f8f0e;
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: center !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.post-privacy-Go-Back:hover {
+    background-color: #005a9e !important; /*hover color */
+}
+
+.post-privacy-Submit:hover {
+    background-color: #0d690e;
+
+}
+
+/* Large Screens */
+@media (max-width: 1200px) {
+    #privacyVisibilityPostContent {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .post-privacy-Go-Back,
+    .post-privacy-Submit {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+    }
+}
+
+/* Medium Screens */
+@media (max-width: 992px) {
+    #privacyVisibilityPostContent  {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .post-privacy-Go-Back,
+    .post-privacy-Submit {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+    }
+}
+
+/* Small Screens */
+@media (max-width: 768px) {
+    #privacyVisibilityPostContent {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .post-privacy-Go-Back,
+    .post-privacy-Submit {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+        padding: 5px 10px; /* Adjust padding to ensure buttons fit */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 576px) {
+    #privacyVisibilityPostContent {
+        width: 100%;
+        padding: 0 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .post-privacy-Go-Back,
+    .post-privacy-Submit {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+        padding: 5px 10px;
+        white-space: nowrap;
+
+        
+    }
+}
+
+
+@media (min-width: 1200px) {
+    #privacyVisibilityPostContent {
+        width: 90% !important;
+        max-width: 1200px !important;
+        padding: 30px !important;
+    }
+}
+
+
+/* Responsive styles for Privacy and Visibility Section */
+@media (min-width: 1000px) and (max-width: 1199px) {
+    #privacyVisibilityPostContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 1150px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: 0 auto; /* Center align the content */
+    }
+}
+
+
+
+@media (min-width: 900px)  and (max-width: 1010px) {
+    #privacyVisibilityPostContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 1000px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: 0 auto; /* Center align the content */
+    }
+}
+
+
+@media (min-width: 400px) and (max-width: 899px) {
+    #privacyVisibilityPostContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 850px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: auto !important; /* Center align the content */
+        align-items: center !important;
+        align-content: center !important;
+    }
+}
+
+
+/* Ensure the width is always lower than the content-box */
+#privacyVisibilityPostContent {
+    width: 100%; /* Full width */
+    max-width: 800px; /* Max width for larger screens */
+    margin: 0 auto; /* Center align on larger screens */
+    padding: 0 !important; /* Remove padding */
+    box-sizing: border-box; /* Include padding/border within the width */
+}
+
+/* Align buttons to the right */
+.post-privacy-Go-Back,
+.post-privacy-Submit {
+    display: inline-block;
+    float: right;
+    margin: 10px 0 0 10px;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+
+
+/* Positioning buttons below the bottom right corner of the line */
+.post-box-controls {
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* Style for circle dots */
+.postCheckbox-container i {
+    color: rgb(189, 188, 188); /* Initially white */
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Active state for circle dots */
+.postCheckbox-container.active i {
+    color: blue; /* Turn blue when clicked */
+}
+
+/* Styles for active radio buttons and labels */
+.postCheckbox-container input[type="radio"]:checked ,
+.postCheckbox-container input[type="radio"].unchecked {
+    color: blue;
+}
+
+/* Ensure normal color when unselected */
+.postCheckbox-container input[type="radio"] + label {
+    color: #333;
+}

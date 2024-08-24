@@ -1,0 +1,2780 @@
+/*///////////////////////////*/
+/*//////////////////////////*/
+/*/////////////////////////*/
+/* Choose Media of the video tab*/
+.short-video-upload-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-left: 0px;
+}
+
+.shot-video-blue-text {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 16px !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.shot-video-blue-text:hover {
+    color: darkblue;}
+
+.short-video-upload-item {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom: 20px;
+    margin-left: 0px;
+}
+
+/* General styles for display-box */
+.display-Short-video {
+    position: relative;
+    width: 100%;
+    max-width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    margin-bottom: 10px;
+    padding: 0; /* Ensure no padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    overflow: hidden;
+    align-self: flex-start; /* Align to the left */
+}
+
+.short-video-holder {
+    position: relative;
+    width: 100%;
+    max-width: 100% !important;
+    height: 100% !important;
+    margin-bottom: 50px !important; /* Space below for frames */
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 5px !important;
+    padding: 10px !important; /* Ensure no padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    overflow: hidden;
+    align-self: flex-start; /* Align to the left */
+}
+/* Ensure the ShortBox maintains a fixed 9:16 aspect ratio without resizing */
+#ShortBox {
+    position: relative;
+    width: 100%;        /* Ensure it uses 100% of the available width */
+    width: 300px;
+    height: calc((300px * 9) / 16);    /* Maintain a height that ensures a 9:16 aspect ratio */
+    background-color: white; /* Black background for a better viewing experience */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#ShortBox video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Cover the entire area, maintaining the 9:16 aspect ratio */
+}
+
+/* Styles for the play/pause button */
+#ShortBox .video-js .vjs-big-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+/* Ensure the control bar remains unaffected */
+#ShortBox .video-js .vjs-control-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+/* Hide big play button when video is playing */
+#ShortBox .video-js.vjs-playing .vjs-big-play-button {
+    display: none;
+}
+
+/* Make sure the control bar is always visible when video is paused */
+#ShortBox .video-js.vjs-paused .vjs-control-bar {
+    display: flex;
+}
+
+
+/* Position the close icon in the top-right corner */
+.short-video-close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+    z-index: 10;
+}
+
+
+
+
+.choose-short-video-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: #1E90FF;
+}
+
+.choose-short-video-button {
+    font-size: 24px;
+}
+
+.choose-short-video-button:hover {
+    color: #104E8B;
+}
+
+.choose-short-upload-info {
+    font-size: 18px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    color: #615f5f;
+    margin-left: 0px;
+}
+
+.short-info-box-scrollable-content {
+    padding: 10px !important;
+    display: none;
+    overflow-y: auto; /* Keep scrolling enabled */
+    background-color: white;
+    border: 0.5px solid #ccc !important;
+    border-radius: 15px !important;
+    margin-bottom: 10px;
+    max-height: 200px;
+    line-height: 1.4;
+    margin-left: 0px !important;
+    max-width: 80% !important;
+    box-shadow: 0 4px 8px rgb(122, 170, 218) !important;
+    
+    /* Hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+}
+
+.short-info-box-scrollable-content::-webkit-scrollbar {
+    display: none; /* WebKit browsers (Chrome, Safari) */
+}
+
+.info-of-short {
+    font-size: 14px !important;
+    font-weight: solid !important;
+    color: #333;
+    margin-bottom: 1px !important;
+    margin-top: 0px !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: solid;
+}
+
+
+
+
+.short-video-preview-button {
+    margin-top: 10px !important;
+    padding: 5px 10px;
+    margin-bottom: 10px !important;
+    margin-left: 737px !important;
+    background-color: #0078d4 !important; /* accent color */
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: center !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.short-video-preview-button:hover {
+    background-color: #005a9e !important; /*hover color */
+}
+
+
+
+
+/* Next Button of the video details of the media tab */
+.short-next-button-of-short-video-media-tab {
+    margin-top: 10px !important;
+    padding: 5px 10px;
+    margin-bottom: 20px !important;
+    margin-left: 767px !important;
+    background-color: #0078d4 !important; /* accent color */
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: center !important;
+    transition: background-color 0.3s ease !important;
+
+}
+
+.short-next-button-of-short-video-media-tab:hover {
+    background-color: #005a9e !important; /*hover color */
+}
+
+
+/* Align buttons to the right */
+.short-video-preview-button,
+.short-next-button-of-short-video-media-tab {
+    display: inline-block;
+    float: right;
+    margin: 10px 0 0 10px;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+
+
+
+/* Video Preview Box Styling */
+.short-preview-box {
+    position: absolute;
+    top: 130px;
+    right: 30px;
+    width: 310px;
+    height: auto !important;
+    background-color: white;
+    padding: 20px;
+    overflow-y: auto;
+    border-radius: 8px;
+    display: none; /* Initially hidden */
+}
+
+/* Ensure the close button is properly styled and positioned */
+.short-close-preview-button {
+    display: none; /* Initially hidden */
+    width: 100% !important;
+    padding: 10px 0 !important;
+    margin-top: 15px !important;
+    background-color: #0078d4 !important; /* Accent color */
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 4px !important;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.short-close-preview-button:hover {
+    background-color: #005a9e !important; /* Hover color */
+}
+
+/* Header for Video Preview */
+.short-preview-box h4 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Styles for the play/pause button */
+.short-video-preview .video-js .vjs-big-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+/* Ensure the control bar remains unaffected */
+.short-video-preview .video-js .vjs-control-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+/* Hide big play button when video is playing */
+.short-video-preview .video-js.vjs-playing .vjs-big-play-button {
+    display: none;
+}
+
+/* Make sure the control bar is always visible when video is paused */
+.short-video-preview .video-js.vjs-paused .vjs-control-bar {
+    display: flex;
+}
+
+/* Add border-radius to the short video preview */
+.short-video-preview {
+    border-radius: 10px !important; /* Adjust the value as needed */
+    overflow: hidden; /* Ensure the border-radius is applied correctly */
+}
+
+
+/* Responsive styles for mid and small screens */
+@media (max-width: 992px) {
+    .short-preview-box {
+        position: static;
+        width: 350px;
+        height: 350px;
+        max-width: none;
+        margin-top: 0px !important;
+        margin-left: 0px !important;
+        margin-bottom: 0px !important;
+        margin-right: 0px !important;
+    }
+
+    .box-content {
+        position: static;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        border-left: none !important;
+        margin-top: 0px !important;
+        margin-left: 0px !important;
+        margin-bottom: 0px !important;
+        margin-right: 0px !important;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .short-preview-box {
+        width: 100%;        /* Ensure it uses 100% of the available width */
+        width: 300px;
+        max-width: 100%; /* Ensure full width */
+        height: calc((300px * 9) / 16);    /* Maintain a height that ensures a 9:16 aspect ratio */
+        margin: 0 !important; /* Remove all margins */
+        padding: 0 !important; /* Remove all padding */
+        box-sizing: border-box; /* Include padding/border within the width */
+        align-self: center !important;
+        margin: auto !important;
+        margin-bottom: 40px !important;
+
+
+
+    }
+
+
+    .box-content {
+        position: static;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        border-left: none !important;
+        margin-top: 0px !important;
+        margin-left: 0px !important;
+        margin-bottom: 0px !important;
+        margin-right: 0px !important;
+    }
+
+    .short-video-preview {
+        width: 100%; /* Full width */
+        height: auto; /* Adjust height as needed */
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        margin: 0 !important; /* Remove all margins */
+        padding: 0 !important; /* Remove all padding */
+        box-sizing: border-box; /* Include padding/border within the width */
+    }
+
+    .short-close-preview-button {
+        margin-bottom: 30px !important;
+    }
+}
+
+/* Media query to handle 576px screen size */
+@media (max-width: 576px) {
+    .short-preview-box {
+        width: 300px;
+        height: calc((300px * 9) / 16);    /* Maintain a height that ensures a 9:16 aspect ratio */
+        max-width: 100%; /* Ensure full width */
+        margin: 0 !important; /* Remove all margins */
+        padding: 0 !important; /* Remove all padding */
+        box-sizing: border-box; /* Include padding/border within the width */
+        align-self: center !important;
+        margin: auto !important;
+        margin-bottom: 40px !important;
+
+
+    }
+
+    .short-video-preview {
+        width: 100%; /* Full width */
+        height: auto; /* Adjust height as needed */
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        margin: 0 !important; /* Remove all margins */
+        padding: 0 !important; /* Remove all padding */
+        box-sizing: border-box; /* Include padding/border within the width */
+    }
+
+    .short-close-preview-button {
+        margin-bottom: 30px !important;
+    }
+
+}
+
+
+
+/* Responsive styles for Choose Media Content */
+
+@media (max-width: 1200px) {
+    #chooseShortContent {
+        width: 100% !important;
+
+    }
+    .short-video-preview-button,
+    .short-next-button-of-short-video-media-tab {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    #chooseShortContent {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .short-video-preview-button,
+    .short-next-button-of-short-video-media-tab {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    #chooseShortContent {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .short-video-preview-button,
+    .short-next-button-of-short-video-media-tab {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+        padding: 5px 10px; /* Adjust padding to ensure buttons fit */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+
+    .short-info-box-scrollable-content {
+        margin-left: 20px !important;
+    
+    }
+    
+}
+
+@media (max-width: 576px) {
+    #chooseShortContent {
+        width: 100%;
+        padding: 0 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .short-video-preview-button,
+    .short-next-button-of-short-video-media-tab {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+        padding: 5px 10px;
+        white-space: nowrap;
+    }
+
+    .short-info-box-scrollable-content {
+        margin-left: 20px !important;
+    
+    }
+    
+}
+
+@media (min-width: 1200px) {
+    #chooseShortContent{
+        width: 90% !important;
+        max-width: 1200px !important;
+        padding: 30px !important;
+    }
+}
+
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+    #chooseShortContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 1150px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: 0 auto; /* Center align the content */
+    }
+}
+
+@media (min-width: 900px)  and (max-width: 1010px) {
+    #chooseShortContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 1000px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: 0 auto; /* Center align the content */
+    }
+}
+
+
+@media (min-width: 400px) and (max-width: 899px) {
+    #chooseShortContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 850px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: auto !important; /* Center align the content */
+        align-items: center !important;
+        align-content: center !important;
+    }
+}
+
+/* Ensure the width is always lower than the content-box */
+#chooseShortContent {
+    width: 100%; /* Full width */
+    max-width: 800px; /* Max width for larger screens */
+    margin: 0 auto; /* Center align on larger screens */
+    padding: 0 !important; /* Remove padding */
+    box-sizing: border-box; /* Include padding/border within the width */
+}
+
+/* Modal Overlay */
+#ChooseShortterms {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    overflow: auto;
+}
+
+/* Modal Content */
+.choose-short-modal-terms-content {
+    background-color: #fdfdfd;
+    margin: 3% auto;
+    padding: 40px;
+    border: none;
+    width: 85%;
+    height: 85%;
+    max-width: 1000px;
+    max-height: 85%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow-y: auto;
+    top: 30px !important;
+    animation: chooseShortTermsFadeIn 0.3s ease-in-out;
+}
+
+/* Close Icon */
+.choose-short-modal-terms-close-icon {
+    position: absolute !important;
+    top: 20px !important;
+    right: 25px !important;
+    font-size: 32px !important;
+    cursor: pointer !important;
+    color: #aaa !important;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.choose-short-modal-terms-close-icon:hover {
+    color: #000;
+    transform: scale(1.2);
+}
+
+/* Fade-in Animation */
+@keyframes chooseShortTermsFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Disable page interaction when modal is open */
+body.modal-open {
+    pointer-events: none;
+}
+
+body.modal-open #ChooseShortterms {
+    pointer-events: auto; /* Allow interaction with the modal */
+}
+
+.shot-video-blue-textt {
+    color: blue;
+    cursor: pointer;
+    font-size: 15px;
+    text-decoration: underline;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: solid;
+}
+
+.shot-video-blue-text:hover {
+    color: darkblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Container for input and info */
+.short-input-container-details {
+    position: relative;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-top: 30px !important;
+}
+
+/* Info Icon */
+.fa-circle-info-short-video {
+    font-size: 16px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    color: #615f5f;
+    margin-left: 0px;
+}
+
+/* Info Box */
+.short-info-box-video {
+    padding: 10px !important;
+    display: none;
+    overflow-y: auto; /* Keep scrolling enabled */
+    background-color: white;
+    border: 0.5px solid #ccc !important;
+    border-radius: 15px !important;
+    margin-bottom: 10px;
+    max-height: 200px;
+    line-height: 1.4;
+    margin-left: 0px !important;
+    max-width: 80% !important;
+    box-shadow: 0 4px 8px rgb(122, 170, 218) !important;
+    
+    /* Hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+    
+}
+
+.short-info-box-video::-webkit-scrollbar {
+    display: none; /* WebKit browsers (Chrome, Safari) */
+}
+
+.short-info-of-detail {
+    font-size: 14px !important;
+    font-weight: solid !important;
+    color: #333;
+    margin-bottom: 1px !important;
+    margin-top: 0px !important;
+    font-family: 'Arial', sans-serif;
+}
+
+.short-contents-of-video {
+    font-size: 16px !important;
+    margin-left: 0px !important;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-weight: solid;
+}
+
+
+
+/* Title Input */
+#shortVideoTitle {
+    width: 800px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1); /* Added shadow */
+    font-size: 14px;
+    margin-bottom: 30px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+#shortVideoTitle:focus {
+    border-color: #1E90FF;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5), 0 2px 4px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    outline: none;
+}
+
+/* Description Textarea */
+#shortVideoDescriptionInput {
+    width: 800px;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1); /* Added shadow */
+    font-size: 14px;
+    resize: vertical;
+    margin-bottom: 30px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+#shortVideoDescriptionInput:focus {
+    border-color: #1E90FF;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5), 0 2px 4px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    outline: none;
+}
+
+
+
+/* Tags Input */
+#shortVideoTags {
+    width: 800px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1); /* Added shadow */
+    font-size: 14px;
+    margin-bottom: 50px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+#shortVideoTags:focus {
+    border-color: #1E90FF;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5), 0 2px 4px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    outline: none;
+}
+
+/* Category Select */
+.short-input-container-category-details {
+    position: relative;
+    margin-bottom: 5px; /* Reduced gap between each container */
+    display: flex;
+    flex-direction: row; /* Change to row for inline display */
+    align-items: center; /* Align items in the center vertically */
+}
+
+#shortVideoCategory {
+    width: 300px !important;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1); /* Added shadow */
+    font-size: 14px;
+    margin-bottom: 30px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+#shortVideoCategory:focus {
+    border-color: #1E90FF;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5), 0 2px 4px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    outline: none;
+}
+
+/* Go Back Button */
+.short-go-back-button-of-the-video-details {
+    margin-top: 10px !important;
+    padding: 5px 10px;
+    margin-bottom: 10px !important;
+    margin-left: 737px !important;
+    background-color: #0078d4 !important; /* accent color */
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: center !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.short-go-back-button-of-the-video-details:hover {
+    background-color: #005a9e !important; /*hover color */
+}
+
+/* Middle Box Next Button */
+.short-next-button-of-the-video-details {
+    margin-top: 10px !important;
+    padding: 5px 10px;
+    margin-bottom: 20px !important;
+    margin-left: 767px !important;
+    background-color: #0078d4 !important; /* accent color */
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: center !important;
+
+}
+
+.short-next-button-of-the-video-details:hover {
+    background-color: #005a9e !important; /*hover color */
+}
+
+/* Responsive styles for Video Details Content */
+
+
+@media (max-width: 1200px) {
+
+    .short-go-back-button-of-the-video-details,
+    .short-next-button-of-the-video-details {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+    }
+    /* Input fields should adjust width based on screen size */
+    #shortVideoTitle,
+    #shortVideoDescriptionInput,
+    #shortVideoTags,
+    #shortVideoCategory {
+        width: 100%;
+        max-width: 90%;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    #shortDetailsContent {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .short-go-back-button-of-the-video-details,
+    .short-next-button-of-the-video-details {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+    }
+    /* Adjust input fields to fit within smaller screens */
+    #shortVideoTitle,
+    #shortVideoDescriptionInput,
+    #shortVideoTags,
+    #shortVideoCategory {
+        width: 100%;
+        max-width: 85%;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #shortDetailsContent {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .short-go-back-button-of-the-video-details,
+    .short-next-button-of-the-video-details {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+        padding: 5px 10px; /* Adjust padding to ensure buttons fit */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+
+    .short-info-box-video {
+        margin-left: 20px !important;
+    }
+
+    /* Further reduce the width for smaller screens */
+    #shortVideoTitle,
+    #shortVideoDescriptionInput,
+    #shortVideoTags,
+    #shortVideoCategory {
+        width: 100%;
+        max-width: 80%;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .shortDetailsContent {
+        width: 100%;
+        padding: 0 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .short-info-of-detail {
+        margin-left: 20px !important;
+    }
+
+
+    .short-go-back-button-of-the-video-details,
+    .short-next-button-of-the-video-details {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+        padding: 5px 10px;
+        white-space: nowrap;
+    }
+
+    
+    .short-info-box-video {
+        margin-left: 20px !important;
+    }
+    /* Ensure input fields fit within the smallest screens */
+    #shortVideoTitle,
+    #shortVideoDescriptionInput,
+    #shortVideoTags,
+    #shortVideoCategory {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+}
+
+
+
+
+@media (min-width: 1200px) {
+    #shortDetailsContent{
+        width: 90% !important;
+        max-width: 1200px !important;
+        padding: 30px !important;
+    }
+}
+
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+    #shortDetailsContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 1150px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: 0 auto; /* Center align the content */
+    }
+}
+
+
+@media (min-width: 900px)  and (max-width: 1010px) {
+    #shortDetailsContent{
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 1000px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: 0 auto; /* Center align the content */
+    }
+}
+
+
+@media (min-width: 400px) and (max-width: 899px) {
+    #shortDetailsContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 850px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: auto !important; /* Center align the content */
+        align-items: center !important;
+        align-content: center !important;
+    }
+}
+
+
+
+/* Ensure the width is always lower than the content-box */
+#shortDetailsContent{
+    width: 100%; /* Full width */
+    max-width: 800px; /* Max width for larger screens */
+    margin: 0 auto; /* Center align on larger screens */
+    padding: 0 !important; /* Remove padding */
+    box-sizing: border-box; /* Include padding/border within the width */
+
+}
+
+/* Align buttons to the right */
+.short-go-back-button-of-the-video-details,
+.short-next-button-of-the-video-details {
+    display: inline-block;
+    float: right;
+    margin: 10px 0 0 10px;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.short-choose-media-line-details {
+    display: block;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+/* Positioning buttons below the bottom right corner of the line */
+.short-middle-box-controls-details {
+    text-align: right;
+    margin-top: 10px;
+}
+/* General styles for input fields to be responsive */
+#shortVideoTitle,
+#shortVideoDescriptionInput,
+#shortVideoTags,
+#shortVideoCategory {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*//////////////////////*/
+/*//////////////////////*/
+/*//////////////////////*/
+/*//////////////////////*/
+/*//////////////////////*/
+/*//////////////////////*/
+
+/* advanced details of the short tab */
+/* advanced details of the short tab */
+/* Container for input and info short */
+.advanced-details-input-container-short {
+    position: relative;
+    margin-top: 30px; /* Reduced gap between each container */
+    margin-left: 0px !important;
+}
+
+
+/* Video Quality (Video Resolution Section) */
+.advanced-details-input-container-box-video-age-short,
+.advanced-details-input-container-box-video-warnings-short,
+.advanced-video-age-restrictions-modal-content-short {
+    width: 100% !important;
+    margin-bottom: 80px !important; /* Adjust margin as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px !important; /* Add padding inside the box */
+    padding-bottom: 0px !important;
+    background-color: white;
+
+}
+
+
+
+.advanced-details-input-container-box-video-license-box-short {
+    width: 100% !important;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px !important; /* Add padding inside the box */
+    padding-bottom: 0px !important;
+    background-color: white;
+
+}
+
+.advanced-content-warning-label-short,
+.advanced-details-age-restriction-label-short {
+    margin-bottom: 30px !important; /* Adjust margin as needed */
+
+}
+
+
+
+.sub-options-of-advanced-video-four-short {
+    font-size: 15px !important;
+    font-weight: solid;
+    color: #333;
+    margin-top: 10px !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.circle-dot-advanced-details-short {
+    margin-left: 20px; /* Adjust as needed */
+}
+
+.circle-dot-advanced-details-short div {
+    display: flex; /* Align radio button and label horizontally */
+    align-items: center; /* Center-align the radio button and label vertically */
+    margin-bottom: 10px; /* Space between each option */
+}
+
+.circle-dot-advanced-details-short input[type="radio"] {
+    margin-right: 10px; /* Space between radio button and label */
+}
+
+.contents-of-advanced-video-short {
+    font-size: 16px !important;
+    font-weight: solid !important;
+    margin-left: 0px !important;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.info-of-advanced-short {
+    font-size: 14px !important;
+    color: #333;
+    margin-bottom: 1px !important;
+    margin-top: 0px !important;
+    font-family: 'Arial', sans-serif;
+    font-weight: solid;
+}
+
+/* Info Box */
+.info-box-advanced-details-short {
+    padding: 10px !important;
+    display: none;
+    overflow-y: auto; /* Keep scrolling enabled */
+    background-color: white;
+    border: 0.5px solid #ccc !important;
+    border-radius: 15px !important;
+    margin-bottom: 10px;
+    max-height: 200px;
+    line-height: 1.4;
+    margin-left: 0px !important;
+    max-width: 80% !important;
+    box-shadow: 0 4px 8px rgb(122, 170, 218) !important;
+        
+    /* Hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+}
+.info-box-advanced-details-short::-webkit-scrollbar {
+    display: none; /* WebKit browsers (Chrome, Safari) */
+}
+
+
+/* Flex container for icon and label */
+.icon-label-container-short {
+    display: flex;
+    align-items: center; /* Aligns icon and label vertically centered */
+    margin-bottom: 5px; /* Space between label and input box */
+}
+
+#shortLanguages {
+    width: 300px !important;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added shadow */
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+#additionalLanguagesShort {
+    width: 300px !important;
+    max-height: 150px;
+    margin-bottom: 80px !important; /* Adjust margin as needed */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added shadow */
+    font-size: 14px;
+}
+
+#shortLanguages:focus,
+#additionalLanguagesShort:focus {
+    border-color: #1E90FF;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+    outline: none;
+}
+
+#peopleFeaturedShort {
+    width: 800px;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc !important;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added shadow */
+    font-size: 14px;
+    resize: vertical;
+    margin-bottom: 80px !important; /* Adjust margin as needed */
+}
+
+#peopleFeaturedShort:focus {
+    border-color: #1E90FF;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+    outline: none;
+}
+
+/* Keywords for SEO */
+#seoKeywordsShort {
+    width: 800px;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added shadow */
+    font-size: 14px;
+    resize: vertical;
+    margin-bottom: 80px !important; /* Adjust margin as needed */
+}
+
+#seoKeywordsShort:focus {
+    border-color: #1E90FF;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+    outline: none;
+}
+
+#locationTagsShort {
+    width: 800px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added shadow */
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+#locationTagsShort:focus {
+    border-color: #1E90FF;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+    outline: none;
+}
+
+/* Navigation Buttons */
+.short-go-back-button-of-advanced-short {
+    margin-top: 10px !important;
+    padding: 5px 10px;
+    margin-bottom: 10px !important;
+    margin-left: 737px;
+    background-color: #0078d4 !important; /* accent color */
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    font-size: 16px;
+    text-align: center !important;
+    transition: background-color 0.3s ease !important;
+}
+
+
+.short-go-back-button-of-advanced-short:hover {
+    background-color: #005a9e !important; /*hover color */
+}
+
+.short-next-button-of-advanced-short {
+    margin-top: 10px !important;
+    padding: 5px 10px;
+    margin-bottom: 20px !important;
+    margin-left: 767px !important;
+    background-color: #0078d4 !important; /* accent color */
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: center !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.short-next-button-of-advanced-short:hover {
+    background-color: #005a9e !important; /*hover color */
+}
+
+
+
+/* Responsive styles for Advanced Details Content */
+
+@media (max-width: 1200px) {
+    #advanced-shortContent {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .short-go-back-button-of-advanced-short,
+    .short-next-button-of-advanced-short {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+    }
+    /* Adjust input fields for large screens */
+    #shortLanguages,
+    #additionalLanguagesShort,
+    #peopleFeaturedShort,
+    #seoKeywordsShort,
+    #locationTagsShort {
+        width: 100%;
+        max-width: 85%;
+    }
+}
+
+@media (max-width: 992px) {
+    #advanced-shortContent {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .short-go-back-button-of-advanced-short,
+    .short-next-button-of-advanced-short{
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+    }
+    /* Adjust input fields for medium screens */
+    #shortLanguages,
+    #additionalLanguagesShort,
+    #peopleFeaturedShort,
+    #seoKeywordsShort,
+    #locationTagsShort {
+        width: 100%;
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    #advanced-shortContent {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .short-go-back-button-of-advanced-short,
+    .short-next-button-of-advanced-short{
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+        padding: 5px 10px; /* Adjust padding to ensure buttons fit */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+    /* Adjust input fields for small screens */
+    #shortLanguages,
+    #additionalLanguagesShort,
+    #peopleFeaturedShort,
+    #seoKeywordsShort,
+    #locationTagsShort {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .info-box-advanced-details-short {
+        margin-left: 20px !important;
+    }
+    
+}
+
+@media (max-width: 576px) {
+    #advanced-shortContent {
+        width: 100%;
+        padding: 0 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .short-go-back-button-of-advanced-short,
+    .short-next-button-of-advanced-short {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+        padding: 5px 10px;
+        white-space: nowrap;
+    }
+    /* Ensure input fields fit within the smallest screens */
+    #shortLanguages,
+    #additionalLanguagesShort,
+    #peopleFeaturedShort,
+    #seoKeywordsShort,
+    #locationTagsShort {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .info-box-advanced-details-short {
+        margin-left: 20px !important;
+    }
+
+}
+
+
+
+
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .advanced-details-input-container-box-video-warnings-short,
+    .advanced-details-input-container-box-video-license-box-short,
+    .advanced-details-input-container-box-video-age-short,
+    .advanced-details-input-container-short {
+        width: 100% !important;
+        padding: 8px;
+    }
+
+    .circle-dot-advanced-details-short {
+        margin-left: 15px; /* Adjust as needed */
+    }
+
+    .circle-dot-advanced-details-short div {
+        margin-bottom: 8px; /* Adjust space between each option */
+    }
+
+
+}
+
+@media (max-width: 992px) {
+    .advanced-details-input-container-box-video-warnings-short,
+    .advanced-details-input-container-box-video-license-box-short,
+    .advanced-details-input-container-box-video-age-short,
+    .advanced-details-input-container-short{
+        width: 100% !important;
+        padding: 8px;
+    }
+
+    .circle-dot-advanced-details-short {
+        margin-left: 10px; /* Adjust as needed */
+    }
+
+    .circle-dot-advanced-details-short div {
+        margin-bottom: 8px; /* Adjust space between each option */
+    }
+
+
+}
+
+@media (max-width: 768px) {
+    .advanced-details-input-container-box-video-warnings-short,
+    .advanced-details-input-container-box-video-license-box-short,
+    .advanced-details-input-container-box-video-age-short,
+    .advanced-details-input-container-short {
+        width: 100% !important;
+        padding: 6px;
+    }
+
+    .circle-dot-advanced-details-short {
+        margin-left: 10px; /* Adjust as needed */
+    }
+
+    .circle-dot-advanced-details-short div {
+        margin-bottom: 6px; /* Adjust space between each option */
+    }
+
+
+}
+
+@media (max-width: 576px) {
+    .advanced-details-input-container-box-video-warnings-short,
+    .advanced-details-input-container-box-video-license-box-short,
+    .advanced-details-input-container-box-video-age-short,
+    .advanced-details-input-container-short {
+        width: 100% !important;
+        padding: 4px;
+    }
+
+    .circle-dot-advanced-details-short {
+        margin-left: 5px; /* Adjust as needed */
+    }
+
+    .circle-dot-advanced-details-short div {
+        margin-bottom: 4px; /* Adjust space between each option */
+    }
+}
+
+
+@media (max-width: 480px) {
+    .advanced-details-input-container-box-video-warnings-short,
+    .advanced-details-input-container-box-video-license-box-short,
+    .advanced-details-input-container-box-video-age-short,
+    .advanced-details-input-container-short {
+        width: 100% !important;
+        padding: 4px;
+    }
+
+    .circle-dot-advanced-details-short {
+        margin-left: 5px; /* Adjust as needed */
+    }
+
+    .circle-dot-advanced-details-short div {
+        margin-bottom: 4px; /* Adjust space between each option */
+    }
+
+}
+
+@media (max-width: 360px) {
+    .advanced-details-input-container-box-video-warnings-short,
+    .advanced-details-input-container-box-video-license-box-short,
+    .advanced-details-input-container-box-video-age-short,
+    .advanced-details-input-container-short {
+        width: 100% !important;
+        padding: 2px;
+    }
+
+    .circle-dot-advanced-details-short {
+        margin-left: 2px; /* Adjust as needed */
+    }
+
+    .circle-dot-advanced-details-short div {
+        margin-bottom: 2px; /* Adjust space between each option */
+    }
+
+
+}
+
+
+
+@media (min-width: 1200px) {
+    #advanced-shortContent{
+        width: 90% !important;
+        max-width: 1200px !important;
+        padding: 30px !important;
+    }
+}
+
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+    #advanced-shortContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 1150px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: 0 auto; /* Center align the content */
+    }
+}
+
+
+@media (min-width: 900px)  and (max-width: 1010px) {
+    #advanced-shortContent{
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 1000px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: 0 auto; /* Center align the content */
+    }
+}
+
+
+@media (min-width: 400px) and (max-width: 899px) {
+    #advanced-shortContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 850px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: auto !important; /* Center align the content */
+        align-items: center !important;
+        align-content: center !important;
+    }
+}
+
+
+/* Ensure the width is always lower than the content-box */
+#advanced-shortContent {
+    width: 100%; /* Full width */
+    max-width: 800px; /* Max width for larger screens */
+    margin: 0 auto; /* Center align on larger screens */
+    padding: 0 !important; /* Remove padding */
+    box-sizing: border-box; /* Include padding/border within the width */
+}
+
+/* Align buttons to the right */
+.short-go-back-button-of-advanced-short,
+.short-next-button-of-advanced-short {
+    display: inline-block;
+    float: right;
+    margin: 10px 0 0 10px;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.short-choose-media-line-details {
+    display: block;
+    border-top: 1px solid #d0e7ff;
+    margin-top: 20px;
+}
+
+/* Positioning buttons below the bottom right corner of the line */
+.short-middle-box-controls-details {
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* General styles for input fields to be responsive */
+#shortLanguages,
+#additionalLanguagesShort,
+#peopleFeaturedShort,
+#seoKeywordsShort,
+#locationTagsShort {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* General styles for textareas to be responsive */
+.advanced-details-textarea-short {
+    width: 100%;
+    max-width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    resize: vertical;
+    margin-bottom: 30px;
+}
+
+
+
+/* Modal Overlay */
+#ChooseShortConentWarnings {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    overflow: auto;
+}
+
+/* Modal Content */
+.Choose-Short-Advanced-terms-content {
+    background-color: #fdfdfd;
+    margin: 3% auto;
+    padding: 40px;
+    border: none;
+    width: 85%;
+    height: 85%;
+    max-width: 1000px;
+    max-height: 85%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow-y: auto;
+    top: 30px !important;
+    animation: chooseContentWarningsFadeIn 0.3s ease-in-out;
+}
+
+/* Close Icon */
+.Choose-Short-Conent-Warnings-close-icon {
+    position: absolute !important;
+    top: 20px !important;
+    right: 25px !important;
+    font-size: 32px !important;
+    cursor: pointer !important;
+    color: #aaa !important;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.Choose-Short-Conent-Warnings-close-icon:hover {
+    color: #000;
+    transform: scale(1.2);
+}
+
+/* Fade-in Animation */
+@keyframes chooseContentWarningsFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Disable page interaction when modal is open */
+body.modal-open {
+    pointer-events: none;
+}
+
+body.modal-open #ChooseShortConentWarnings {
+    pointer-events: auto; /* Allow interaction with the modal */
+}
+
+.learn-more-link-short {
+    color: blue;
+    cursor: pointer;
+    font-weight: solid;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+.para-of-advanced-details-short {
+    font-weight: solid;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+.learn-more-link-short:hover {
+    color: darkblue;
+}
+
+
+
+
+/* Age Restrictions Modal Overlay */
+#AgeRestrictionsModalShort {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    overflow: auto;
+}
+
+/* Age Restrictions Modal Content */
+.Age-Restrictions-Modal-Short-content {
+    background-color: #fdfdfd;
+    margin: 3% auto;
+    padding: 40px;
+    border: none;
+    width: 85%;
+    height: 85%;
+    max-width: 1000px;
+    max-height: 85%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow-y: auto;
+    top: 30px !important;
+    animation: AgeRestrictionsModalShortFadeIn 0.3s ease-in-out;
+}
+
+/* Close Icon for Age Restrictions Modal */
+.Age-Restrictions-Modal-Short-close-icon {
+    position: absolute !important;
+    top: 20px !important;
+    right: 25px !important;
+    font-size: 32px !important;
+    cursor: pointer !important;
+    color: #aaa !important;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.Age-Restrictions-Modal-Short-close-icon:hover {
+    color: #000;
+    transform: scale(1.2);
+}
+
+/* Fade-in Animation for Age Restrictions Modal */
+@keyframes AgeRestrictionsModalShortFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Disable page interaction when modal is open */
+body.modal-open {
+    pointer-events: none;
+}
+
+body.modal-open #AgeRestrictionsModalShort {
+    pointer-events: auto; /* Allow interaction with the modal */
+}
+
+/* License Type Modal Overlay */
+#openLicenseTypeModalShort {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    overflow: auto;
+}
+
+/* License Type Modal Content */
+.open-License-Type-Modal-Short-content {
+    background-color: #fdfdfd;
+    margin: 3% auto;
+    padding: 40px;
+    border: none;
+    width: 85%;
+    height: 85%;
+    max-width: 1000px;
+    max-height: 85%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow-y: auto;
+    top: 30px !important;
+    animation: openLicenseTypeModalShortFadeIn 0.3s ease-in-out;
+}
+
+/* Close Icon for License Type Modal */
+.open-License-Type-Modal-Short-close-icon {
+    position: absolute !important;
+    top: 20px !important;
+    right: 25px !important;
+    font-size: 32px !important;
+    cursor: pointer !important;
+    color: #aaa !important;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.open-License-Type-Modal-Short-close-icon:hover {
+    color: #000;
+    transform: scale(1.2);
+}
+
+/* Fade-in Animation for License Type Modal */
+@keyframes openLicenseTypeModalShortFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Disable page interaction when modal is open */
+body.modal-open {
+    pointer-events: none;
+}
+
+body.modal-open #openLicenseTypeModalShort {
+    pointer-events: auto; /* Allow interaction with the modal */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Privacy and Visibility short */
+/* Privacy and Visibility short */
+/* Privacy and Visibility short */
+#privacyVisibilityContent {
+    display: none;
+    width: 100%;
+    max-width: 700px;
+    margin: 30px;
+    padding: 0; /* Remove padding from the main container */
+}
+
+.section-names {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left; /* Align the section title to the left */
+    padding-left: 0; /* Remove any padding on the left */
+    margin-left: 0; /* Remove any left margin */
+}
+
+.short-input-container-visibility {
+    margin-top: 30px !important;
+}
+
+/* Containers */
+.short-input-container-visibility,
+.short-input-container-share-settings,
+.short-input-container-comments,
+.short-input-container-viewer-interaction,
+.short-input-container-content-analytics {
+    margin-bottom: 0px !important;
+    padding: 10px; /* Reduce padding inside containers */
+    background-color: white;
+
+    width: 100%;
+    text-align: left; /* Align the content to the left */
+    margin-left: 0; /* Ensure no extra margin on the left */ 
+    padding-top: 20px !important;   
+    padding-bottom: 10px !important;
+    margin-bottom: 60px !important;
+    background-color: white;
+    border: 1px solid #c9cacc;
+    border-radius: 2px;
+}
+
+.shortIcon-label-container-visibility,
+.shortIcon-label-container-share-settings,
+.shortIcon-label-container-comments,
+.shortIcon-label-container-viewer-interaction,
+.shortIcon-label-container-content-analytics {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333; /* inspired color */
+    text-align: left; /* Align the labels to the left */
+    padding-left: 0; /* Remove any padding on the left */
+    margin-left: 0; /* Ensure no extra margin on the left */
+}
+
+/* Labels and Checkboxes */
+.short-input-container-visibility label,
+.short-input-container-share-settings label,
+.short-input-container-comments label,
+.short-input-container-viewer-interaction label,
+.short-input-container-content-analytics label {
+    display: inline-block;
+    margin-bottom: 5px;
+    text-align: left; /* Align the labels to the left */
+    padding-left: 0; /* Remove any padding on the left */
+    margin-left: 20px; /* Ensure no extra margin on the left */
+    font-size: 16px;
+    font-weight: solid;
+    color: black;
+}
+
+.shortSub-options-of-privacy-video {
+    margin-top: 0px !important;
+    font-size: 15px !important;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+/* Info of Privacy */
+.shortInfo-of-privacy {
+    margin-left: 20px; /* Match the margin-left of the respective label */
+    display: block;
+    margin-top: 5px; /* Add margin to ensure proper spacing */
+    font-size: 14px !important;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: solid;
+}
+
+/* Checkbox Containers */
+.short-input-container-visibility .shortCheckbox-container,
+.short-input-container-share-settings .shortCheckbox-container,
+.short-input-container-comments .shortCheckbox-container,
+.short-input-container-viewer-interaction .shortCheckbox-container,
+.short-input-container-content-analytics .shortCheckbox-container {
+    display: flex;
+    flex-direction: column; /* Make each checkbox-container column-based */
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 5px;
+    border: 1px solid #ccc !important;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+    width: 100%;
+    text-align: left; /* Align the checkboxes to the left */
+    margin-left: 0; /* Ensure no extra margin on the left */
+}
+
+.short-input-container-visibility input[type="radio"],
+.short-input-container-share-settings input[type="radio"],
+.short-input-container-comments input[type="radio"],
+.short-input-container-viewer-interaction input[type="radio"],
+.short-input-container-content-analytics input[type="radio"] {
+    margin-right: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* Hover and Focus States */
+.shortIcon-label-container-visibility:hover,
+.shortIcon-label-container-share-settings:hover,
+.shortIcon-label-container-comments:hover,
+.shortIcon-label-container-viewer-interaction:hover,
+.shortIcon-label-container-content-analytics:hover {
+    color: #0056b3;
+}
+
+.shortCheckbox-containe:hover label,
+.shortCheckbox-containe:focus-within label {
+    color: #0056b3;
+}
+
+/* Navigation Buttons */
+.short-go-back-button-privacy {
+    margin-top: 10px !important;
+    padding: 5px 10px;
+    margin-bottom: 10px !important;
+    margin-left: 737px !important;
+    background-color: #0078d4 !important; /* accent color */
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: center !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.short-next-button-privacy {
+    margin-top: 10px !important;
+    padding: 5px 10px;
+    margin-bottom: 20px !important;
+    margin-left: 767px !important;
+    background-color: #0078d4 !important; /* accent color */
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: center !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.short-go-back-button-privacy:hover,
+.short-next-button-privacy:hover {
+    background-color: #005a9e !important; /*hover color */
+}
+
+
+
+/* Large Screens */
+@media (max-width: 1200px) {
+    #privacyVisibilityContent {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .short-go-back-button-privacy,
+    .short-next-button-privacy {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+    }
+}
+
+/* Medium Screens */
+@media (max-width: 992px) {
+    #privacyVisibilityContent  {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .short-go-back-button-privacy,
+    .short-next-button-privacy {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+    }
+}
+
+/* Small Screens */
+@media (max-width: 768px) {
+    #privacyVisibilityContent  {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .short-go-back-button-privacy,
+    .short-next-button-privacy{
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+        padding: 5px 10px; /* Adjust padding to ensure buttons fit */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 576px) {
+    #privacyVisibilityContent  {
+        width: 100%;
+        padding: 0 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .short-go-back-button-privacy,
+    .short-next-button-privacy{
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+        padding: 5px 10px;
+        white-space: nowrap;
+
+        
+    }
+}
+
+
+@media (min-width: 1200px) {
+    #privacyVisibilityContent {
+        width: 90% !important;
+        max-width: 1200px !important;
+        padding: 30px !important;
+    }
+}
+
+
+/* Responsive styles for Privacy and Visibility Section */
+@media (min-width: 1000px) and (max-width: 1199px) {
+    #privacyVisibilityContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 1150px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: 0 auto; /* Center align the content */
+    }
+}
+
+
+
+@media (min-width: 900px)  and (max-width: 1010px) {
+    #privacyVisibilityContent{
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 1000px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: 0 auto; /* Center align the content */
+    }
+}
+
+
+@media (min-width: 400px) and (max-width: 899px) {
+    #privacyVisibilityContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 850px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: auto !important; /* Center align the content */
+        align-items: center !important;
+        align-content: center !important;
+    }
+}
+
+
+/* Ensure the width is always lower than the content-box */
+#privacyVisibilityContent  {
+    width: 100%; /* Full width */
+    max-width: 800px; /* Max width for larger screens */
+    margin: 0 auto; /* Center align on larger screens */
+    padding: 0 !important; /* Remove padding */
+    box-sizing: border-box; /* Include padding/border within the width */
+}
+
+/* Align buttons to the right */
+.short-go-back-button-privacy,
+.short-next-button-privacy{
+    display: inline-block;
+    float: right;
+    margin: 10px 0 0 10px;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Line under Privacy and Visibility section */
+.short-choose-media-line-details {
+    display: block;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+/* Positioning buttons below the bottom right corner of the line */
+.short-middle-box-controls-details {
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* Style for circle dots */
+.shortCheckbox-container i {
+    color: rgb(189, 188, 188); /* Initially white */
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Active state for circle dots */
+.shortCheckbox-container.active i {
+    color: blue; /* Turn blue when clicked */
+}
+
+/* Styles for active radio buttons and labels */
+.shortCheckbox-container input[type="radio"]:checked ,
+.shortCheckbox-container input[type="radio"].unchecked {
+    color: blue;
+}
+
+/* Ensure normal color when unselected */
+.shortCheckbox-container input[type="radio"] + label {
+    color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*////////////////////////////*/
+/*///////////////////////////*/
+/*//////////////////////////*/
+/*Monetization of the video Tab*/
+#monetizationshortContent {
+    display: none;
+}
+
+#monetizationshortContent .section-names {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.shortMonet-options-video {
+    font-weight: solid;
+    margin-left: 20px !important;
+    line-height: 1.4;
+    color: black;
+    font-size: 16px !important;
+
+}
+
+.shortInfo-of-mone-video {
+    font-size: 14px !important;
+    margin-top: 5px !important;
+    margin-left: 20px !important;
+    color: #333;
+}
+
+
+
+.shortInput-container-monetization {
+    margin-bottom: 0px;
+    padding: 10px;
+    background-color: white;
+    width: 100%;
+    text-align: left;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-top: 20px !important;
+    padding-bottom: 10px !important;
+    margin-bottom: 60px !important;
+    background-color: white;
+    border: 1px solid #c9cacc;
+    border-radius: 2px;
+}
+
+.shortInput-container-monetization-of-short-logo {
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+}
+
+/* Styling the existing content */
+.shortLogo-label-container-monetization-of-short {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+.shortInput-boxes-monet-video {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fdfdfd !important;
+    margin-left: 0px !important;
+    margin-bottom: 20px !important;
+    transition: background-color 0.3s ease !important;
+    cursor: pointer;
+}
+
+.shortInput-container-monetization input[type="radio"] {
+    margin-right: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.shortInput-container-monetization label {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-left: 0px;
+}
+
+.shortContent-of-monet-video {
+    font-weight: bold !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: #333;
+    margin-left: 20px !important;
+}
+
+.shortContent-of-monet-video-sub {
+    margin-left: 20px !important;
+    font-weight: bold;
+    font-size: 15px;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+}
+
+
+.shortInput-container-monetization input[type="text"],
+.shortInput-container-monetization textarea {
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: calc(100% - 40px);
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shortInput-container-monetization input[type="text"]:focus,
+.shortInput-container-monetization textarea:focus {
+    border-color: #1E90FF;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+    outline: none;
+}
+
+#monetizationshortContent button {
+    margin-left: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.short-go-back-button-of-monetization {
+    margin-top: 10px !important;
+    padding: 5px 10px;
+    margin-bottom: 10px !important;
+    margin-left: 737px !important;
+    background-color: #0078d4 !important; /* accent color */
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: center !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.short-go-back-button-of-monetization:hover {
+    background-color: #005a9e !important;
+}
+
+.short-submit-button-of-monetization {
+    margin-top: 10px !important;
+    padding: 5px 10px;
+    margin-bottom: 20px !important;
+    margin-left: 767px !important;
+    background-color: #1f8f0e;
+    color: white;
+    border: none !important;
+    outline: none !important;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: center !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.short-submit-button-of-monetization:hover {
+    background-color: #0d690e;
+}
+
+
+/* Responsive styles for Monetization of Choose Media Section */
+@media (max-width: 1200px) {
+    #monetizationshortContent {
+        width: 85%;
+        padding: 0 10px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .short-go-back-button-of-monetization,
+    .short-submit-button-of-monetization {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    #monetizationshortContent {
+        width: 80%;
+        padding: 0 10px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .short-go-back-button-of-monetization,
+    .short-submit-button-of-monetization {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    #monetizationshortContent {
+        width: 75%;
+        padding: 0 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .short-go-back-button-of-monetization,
+    .short-submit-button-of-monetization {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+        padding: 5px 10px; /* Adjust padding to ensure buttons fit */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+}
+
+@media (max-width: 576px) {
+    #monetizationshortContent {
+        width: 100%;
+        padding: 0 10px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .short-go-back-button-of-monetization,
+    .short-submit-button-of-monetization {
+        display: inline-block;
+        float: right;
+        margin: 10px 0 0 10px;
+        padding: 5px 10px;
+        white-space: nowrap;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    #monetizationshortContent {
+        width: 90% !important;
+        max-width: 1200px !important;
+        padding: 30px !important;
+    }
+}
+
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+    #monetizationshortContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 1150px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: 0 auto; /* Center align the content */
+    }
+}
+
+
+
+@media (min-width: 900px)  and (max-width: 1010px) {
+    #monetizationshortContent{
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 1000px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: 0 auto; /* Center align the content */
+    }
+}
+
+
+@media (min-width: 400px) and (max-width: 899px) {
+    #monetizationshortContent {
+        width: 90% !important; /* Slightly wider for this screen size range */
+        max-width: 850px !important; /* Adjust the max width */
+        padding: 25px !important; /* Moderate padding for spacing */
+        margin: auto !important; /* Center align the content */
+        align-items: center !important;
+        align-content: center !important;
+    }
+}
+
+#monetizationshortContent {
+    width: 100%; /* Full width */
+    max-width: 800px; /* Max width for larger screens */
+    margin: 0 auto; /* Center align on larger screens */
+    padding: 0 !important; /* Remove padding */
+    box-sizing: border-box; /* Include padding/border within the width */
+}
+
+.short-go-back-button-of-monetization,
+.short-submit-button-of-monetization {
+    display: inline-block;
+    float: right;
+    margin: 10px 0 0 10px;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+.short-choose-media-line-details {
+    display: block;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+/* Positioning buttons below the bottom right corner of the line */
+.short-middle-box-controls-details {
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* Monetization Modal Overlay */
+.short-Open-Monetization-Modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    overflow: auto;
+}
+
+/* Monetization Modal Content */
+.short-Open-Monetization-Modal-content {
+    background-color: #fdfdfd;
+    margin: 3% auto;
+    padding: 40px;
+    border: none;
+    width: 85%;
+    height: 85%;
+    max-width: 1000px;
+    max-height: 85%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow-y: auto;
+    top: 30px !important;
+    animation: shortOpenMonetizationModalFadeIn 0.3s ease-in-out;
+}
+
+/* Close Icon for Monetization Modal */
+.short-Open-Monetization-Modal-close-icon {
+    position: absolute !important;
+    top: 20px !important;
+    right: 25px !important;
+    font-size: 32px !important;
+    cursor: pointer !important;
+    color: #aaa !important;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.short-Open-Monetization-Modal-close-icon:hover {
+    color: #000;
+    transform: scale(1.2);
+}
+
+/* Fade-in Animation for Monetization Modal */
+@keyframes shortOpenMonetizationModalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Disable page interaction when modal is open */
+body.modal-open {
+    pointer-events: none;
+}
+
+body.modal-open .short-Open-Monetization-Modal {
+    pointer-events: auto; /* Allow interaction with the modal */
+}
+
+
+.short-Learn-more-link {
+    color: blue;
+    font-size: 15px;
+    font-weight: solid;
+    cursor: pointer;
+    text-decoration: underline;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.short-Learn-more-link:hover {
+    color: darkblue;
+}
+
+

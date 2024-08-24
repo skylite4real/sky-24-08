@@ -1,0 +1,170 @@
+/* Dashboard Section Styles */
+.dashboard-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Softer background color for the dashboard */
+    z-index: 1000; /* Ensure it appears above other content */
+    display: none; /* Initially hidden, will be shown with JavaScript */
+    flex-direction: column; /* Stack header and content vertically */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); /* Inner shadow for depth */
+}
+
+/* Dashboard Header */
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #ffffff; /* White background for the header */
+    top: 0;
+    z-index: 1001; /* Ensure it stays on top during scroll */
+    border-bottom: 1px solid #ccc;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+    display: flex;
+    height: calc(100% - 60px); /* Adjust height to account for the header */
+    padding: 20px;
+    gap: 15px; /* Space between columns */
+}
+
+/* Left Column */
+.left-column {
+    width: 40%; /* 40% width */
+    display: flex;
+    flex-direction: column; /* Stack boxes vertically */
+    gap: 15px; /* Space between boxes */
+}
+
+/* Manage Content Display Box */
+.manage-content-display-box {
+    width: 100%; /* Full width of the left column */
+    height: 40%; /* 40% height of the left column */
+    background-color: white; /* Background color of the box */
+    padding: 20px; /* Padding inside the box */
+    display: flex;
+    flex-direction: column; /* Arrange content inside the box vertically */
+    margin-top: 0px !important;
+    border-radius: 1px; /* 1px rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for floating effect */
+    border: 1px solid #ccc;
+
+}
+
+
+
+/* real-time-content-display-box */
+.real-time-content-display-box {
+    width: 60%; /* 60% width */
+    height: 100%; /* Full height of the content area */
+    background-color: white; /* Background color for the right box */
+    padding: 20px; /* Padding inside the box */
+    display: flex;
+    flex-direction: column; /* Arrange content inside the box vertically */
+    border-radius: 1px; /* 1px rounded corners */
+    border: none; /* Remove unnecessary borders */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for floating effect */
+    border: 1px solid #ccc;
+
+}
+
+
+/* Close Dashboard Icon */
+.close-dashboard-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 15px;
+    color: #333;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.close-dashboard-icon:hover {
+    color: #000; /* Darken color on hover */
+}
+
+/* Utility class to make the section full screen */
+.full-screen {
+    display: block; /* Ensure it's displayed when this class is added */
+}
+
+/* Tabs Container */
+.user-content-display-tabs, .real-time-content-display-tabs {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f3f4f6; /* Light background for tabs */
+    border-bottom: 1px solid #ddd;
+    border-radius: 1px 1px 0 0; /* 1px rounded top corners */
+    overflow: hidden; /* Clip overflow for clean corners */
+}
+
+/* Tab Button */
+.user-content-display-video-tab,
+.user-content-display-shorts-tab,
+.user-content-display-posts-tab,
+.real-time-tab {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f3f4f6;
+    border: none !important;
+    outline: none !important;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth background and transform transition */
+    font-size: 16px; /* Slightly larger text for better readability */
+    color: #333; /* Consistent text color */
+    border-radius: 1px; /* 1px border radius */
+}
+
+/* Active Tab */
+.user-content-display-video-tab.active,
+.user-content-display-shorts-tab.active,
+.user-content-display-posts-tab.active,
+.real-time-tab.active {
+    background-color: #f3f4f6;
+    font-weight: bold;
+    color: blue; /* Darker text color for active tab */
+    box-shadow: inset 0 -2px 0 blue; /* Bottom border to highlight active tab */
+}
+
+/* Tab Hover Effect */
+.user-content-display-video-tab:hover,
+.user-content-display-shorts-tab:hover,
+.user-content-display-posts-tab:hover,
+.real-time-tab:hover {
+    background-color: #eaeaea; /* No background color change on hover */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+/* user-content-display-box adjustments */
+.user-content-display-box {
+    width: 100%;
+    height: 60%;
+    background-color: white;
+    padding: 0; /* Remove padding to accommodate tabs */
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    border-radius: 1px; /* 1px rounded corners */
+    overflow: hidden; /* Clip overflow for clean corners */
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for floating effect */
+
+
+}
+
+/* Tab Content */
+.user-content-display-tab-content,
+.real-time-tab-content {
+    display: none;
+    padding: 20px;
+    flex-grow: 1; /* Ensure content takes up remaining space */
+}
+
+.user-content-display-tab-content.active,
+.real-time-tab-content.active {
+    display: flex;
+    flex-direction: column; /* Arrange content inside the tab vertically */
+}

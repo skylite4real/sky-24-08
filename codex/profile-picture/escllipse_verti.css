@@ -1,0 +1,33 @@
+
+/* CSS for Options Dropdown */
+.options-container {
+    position: relative;
+}
+
+.options-dropdown {
+    display: none; /* Initially hide the dropdown */
+    position: absolute;
+    top: 30px; /* Position below the ellipsis icon */
+    right: 0;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1001;
+}
+
+.options-dropdown.active {
+    display: block;
+}
+
+.options-dropdown a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.options-dropdown a:hover {
+    background: #f0f0f0;
+}

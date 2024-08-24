@@ -1,0 +1,488 @@
+.upload-section {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #EDEFF5 0%, #D3DAE8 100%);
+    z-index: 9999;
+    overflow: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0 !important;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.05); /* Softer shadow for Windows 11 feel */
+}
+
+/* Style for back arrow icon */
+.back-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10000;
+    color: #0063ce;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back-icon:hover {
+    color: #0056b3;
+    transform: scale(1.1); /* Slight hover effect */
+}
+
+/* Additional styles to prevent interference with other content */
+body.uploading {
+    overflow: hidden;
+}
+
+/* Header */
+.video-section-header {
+    text-align: center;
+    margin-top: 10px !important;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #202225;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05); /* Softer shadow */
+}
+
+/* Tabs above the horizontal line */
+.upload-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.upload-tabs .tab {
+    margin: 0 15px;
+    font-size: 16px;
+    color: #3c3f41;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 12px 25px;
+    text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+    border-radius: 8px;
+    background-image: linear-gradient(135deg, #fdfbfb 0%, #f1f2f4 100%);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+}
+
+.upload-tabs .tab:hover {
+    color: #0063ce;
+    background-color: #e1ebf7;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upload-tabs .tab.active {
+    color: #ffffff;
+    background: linear-gradient(135deg, #0063ce 0%, #0078d4 100%);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15); /* More shadow for active state */
+}
+
+/* Horizontal line below the tabs */
+.upload-divider {
+    margin: 0 auto 20px auto;
+    width: 90%;
+    border: 1px solid #d1d4d9;
+}
+
+/* Box below the horizontal line */
+.box-content {
+    display: none;
+    position: absolute;
+    top: 130px;
+    left: 200px;
+    width: calc(100% - 540px);
+    max-width: 850px;
+    height: 600px;
+    background: linear-gradient(135deg, #f9f9f9 0%, #f3f4f6 100%);
+    border: 2px solid #dadcdf;
+    border-radius: 15px;
+    padding: 20px !important;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Hide the scrollbar */
+.box-content::-webkit-scrollbar {
+    width: 8px;
+    background-color: #e5e7eb;
+}
+
+.box-content::-webkit-scrollbar-thumb {
+    background-color: #0063ce;
+    border-radius: 4px;
+}
+
+/* Content associated with each tab */
+.tab-content {
+    display: none;
+    margin-top: 10px;
+    padding: 0;
+}
+
+/* Steps inside each tab for large screens */
+.steps {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 5px;
+    padding-left: 20px;
+    gap: 10px;
+}
+
+.steps .step {
+    margin: 1px 0;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+    border-radius: 8px;
+    width: 150px;
+    text-align: center;
+    background-color: #f3f4f6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.steps .step:hover {
+    color: #0063ce;
+    background-color: #e1ebf7;
+    transform: translateX(8px);
+}
+
+.steps .step.active {
+    color: #ffffff;
+    background: linear-gradient(135deg, #0063ce 0%, #0078d4 100%);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Content for the steps */
+.step-content {
+    display: none;
+    margin-top: 10px;
+    padding: 0;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Video Preview Box Styling */
+.preview-box {
+    position: absolute;
+    top: 150px;
+    right: 30px;
+    width: 310px;
+    height: 310px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #cfd9df 100%);
+    padding: 20px;
+    margin-left: 0px;
+    overflow-y: auto;
+}
+
+/* Header for Video Preview */
+.preview-box h4 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Video preview container */
+.video-preview {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    background: linear-gradient(135deg, #f5f7fa 0%, #cfd9df 100%);
+    position: relative;
+    overflow: hidden;
+
+}
+
+/* Ensure the video fits perfectly in 16:9 aspect ratio */
+.video-preview video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Fit within the box while preserving aspect ratio */
+}
+
+/* Styles for the play/pause button */
+.video-preview .video-js .vjs-big-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+/* Ensure the control bar remains unaffected */
+.video-preview .video-js .vjs-control-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+/* Hide big play button when video is playing */
+.video-preview .video-js.vjs-playing .vjs-big-play-button {
+    display: none;
+}
+
+/* Make sure the control bar is always visible when video is paused */
+.video-preview .video-js.vjs-paused .vjs-control-bar {
+    display: flex;
+}
+/* Close Preview Button Styling */
+.close-preview-button {
+    display: block;
+    width: 100% !important;
+    padding: 10px 0 !important;
+    margin-top: 15px !important;
+    background-color: #0078d4 !important; /* accent color */
+    color: white !important;
+    border: none !important;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center !important;
+    display: none; /* Initially hidden */
+    transition: background-color 0.3s ease !important;
+}
+
+.close-preview-button:hover {
+    background-color: #005a9e !important; /*hover color */
+}
+/* Steps inside each tab for mid and small screens */
+@media (max-width: 992px) {
+    .steps {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 20px;
+        padding-left: 0;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        white-space: nowrap;
+    }
+
+    .steps::-webkit-scrollbar {
+        display: none;
+    }
+
+    .box-content {
+        position: static;
+        width: 100%;
+        height: auto;
+        max-width: none;
+        margin-top: 20px;
+    }
+}
+
+/* Steps inside each tab for small screens */
+@media (max-width: 768px) {
+    .upload-tabs {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .upload-tabs .tab {
+        margin: 10px 5px;
+    }
+
+    .steps {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        white-space: nowrap;
+        margin-bottom: 40px !important;
+    }
+
+    .steps::-webkit-scrollbar {
+        display: none;
+    }
+
+    .steps .step {
+        margin: 10px 5px;
+    }
+
+    .box-content {
+        margin-top: 30px;
+    }
+}
+
+/* Adding gap between steps for screen sizes between 750px and 910px */
+@media (min-width: 750px) and (max-width: 992px) {
+    .steps .step {
+        align-items: center !important;
+        align-content: center !important;
+        align-self: center !important;
+        margin: auto !important;
+        margin-bottom: 30px !important;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .steps {
+        margin-bottom: 40px !important;
+    }
+}
+
+/* Media query to handle smaller screens */
+@media (max-width: 768px) {
+    .preview-box {
+        position: static;
+        width: 350px;
+        height: 350px;
+        max-width: none;
+        margin-top: 0px !important;
+        margin-left: 0px !important;
+        margin-bottom: 0px !important;
+        margin-right: 0px !important;
+    }
+}
+
+/* General styles for large screens */
+
+/* Responsive styles for mid and small screens */
+@media (max-width: 992px) {
+    .preview-box {
+        position: static;
+        width: 350px;
+        height: 350px;
+        max-width: none;
+        margin-top: 0px !important;
+        margin-left: 0px !important;
+        margin-bottom: 0px !important;
+        margin-right: 0px !important;
+    }
+
+    .box-content {
+        position: static;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        border-left: none !important;
+        border-right: none !important;
+        margin-top: 0px !important;
+        margin-left: 0px !important;
+        margin-bottom: 0px !important;
+        margin-right: 0px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .preview-box {
+        width: 100%; /* Full width */
+        height: auto; /* Adjust height as needed */
+        max-width: 100%; /* Ensure full width */
+        margin: 0 !important; /* Remove all margins */
+        padding: 0 !important; /* Remove all padding */
+        box-sizing: border-box; /* Include padding/border within the width */
+        margin-bottom: 40px !important;
+    }
+
+    .video-preview {
+        width: 100%; /* Full width */
+        height: auto; /* Adjust height as needed */
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        margin: 0 !important; /* Remove all margins */
+        padding: 0 !important; /* Remove all padding */
+        box-sizing: border-box; /* Include padding/border within the width */
+    }
+
+    .box-content {
+        position: static;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        margin-top: 0px !important;
+        margin-left: 0px !important;
+        margin-bottom: 0px !important;
+        margin-right: 0px !important;
+        border-left: none !important;
+        border-right: none !important;
+    }
+}
+
+/* Media query to handle 576px screen size */
+@media (max-width: 576px) {
+    .preview-box {
+        width: 100%; /* Full width */
+        height: auto; /* Adjust height as needed */
+        max-width: 100%; /* Ensure full width */
+        margin: 0 !important; /* Remove all margins */
+        padding: 20px !important; /* Remove all padding */
+        box-sizing: border-box; /* Include padding/border within the width */
+        margin-bottom: 40px !important;
+
+    }
+
+    .video-preview {
+        width: 100%; /* Full width */
+        height: auto; /* Adjust height as needed */
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        margin: 0 !important; /* Remove all margins */
+        padding: 0 !important; /* Remove all padding */
+        box-sizing: border-box; /* Include padding/border within the width */
+    }
+
+    .box-content {
+        position: static;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        margin-top: 0px !important;
+        margin-left: 0px !important;
+        margin-bottom: 0px !important;
+        margin-right: 0px !important;
+        border-left: none !important;
+        border-right: none !important;
+        padding: none;
+    }
+
+}
+
+
